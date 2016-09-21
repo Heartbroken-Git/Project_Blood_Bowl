@@ -1,0 +1,9 @@
+/*!
+ * @file Main.cpp
+ * @author Elbert NYUNTING
+ * @brief Protoype
+ */
+
+#include <iostream>
+#include <vector>
+using namespace std;
