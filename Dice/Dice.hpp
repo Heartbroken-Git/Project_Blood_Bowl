@@ -55,31 +55,7 @@ class Dice{
      *@brief lance un dé de type typeDice_ une seule fois
     */
     int throwDiceSingle();
-    
-    /*!
-     *@brief Donne le résultat d'un lancer de nbDice_ dés de même type. Lance typeDice_ nbDice_ fois en ajoutant la valeur qui sera retourné.  
-    */    
-    int throwDice();
-    
-    /*!
-     *@brief override throwDice() pour lancer deux dés de types différentes. Utilisé surtout pour les jets de blessure (1d6 et 1d8) donc ne vous faites pas mal!
-    */
-    int throwDice(Dice dice);
-        
-    
-    /*!
-     *@brief return les chiffres de deux (on n'utilise pas plus que deux, c'est Blood Bowl, pas D&D) dés lancés dans l'ordre
-     *ATTENTION: return un tableau de deux int ou une classe Pair??
-     *@pre nbDice_ == 2
-    */
-    int throwDiceDigit();
-    
-    /*!
-     *@brief return les chiffres de deux (on n'utilise pas plus que deux, c'est Blood Bowl, pas D&D) dés lancés dans l'ordre, ceci est un overload pour deux dés de types différentes
-     *ATTENTION: return un tableau de deux int ou une classe Pair??
-     *@pre nbDice_ == 2
-    */
-    int throwDiceDigit(Dice dice);
+   
     
     
     private:
