@@ -12,7 +12,8 @@
 
 class Player{
 	public:
-		players();
+		Player();
+		~Player();
 		enum skill{};
 		void setMA(int );
 		void setST(int );
