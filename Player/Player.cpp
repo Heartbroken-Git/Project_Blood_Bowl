@@ -22,6 +22,11 @@ Player::Player(){
 	lvl = 1;
 }
 
+Player::~Player(){
+	std::cout<<"Player deleted"<<std::endl;
+
+}
+
 //COMMENTER SUR CHAQUE GETTERS
 int Player::getMA(){
 	return ma;
@@ -71,9 +76,7 @@ void Player::setXP(int experience){
 void Player::setLevel(int level){
 	lvl = level;
 }
-	
-	
-	
+
 	
 	
 

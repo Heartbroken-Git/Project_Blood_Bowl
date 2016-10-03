@@ -12,8 +12,8 @@
 
 class Player{
 	public:
-		players();
-		int ma, st, ag, av, xp, lvl;
+		Player();
+		~Player();
 		enum skill{};
 		void setMA(int );
 		void setST(int );
@@ -27,6 +27,9 @@ class Player{
 		int getAV();
 		int getXP();
 		int getLevel();
+		
+	private:
+		int ma, st, ag, av, xp, lvl;
 };
  
  
