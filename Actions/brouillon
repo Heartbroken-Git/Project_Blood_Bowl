@@ -1,0 +1,8 @@
+
+TODO getStr() return int for PLayer
+TODO outnumbered() bool for Player
+TODO block() bool for Player to check if player has Block skill
+TODO downed() to down a player without being pushed, still roll for injury
+TODO turnover() mettre fin au tour de l'equipe du joueur
+TODO freeSpot() int, nb de cases libres autour du joueur
+TODO pushBack() pousse le player dans une case adjacente aleatoire
