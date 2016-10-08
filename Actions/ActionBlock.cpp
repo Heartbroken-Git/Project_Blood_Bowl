@@ -1,44 +1,46 @@
-#include <queue>
-#include <vector>
+/**
+ * @file ActionBlock.cpp
+ * @copyright WTFPL v2
+ * @author Elbert NYUNTING
+ * @date 06/10/2016
+ * @brief Fichier source définissant l'action de blocker un joueur adverse (et tout ce qui peut y arriver)
+*/
+
 #include "ActionBlock.hpp"
 
 using namespace std;
 
-////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////
-// Interface publique
-////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////
-
-//------------------------------------------------------------------------------
-/*!
- *@brief : Create ActionBlock and set actingPlayer_
- *
-*/
+/**
+ * @brief Constructeur de ActionBlock
+ * @param actingPlayer le joueur actif
+ * @pre actingPlayer doit être un joueur de l'équipe jouant en jeu
+ */
 ActionBlock::ActionBlock(Player actingPlayer){
 	actingPlayer_ = actingPlayer;
 }
 
-/*!
- *@brief : delete ActionBlock
- *
-*/
+/**
+ * @brief Destructeur de ActionBlock
+ */
 ActionBlock::~ActionBlock(){}
 
-/*!
- *@brief : get actingPlayer_
- *
-*/
+/**
+ * @brief méthode retournant le joueur actif
+ * @return le joueur actif
+ */
 Player ActionBlock::getActingPlayer(){
 	return actingPlayer_;
 }
 
-/*!
- *@brief : actingPlayer_ blocks an opposingPLayer in parameter
- * rolls n dice determined by position and strength value then resolve the action by these dice rolls.
- * This badboy is gonna be used often.
- * Doesn't really follow Blood Bowl rules, but it's a lot more bloody.
-*/
+/**
+ * @brief Méthode permettant actingPlayer_ de bloquer oppoPlayer
+ * @details actingPlayer_ aura plus ou moins de chance de bloquer oppoPlayer par rapport à leur différence de STR et s'il a un avantage de support ou non
+ * @details Les avantages se présente sous la forme de nombre de dés (min 1 dé, max 3 dés) et le coach peut choisir quel résultat à choisir des dés lancés
+ * @details Les joueurs qui ont Block peuvent résister l'effet d'un double KO
+ * @details Si oppoPlayer a Dodge, il peut changer l'effet d'un leger KO en Push
+ * @details Un Push pousse oppoPlayer dans une case adjacentes disponibles aléatoirement, s'il n'y a pas de case disponible, oppoPlayer sera KO
+ * @param oppoPlayer, le joueur victime d'une tentative de blockage
+ */
 void ActionBlock::doAction(Player oppoPlayer){
 	int advantage = 1;
 	int diceRes;
