@@ -54,25 +54,25 @@ void ActionPass::doAction(Player playerCible){
 		
 		diceRes = rollPassDices();
 		if(diceRes > playerCible.getAgi()){ //fail
-			passFail(playerCible);
+			playerCible.passFail();
 		}else{ //success
-			passSuccess(playerCible);
+			playerCible.passSuccess();
 		}
 	}else if(actingPlayer_.tileDist() >= 1 && actingPlayer_.tileDist() < 3){ //normal pass
 		if(actingPlayer_.pass()){ //thrower
-			receiveAct(-2);
+			playerCible.receiveAct(-2);
 		}else{ //normal
-			receiveAct(0);
+			playerCible.receiveAct(0);
 		}
 	}else if(actingPlayer_.tileDist() >= 3 && actingPlayer_.tileDist() < 6 ){ //long pass
 		if(actingPlayer_.pass()){ //thrower
-			receiveAct(0);
+			playerCible.receiveAct(0);
 		}else{ //normal
-			receiveAct(2);
+			playerCible.receiveAct(2);
 		}
 	}else if (actingPlayer_.tileDist() >= 6 && actingPlayer_.tileDist() < 9 ){ //hail Mary
 		if(actingPlayer_.pass()){ //thrower
-			receiveAct(2);
+			playerCible.receiveAct(2);
 		}else{ //normal
 			std::cout<<"Trop loin!"<<std::endl;
 			return;
