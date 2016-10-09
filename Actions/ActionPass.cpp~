@@ -6,6 +6,8 @@
  * @brief Fichier source définissant l'action de passer et reçevoir la balle (ainsi que le fait for probable de les rater)
 */
 
+#include <queue>
+#include <vector>
 #include "ActionPass.hpp"
 
 using namespace std;
@@ -15,9 +17,8 @@ using namespace std;
  * @param actingPlayer le joueur actif
  * @pre actingPlayer doit être un joueur de l'équipe jouant en jeu
  */
-ActionPass::ActionPass(Player actingPlayer, Game game){
+ActionPass::ActionPass(Player actingPlayer){
 	actingPlayer_ = actingPlayer;
-	game_ = game;
 }
 /**
  * @brief Destructeur de ActionPass
@@ -30,14 +31,6 @@ ActionPass::~ActionPass(){}
  */
 Player ActionPass::getActingPlayer(){
 	return actingPlayer_;
-}
-
-/**
- * @brief méthode retournant le jeu actif
- * @return le jeu actif
- */
-Game ActionPass::getGame(){
-	return game_;
 }
 
 /**
@@ -95,8 +88,8 @@ void ActionPass::doAction(Player playerCible){
  */
 void ActionPass::passFail(){
 		std::cout<<"Et il a raté le pass! Gah! Ces joueurs ne savent pas jouer ou quoi?!"<<std::endl;
-		game_.getBall.setPlayer(actingPlayer_);
-		game_.getBall.bounce();
+		ball.setPlayer(actingPlayer_);
+		ball.bounce();
 		playerCible.turnover();
 }
 
