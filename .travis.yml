@@ -18,6 +18,10 @@ install:
  - if [ "$CXX" = "g++" ]; then export CXXFLAGS="-std=c++0x"; fi
  - if [ "$CXX" = "g++" ]; then export CXX="g++-4.8"; fi
 
+branches:
+ only:
+  - master
+  
 script:
  - $CXX --version
  - echo $CXXFLAGS
