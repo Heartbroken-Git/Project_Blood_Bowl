@@ -1,0 +1,32 @@
+language: cpp
+
+compiler:
+ - gcc
+
+before_install:
+ - sudo apt-get install valgrind
+
+ # g++4.8.1
+ - if [ "$CXX" == "g++" ]; then sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test; fi
+ 
+ - sudo apt-get update -qq
+ 
+install:
+ # g++4.8.1
+ - if [ "$CXX" = "g++" ]; then sudo apt-get install -qq g++-4.8; fi
+ - if [ "$CXX" = "g++" ]; then sudo apt-get install -qq libstdc++6-4.7-dev; fi
+ - if [ "$CXX" = "g++" ]; then export CXXFLAGS="-std=c++0x"; fi
+ - if [ "$CXX" = "g++" ]; then export CXX="g++-4.8"; fi
+
+branches:
+ only:
+  - master
+  
+script:
+ - $CXX --version
+ - echo $CXXFLAGS
+ - make
+ - valgrind --leak-check=full --show-reachable=yes ProjectBloodBowl
+ 
+ notifications:
+  webhooks: https://webhooks.gitter.im/e/a6fc712ba46449aba1ed
