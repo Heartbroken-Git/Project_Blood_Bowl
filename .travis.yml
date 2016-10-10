@@ -27,3 +27,6 @@ script:
  - echo $CXXFLAGS
  - make
  - valgrind --leak-check=full --show-reachable=yes ProjectBloodBowl
+ 
+ notifications:
+  webhooks: https://webhooks.gitter.im/e/a6fc712ba46449aba1ed
