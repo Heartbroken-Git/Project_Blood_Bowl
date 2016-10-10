@@ -6,6 +6,9 @@
 
 #include <iostream>
 #include <vector>
+
+#include <Dice.hpp>
+
 using namespace std;
 
 int main(){
