@@ -205,7 +205,7 @@ void ActionBlock::pushed(Player oppoPlayer){
  * @detail si oppoPlayer a le skill Dodge, il ne sera que poussé (avec les effets qui vont avec)
  */
 void ActionBlock::stumble(Player oppoPlayer){
-	if(oppoPlayer.Dodge()){
+	if(oppoPlayer.dodge()){
 		actingPlyaer_.pushed(Player oppoPlayer)
 	}else{
 		oppoPlayer.downed()
