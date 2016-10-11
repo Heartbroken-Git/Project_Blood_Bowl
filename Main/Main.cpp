@@ -7,7 +7,7 @@
 #include <iostream>
 #include <vector>
 
-#include <Dice.hpp>
+#include "../Dice/Dice.hpp"
 
 using namespace std;
 
