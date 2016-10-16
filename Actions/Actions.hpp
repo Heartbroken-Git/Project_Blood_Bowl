@@ -18,6 +18,7 @@ class Actions{
     public:
     Actions();
     ~Actions();
+	virtual void doAction(Player player)=0;
 	virtual void doAction()=0;
 };
 
