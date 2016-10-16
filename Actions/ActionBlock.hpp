@@ -20,7 +20,8 @@ class ActionBlock : public Actions{
 	int countAdvantage(Player oppoPlayer);
 	void bothDown(Player oppoPlayer);
 	void pushed(Player oppoPlayer);
-	void stumble(Player oppoPlayer)
+	void stumble(Player oppoPlayer);
+	Player getActingPlayer();
 	
 	
     private:
