@@ -8,5 +8,5 @@ using namespace std;
 Actions::Actions(){}
 Actions::~Actions(){}
 void Actions::doAction(Player player){}
-
+void Actions::doAction(){}
 
