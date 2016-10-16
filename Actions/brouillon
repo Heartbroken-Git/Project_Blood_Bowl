@@ -7,3 +7,4 @@ TODO turnover() mettre fin au tour de l'equipe du joueur
 TODO freeSpot() int, nb de cases libres autour du joueur
 TODO pushBack() pousse le player dans une case adjacente aleatoire
 TODO Player status_ en int avec 0 == debout, 1 == debout, -3 mouvement & !tackle, 2 == au sol, 3 == sur le ventre, 4 == KO, 5 == Mort, 6 == en reserve
+TODO oppoAdjac, retournant le nb de joueurs adverse autour de Player
