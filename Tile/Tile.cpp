@@ -50,6 +50,12 @@ Tile::Tile(int x, int y, bool originalBallTile) {
 	playerOn_ = NULL;
 	ballOn_ = originalBallTile;
 }
+
+/**
+ * @brief Destructeur de Tile
+ */
+Tile::~Tile() {}
+ 
 /**
  * @brief Méthode retournant l'abscisse d'une case
  * @return l'abscisse de la case
