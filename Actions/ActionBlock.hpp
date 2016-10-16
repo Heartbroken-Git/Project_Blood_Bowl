@@ -24,7 +24,7 @@ class ActionBlock : public Actions{
 	
 	
     private:
-	Player actingPlayer;_
+	Player actingPlayer_;
 };
 
 #endif
