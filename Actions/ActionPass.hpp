@@ -14,7 +14,7 @@
 class Actions;
 
 
-class ActionPass : public Actions{
+class ActionPass : public virtual Actions{
     public:
 	ActionPass(Player actingPlayer, Game game);
 	~ActionBlock();
