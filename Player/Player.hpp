@@ -9,6 +9,9 @@
  
 #include <iostream>
 #include <vector>
+#include "../Tile/Tile.hpp"
+
+class Tile;
 
 class Player{
 	public:
@@ -27,9 +30,17 @@ class Player{
 		int getArm();
 		int getXpe();
 		int getLvl();
+	
+		bool outnumbered();
+		void downed();
+		void turnover();
+		int freeSpot();
+		void pushBack();
+		int oppoAjac();
 		
 	private:
-		int mvt, str, agi, arm, xpe, lvl;
+		int mvt_, str_, agi_, arm_, xpe_, lvl_, status_;
+		Tile case_;
 };
  
  
