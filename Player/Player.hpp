@@ -38,11 +38,8 @@ class Player{
 		void pushBack();
 		int oppoAjac();
 		int countAdvantage(Player oppoPlayer);
-	
 		void downed();
-		void bothDown(Player oppoPlayer);
-		void pushed();
-		void stumble();
+		
 		
 	private:
 		int mvt_, str_, agi_, arm_, xpe_, lvl_, status_;
