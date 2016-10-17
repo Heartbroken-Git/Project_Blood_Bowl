@@ -37,7 +37,7 @@ class Player{
 		int freeSpot();
 		void pushBack();
 		int oppoAjac();
-		int countAdvantage();
+		int countAdvantage(Player oppoPlayer);
 	
 		void downed();
 		void bothDown(Player oppoPlayer);
