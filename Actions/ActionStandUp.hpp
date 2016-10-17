@@ -14,7 +14,7 @@
 
 class ActionStandUp : public Actions{
     public:
-	ActionStandUp();
+	ActionStandUp(Player actingPlayer);
 	~ActionStandUp();
 	void doAction(Player player);
 	Player getActingPlayer();
