@@ -8,6 +8,9 @@
 
 #include <queue>
 #include <vector>
+#include "../Player/Player.hpp"
+
+class Player;
 
 /**
  * @brief 
