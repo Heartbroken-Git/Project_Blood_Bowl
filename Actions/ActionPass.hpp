@@ -18,7 +18,7 @@ class Player;
 class ActionPass : public virtual Actions{
     public:
 	ActionPass(Player actingPlayer, Game game);
-	~ActionBlock();
+	~ActionPass();
 	Player getActingPlayer();
 	Game getGame();
 	void setActingPlayer(Player actingPlayer);
