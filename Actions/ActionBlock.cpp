@@ -53,7 +53,7 @@ void ActionBlock::doAction(Player oppoPlayer){
 	vector<unsigned int> diceStack;
 	Dice d6(1, 6);
 	
-	advantage = actingPlayer_.countAdvantage(Player oppoPlayer);
+	advantage = countAdvantage(Player oppoPlayer);
 	if (advantage < 0){
 		advantage *= -1;
 		inControl = false;
