@@ -20,6 +20,7 @@ Player::Player(){
 	arm_ = 0;
 	xpe_ = 0;
 	lvl_ = 1;
+	status_ = 0;
 }
 
 Player::~Player(){
@@ -75,6 +76,32 @@ void Player::setXpe(int experience){
 	
 void Player::setLvl(int level){
 	lvl_ = level;
+}
+
+//PLACEHOLDER METHODS, JUST SO IT COMPILES, TODO. HARD.
+
+bool Player::outnumbered(){
+	return true;	
+}
+
+void Player::downed(){
+	return;	
+}
+
+void Player::turnover(){
+	return;	
+}
+
+int Player::freeSpot(){
+	return 5;	
+}
+
+void Player::pushBack(){
+	return;	
+}
+
+int Player::oppoAjac(){
+	return 5;	
 }
 
 	
