@@ -11,7 +11,10 @@
 #include <queue>
 #include <vector>
 #include "Actions.hpp"
+#include "../Player/Player.hpp"
+
 class Actions;
+class Player;
 class ActionBlock: public virtual Actions {
     public:
 	ActionBlock(Player actingPlayer);
