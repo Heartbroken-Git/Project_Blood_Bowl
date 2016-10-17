@@ -15,7 +15,7 @@
 class Actions;
 
 
-class ActionFoul : public Actions{
+class ActionFoul : public virtual Actions{
     public:
 	ActionFoul(Player actingPlayer);
 	~ActionFoul();
