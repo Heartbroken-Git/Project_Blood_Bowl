@@ -108,7 +108,7 @@ void ActionBlock::doAction(Player oppoPlayer){
 	
 	if(finalRes == 1){ //failed block, attacker down
 		actingPlayer_.downed();
-		std::cout << "Et voila! Il est à terre pour tenter un blockage! Comme quoi il ne faut pas embaucher des amateurs!" <<std::endl
+		std::cout << "Et voila! Il est à terre pour tenter un blockage! Comme quoi il ne faut pas embaucher des amateurs!" <<std::endl;
 	
 	}else if(finalRes == 2){ 
 		actingPlayer_.bothDown(Player oppoPlayer);		
