@@ -120,6 +120,24 @@ int Player::countAdvantage(Player oppoPlayer){
 int Player::oppoAjac(){
 	return 5;	
 }
+
+void Player::block(){
+	return;	
+}
+
+void Player::pass(){
+	return;	
+}
+
+void Player::dodges(){
+	return;	
+}
+
+void Player::catches(){
+	return;	
+}
+
+
 	
 
 
