@@ -173,15 +173,15 @@ void ActionBlock::bothDown(Player oppoPlayer){
 		std::cout << "Les deux joueurs se cognent et rien ne se passe!" <<std::endl;
 	}else if(actingPlayer_.block()){ //opposing player down
 		oppoPlayer.downed();
-		std::cout << "BOOM! Ils se cognent mais un est nettement plus solide que l'autre!" <<std::endl
+		std::cout << "BOOM! Ils se cognent mais un est nettement plus solide que l'autre!" <<std::endl;
 	}else if(oppoPlayer_.block()){//acting player down et turnover
 		actingPlayer_.downed();
-		std::cout << "BOOM! Ils se cognent mais un est nettement plus solide que l'autre!" <<std::endl
+		std::cout << "BOOM! Ils se cognent mais un est nettement plus solide que l'autre!" <<std::endl;
 		actingPlayer_.turnover();
 	}else{ //both down, turnover
 		actingPlayer_.downed();
 		oppoPlayer.downed();
-		std::cout << "HA! Ils se cognent et sont tous les deux à terre!" <<std::endl
+		std::cout << "HA! Ils se cognent et sont tous les deux à terre!" <<std::endl;
 		actingPlayer_.turnover();
 	}
 }
