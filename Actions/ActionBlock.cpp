@@ -50,7 +50,7 @@ void ActionBlock::doAction(Player oppoPlayer){
 	unsigned int diceChoice;
 	int finalRes;
 	bool inControl = true;
-	vector<int> diceStack;
+	vector<unsigned int> diceStack;
 	Dice d6(1, 6);
 	
 	advantage = actingPlayer_.countAdvantage(Player oppoPlayer);
