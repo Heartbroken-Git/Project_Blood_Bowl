@@ -10,7 +10,7 @@
 
 #include <queue>
 #include <vector>
-
+#include "Actions.hpp"
 class Actions;
 class ActionBlock: public virtual Actions {
     public:
