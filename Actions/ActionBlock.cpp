@@ -119,7 +119,7 @@ void ActionBlock::doAction(Player oppoPlayer){
 	}else if(finalRes == 5){ 
 		actingPlayer_.stumble(Player oppoPlayer);
 		
-	}else(finalRes == 6){ //knocked down, no evading this bad boy
+	}else if(finalRes == 6){ //knocked down, no evading this bad boy
 		oppoPlayer.downed();
 		std::cout << "OUCH! Ca doit faire mal, ça!" <<std::endl;
 	}
