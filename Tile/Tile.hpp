@@ -14,6 +14,8 @@
 
 using namespace std;
 
+class Player;
+
 /**
  * @class Tile
  * @brief Classe définissant une case du plateau de jeu
