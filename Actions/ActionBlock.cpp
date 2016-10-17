@@ -174,7 +174,7 @@ void ActionBlock::bothDown(Player oppoPlayer){
 	}else if(actingPlayer_.block()){ //opposing player down
 		oppoPlayer.downed();
 		std::cout << "BOOM! Ils se cognent mais un est nettement plus solide que l'autre!" <<std::endl;
-	}else if(oppoPlayer_.block()){//acting player down et turnover
+	}else if(oppoPlayer.block()){//acting player down et turnover
 		actingPlayer_.downed();
 		std::cout << "BOOM! Ils se cognent mais un est nettement plus solide que l'autre!" <<std::endl;
 		actingPlayer_.turnover();
