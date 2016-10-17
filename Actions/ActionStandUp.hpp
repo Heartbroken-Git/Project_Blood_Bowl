@@ -10,7 +10,9 @@
 
 #include <queue>
 #include <vector>
+#include "Actions.hpp"
 
+class Actions;
 
 class ActionStandUp : public Actions{
     public:
