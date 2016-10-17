@@ -10,6 +10,9 @@
  
 #include <queue>
 #include <vector>
+#include "Actions.hpp"
+
+class Actions;
 
 using namespace std;
 
