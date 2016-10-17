@@ -53,7 +53,7 @@ void ActionBlock::doAction(Player oppoPlayer){
 	vector<unsigned int> diceStack;
 	Dice d6(1, 6);
 	
-	advantage = countAdvantage(Player oppoPlayer);
+	advantage = countAdvantage(oppoPlayer);
 	if (advantage < 0){
 		advantage *= -1;
 		inControl = false;
@@ -111,13 +111,13 @@ void ActionBlock::doAction(Player oppoPlayer){
 		std::cout << "Et voila! Il est à terre pour tenter un blockage! Comme quoi il ne faut pas embaucher des amateurs!" <<std::endl;
 	
 	}else if(finalRes == 2){ 
-		actingPlayer_.bothDown(Player oppoPlayer);		
+		bothDown(actingPlayer_, oppoPlayer);		
 	
 	}else if(finalRes == 3 || finalRes == 4){ //pushed
-		pushed(Player oppoPlayer);	
+		pushed(oppoPlayer);	
 		
 	}else if(finalRes == 5){ 
-		stumble(Player oppoPlayer);
+		stumble(oppoPlayer);
 		
 	}else if(finalRes == 6){ //knocked down, no evading this bad boy
 		oppoPlayer.downed();
@@ -167,7 +167,7 @@ int ActionBlock::countAdvantage(Player oppoPlayer){
  * @brief méthode simulant l'effet de deux joueurs se tapant desus
  * @detail le(s) joueur(s) qui a le skill Block ne sera pas à terre
  */
-void ActionBlock::bothDown(Player oppoPlayer){
+void ActionBlock::bothDown(Player actingPlayer, Player oppoPlayer){
 	//both down, unless the guy with Block skill
 	if(actingPlayer_.block() && oppoPlayer.block()){ //none down
 		std::cout << "Les deux joueurs se cognent et rien ne se passe!" <<std::endl;
@@ -208,7 +208,7 @@ void ActionBlock::pushed(Player oppoPlayer){
  */
 void ActionBlock::stumble(Player oppoPlayer){
 	if(oppoPlayer.dodge()){
-		pushed(Player oppoPlayer);
+		pushed(oppoPlayer);
 	}else{
 		oppoPlayer.downed();
 		std::cout << "OUCH! Ca doit faire mal, ça!" <<std::endl;
