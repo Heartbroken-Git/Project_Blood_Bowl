@@ -21,7 +21,7 @@ class ActionBlock: public virtual Actions {
 	~ActionBlock();
 	void doAction(Player oppoPlayer); //check surrounding, then roll dice(s), then apply changes
 	int countAdvantage(Player oppoPlayer);
-	void bothDown(Player oppoPlayer);
+	void bothDown(Player actingPlayer, Player oppoPlayer);
 	void pushed(Player oppoPlayer);
 	void stumble(Player oppoPlayer);
 	Player getActingPlayer();
