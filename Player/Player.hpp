@@ -15,21 +15,21 @@ class Player{
 		Player();
 		~Player();
 		enum skill{};
-		void setMA(int );
-		void setST(int );
-		void setAG(int );
-		void setAV(int );
-		void setXP(int );
-		void setLevel(int );
-		int getMA();
-		int getST();
-		int getAG();
-		int getAV();
-		int getXP();
-		int getLevel();
+		void setMvt(int );
+		void setStr(int );
+		void setAgi(int );
+		void setArm(int );
+		void setXpe(int );
+		void setLvl(int );
+		int getMvt();
+		int getStr();
+		int getAgi();
+		int getArm();
+		int getXpe();
+		int getLvl();
 		
 	private:
-		int ma, st, ag, av, xp, lvl;
+		int mvt, str, agi, arm, xpe, lvl;
 };
  
  
