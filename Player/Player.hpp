@@ -24,6 +24,7 @@ class Player{
 		void setArm(int );
 		void setXpe(int );
 		void setLvl(int );
+		void setStatus(int status);
 		int getMvt();
 		int getStr();
 		int getAgi();
