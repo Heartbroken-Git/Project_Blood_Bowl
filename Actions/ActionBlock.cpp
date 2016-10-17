@@ -208,7 +208,7 @@ void ActionBlock::pushed(Player oppoPlayer){
  */
 void ActionBlock::stumble(Player oppoPlayer){
 	if(oppoPlayer.dodge()){
-		actingPlyaer_.pushed(Player oppoPlayer);
+		pushed(Player oppoPlayer);
 	}else{
 		oppoPlayer.downed();
 		std::cout << "OUCH! Ca doit faire mal, ça!" <<std::endl;
