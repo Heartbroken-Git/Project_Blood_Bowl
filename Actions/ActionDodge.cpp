@@ -7,7 +7,9 @@
  */
  
 #include "ActionDodge.hpp"
+#include "../Dice/Dice.hpp"
 
+class Dice;
 /**
  * @brief Constructeur de ActionDodge
  * @param actingPlayer le joueur exécutant l'action
