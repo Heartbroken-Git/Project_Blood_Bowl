@@ -32,11 +32,16 @@ class Player{
 		int getLvl();
 	
 		bool outnumbered();
-		void downed();
 		void turnover();
 		int freeSpot();
 		void pushBack();
 		int oppoAjac();
+		int countAdvantage();
+	
+		void downed();
+		void bothDown(Player oppoPlayer);
+		void pushed();
+		void stumble();
 		
 	private:
 		int mvt_, str_, agi_, arm_, xpe_, lvl_, status_;
