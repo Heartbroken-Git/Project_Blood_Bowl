@@ -57,7 +57,7 @@ void ActionFoul::doAction(Player oppoPlayer){
 		result += stock;
 		stock = oppoPlayer.oppoAdjac();
 		result += stock;
-		if(result > oppoPlayer.getArmor()){
+		if(result > oppoPlayer.getAmr()){
 			oppoPlayer.downed();
 			std::cout<<"Aïe!"<<std::endl;
 		}
