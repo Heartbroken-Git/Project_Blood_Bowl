@@ -11,8 +11,8 @@
 #include <queue>
 #include <vector>
 
-class Actions;
-class ActionBlock: public Actions {
+//virtual class Actions;
+class ActionBlock: public virtual Actions {
     public:
 	ActionBlock(Player actingPlayer);
 	~ActionBlock();
