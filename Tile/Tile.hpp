@@ -27,6 +27,7 @@ class Tile {
 		Tile(int, int);
 		Tile(int, int, Player);
 		Tile(int, int, bool);
+		~Tile();
 		int getX();
 		int getY();
 		Player getPlayerOn();
