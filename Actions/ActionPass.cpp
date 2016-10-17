@@ -133,9 +133,9 @@ int ActionPass::rollPassDices(){
 void ActionPass::receiveAct(int modif){
 	diceRes = rollPassDices();
 	diceRes += modif;
-	if(diceRes > actingPlayer_.getAgi() && !actingPlayer_.catch()){ //fail, no reroll
+	if(diceRes > actingPlayer_.getAgi() && !actingPlayer_.catches()){ //fail, no reroll
 		actingPlayer_.passFail();
-	}else if(diceRes > actingPlayer_.getAgi() && actingPlayer_.catch()){ //fail, reroll
+	}else if(diceRes > actingPlayer_.getAgi() && actingPlayer_.catches()){ //fail, reroll
 		std::cout<<"On va relancer ça! \n";
 		diceRes = rollPassDices();
 		if(diceRes > actingPlayer_.getAgi()){ //fail
