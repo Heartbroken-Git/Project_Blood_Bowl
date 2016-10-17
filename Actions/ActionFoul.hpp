@@ -14,7 +14,7 @@
 
 class ActionFoul : public Actions{
     public:
-	ActionFoul();
+	ActionFoul(Player actingPlayer);
 	~ActionFoul();
 	void doAction(Player oppoPlayer);
 	Player getActingPlayer();
