@@ -78,6 +78,10 @@ void Player::setLvl(int level){
 	lvl_ = level;
 }
 
+void Player::setStatus(int status){
+	status_ = status;	
+}
+
 //PLACEHOLDER METHODS, JUST SO IT COMPILES, TODO. HARD.
 
 bool Player::outnumbered(){
@@ -104,7 +108,17 @@ int Player::oppoAjac(){
 	return 5;	
 }
 
-	
+void Player::bothDown(Player oppoPlayer){
+	return;	
+}
+
+void Player::pushed(){
+	return;	
+}
+
+void Player::stumble(){
+	return;
+}	
 	
 
 
