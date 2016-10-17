@@ -14,12 +14,12 @@ using namespace std;
 *@complexite Constante
 */
 Player::Player(){
-	ma = 0;
-	st = 0;
-	ag = 0;
-	av = 0;
-	xp = 0;
-	lvl = 1;
+	mvt_ = 0;
+	str_ = 0;
+	agi_ = 0;
+	arm_ = 0;
+	xpe_ = 0;
+	lvl_ = 1;
 }
 
 Player::~Player(){
@@ -28,53 +28,53 @@ Player::~Player(){
 }
 
 //COMMENTER SUR CHAQUE GETTERS
-int Player::getMA(){
-	return ma;
+int Player::getMvt(){
+	return mvt_;
 }
 
-int Player::getST(){
-	return st;
+int Player::getStr(){
+	return str_;
 }
 
-int Player::getAG(){
-	return ag;
+int Player::getAgi(){
+	return agi_;
 }
 	
-int Player::getAV(){
-	return av;
+int Player::getArm_(){
+	return arm_;
 }
 	
-int Player::getXP(){ 
-	return xp;
+int Player::getXpe_(){ 
+	return xpe_;
 }
 	
-int Player::getLevel(){
-	return lvl;
+int Player::getLvl(){
+	return lvl_;
 }
 	
 //COMMENTER SUR CHAQUE SETTERS
-void Player::setMA(int mouvementAllowance){
-	ma = mouvementAllowance;
+void Player::setMvt(int mouvementAllowance){
+	mvt_ = mouvementAllowance;
 }
 	
-void Player::setST(int strength){
-	st = strength;
+void Player::setStr(int strength){
+	str_ = strength;
 }
 	
-void Player::setAG(int agility){
-	ag = agility;
+void Player::setAgi(int agility){
+	agi_ = agility;
 }
 	
-void Player::setAV(int armorValue){
-	av = armorValue;
+void Player::setArm(int armorValue){
+	arm_ = armorValue;
 }
 	
-void Player::setXP(int experience){
-	xp = experience;
+void Player::setXpe(int experience){
+	xpe_ = experience;
 }
 	
-void Player::setLevel(int level){
-	lvl = level;
+void Player::setLvl(int level){
+	lvl_ = level;
 }
 
 	
