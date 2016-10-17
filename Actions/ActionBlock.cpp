@@ -94,7 +94,7 @@ void ActionBlock::doAction(Player oppoPlayer){
 			}
 		}else{
 			diceChoice = 6;
-			for(int i = 0; i < diceStack.size(); ++i){
+			for(unsigned int i = 0; i < diceStack.size(); ++i){
 				if(diceChoice > diceStack.at(i)){
 					diceChoice = diceStack.at(i);
 				}
