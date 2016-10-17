@@ -67,7 +67,7 @@ void ActionBlock::doAction(Player oppoPlayer){
 	
 	
 	for(int i = 0; i <= advantage; ++i){
-		diceRes = d6.throwDiceSingle()
+		diceRes = d6.throwDiceSingle();
 		diceStack.push_back(diceRes);
 		
 		std::cout<<"Lancée "<<advantage<<"!"<<std::endl;
@@ -120,7 +120,7 @@ void ActionBlock::doAction(Player oppoPlayer){
 		actingPlayer_.stumble(Player oppoPlayer);
 		
 	}else(finalRes == 6){ //knocked down, no evading this bad boy
-		oppoPlayer.downed()
+		oppoPlayer.downed();
 		std::cout << "OUCH! Ca doit faire mal, ça!" <<std::endl;
 	}
 	
@@ -137,12 +137,12 @@ int ActionBlock::countAdvantage(Player oppoPlayer){
 	if(actingPlayer_.getStr() > oppoPlayer.getStr()){
 		++advantage;
 		if(actingPlayer_.getStr >= oppoPlayer.getStr() * 2 + 1){
-			++advantage
+			++advantage;
 		}
 	}else if(actingPlayer_.getStr() < oppoPlayer.getStr()){
 		--advantage;
 		if(actingPlayer_.getStr <= oppoPlayer.getStr() * 2 + 1){
-			--advantage
+			--advantage;
 		}
 	}
 	 
@@ -210,7 +210,7 @@ void ActionBlock::stumble(Player oppoPlayer){
 	if(oppoPlayer.dodge()){
 		actingPlyaer_.pushed(Player oppoPlayer)
 	}else{
-		oppoPlayer.downed()
+		oppoPlayer.downed();
 		std::cout << "OUCH! Ca doit faire mal, ça!" <<std::endl;
 	}
 }
