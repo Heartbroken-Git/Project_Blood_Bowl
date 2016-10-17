@@ -12,7 +12,6 @@
 #include <string>
 #include "../Player/Player.hpp"
 
-class Player;
 using namespace std;
 
 /**
