@@ -9,7 +9,7 @@
  
 #include <iostream>
 #include <vector>
-#include "../Tile/Tile.hpp"
+
 
 class Player{
 	public:
@@ -41,7 +41,7 @@ class Player{
 		
 	private:
 		int mvt_, str_, agi_, arm_, xpe_, lvl_, status_;
-		Tile case_;
+
 };
  
  
