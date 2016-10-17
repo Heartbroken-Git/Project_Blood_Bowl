@@ -114,10 +114,10 @@ void ActionBlock::doAction(Player oppoPlayer){
 		actingPlayer_.bothDown(Player oppoPlayer);		
 	
 	}else if(finalRes == 3 || finalRes == 4){ //pushed
-		actingPlayer_.pushed(Player oppoPlayer);	
+		pushed(Player oppoPlayer);	
 		
 	}else if(finalRes == 5){ 
-		actingPlayer_.stumble(Player oppoPlayer);
+		stumble(Player oppoPlayer);
 		
 	}else if(finalRes == 6){ //knocked down, no evading this bad boy
 		oppoPlayer.downed();
