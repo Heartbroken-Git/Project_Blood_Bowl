@@ -111,18 +111,6 @@ int Player::countAdvantage(Player oppoPlayer){
 int Player::oppoAjac(){
 	return 5;	
 }
-
-void Player::bothDown(Player oppoPlayer){
-	return;	
-}
-
-void Player::pushed(){
-	return;	
-}
-
-void Player::stumble(){
-	return;
-}	
 	
 
 
