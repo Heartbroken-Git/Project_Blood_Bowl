@@ -8,7 +8,9 @@
 
 #include <vector>
 #include "ActionBlock.hpp"
+#include "../Dice/Dice.hpp"
 
+class Dice;
 using namespace std;
 
 /**
