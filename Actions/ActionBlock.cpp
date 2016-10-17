@@ -46,8 +46,8 @@ Player ActionBlock::getActingPlayer(){
  */
 void ActionBlock::doAction(Player oppoPlayer){
 	int advantage;
-	int diceRes;
-	int diceChoice;
+	unsigned int diceRes;
+	unsigned int diceChoice;
 	int finalRes;
 	bool inControl = true;
 	vector<int> diceStack;
