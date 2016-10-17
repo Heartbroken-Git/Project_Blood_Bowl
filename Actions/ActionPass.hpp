@@ -10,9 +10,10 @@
 #include <queue>
 #include <vector>
 #include "Actions.hpp"
+#include "../Player/Player.hpp"
 
 class Actions;
-
+class Player;
 
 class ActionPass : public virtual Actions{
     public:
