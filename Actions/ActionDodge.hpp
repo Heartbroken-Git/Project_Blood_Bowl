@@ -21,7 +21,7 @@ using namespace std;
  * @brief Classe définissant l'action Dodge
  * @details L'action Dodge est l'acte d'un joueur d'éviter une attaque ennemie, elle dépent principalement de l'agilité du joueur attaqué
  */
-class ActionDodge : public Actions {
+class ActionDodge : public virtual Actions {
 	private:
 		Player actingPlayer_;
 	
