@@ -30,7 +30,7 @@ ActionDodge::~ActionDodge() {}
  * @details Si le test échoue le joueur doit alors tenter de bloquer l'attaque (renvoie sur ActionBlock).
  */
 void ActionDodge::doAction() {
-	int modifier = 1 + (0 - actingPlayer_.oppoAjac());
+	unsigned int modifier = 1 + (0 - actingPlayer_.oppoAjac());
 	Dice d6(1, 6);
 	if (!((d6.throwDiceSingle() + modifier) >= 7 - actingPlayer_.getAG())) {
 		actingPlayer_.downed();
