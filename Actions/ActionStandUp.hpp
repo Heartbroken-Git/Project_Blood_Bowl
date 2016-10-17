@@ -14,7 +14,7 @@
 
 class Actions;
 
-class ActionStandUp : public Actions{
+class ActionStandUp : public virtual Actions{
     public:
 	ActionStandUp(Player actingPlayer);
 	~ActionStandUp();
