@@ -12,7 +12,7 @@
 #include <vector>
 
 
-class ActionBlock : public Actions{
+class ActionBlock :: public Actions{
     public:
 	ActionBlock(Player actingPlayer);
 	~ActionBlock();
