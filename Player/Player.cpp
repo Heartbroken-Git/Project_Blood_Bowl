@@ -104,6 +104,10 @@ void Player::pushBack(){
 	return;	
 }
 
+int Player::countAdvantage(Player oppoPlayer){
+	return 5;	
+}
+
 int Player::oppoAjac(){
 	return 5;	
 }
