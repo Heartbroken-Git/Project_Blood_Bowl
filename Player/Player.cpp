@@ -21,6 +21,7 @@ Player::Player(){
 	xpe_ = 0;
 	lvl_ = 1;
 	status_ = 0;
+	name_="";
 }
 
 Player::~Player(){
@@ -52,6 +53,10 @@ int Player::getXpe_(){
 int Player::getLvl(){
 	return lvl_;
 }
+
+string Player::getName(){
+	return name_;	
+}
 	
 //COMMENTER SUR CHAQUE SETTERS
 void Player::setMvt(int mouvementAllowance){
@@ -80,6 +85,10 @@ void Player::setLvl(int level){
 
 void Player::setStatus(int status){
 	status_ = status;	
+}
+
+void Player::setName(string name){
+	name_=name;	
 }
 
 //PLACEHOLDER METHODS, JUST SO IT COMPILES, TODO. HARD.
