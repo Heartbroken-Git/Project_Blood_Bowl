@@ -11,8 +11,6 @@
 #include <vector>
 #include "../Tile/Tile.hpp"
 
-class Tile;
-
 class Player{
 	public:
 		Player();
