@@ -8,6 +8,9 @@
 
 #include <vector>
 #include "ActionFoul.hpp"
+#include "../Dice/Dice.hpp"
+
+class Dice;
 
 using namespace std;
 
