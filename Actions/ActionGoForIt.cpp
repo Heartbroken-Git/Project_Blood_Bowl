@@ -7,6 +7,9 @@
  */
 
 #include "ActionGoForIt.hpp"
+#include "../Dice/Dice.hpp"
+
+class Dice;
 
 /**
  * @brief Constructeur de ActionGoForIt
