@@ -60,7 +60,7 @@ void ActionPass::setActingPlayer(Player actingPlayer){
 void ActionPass::doAction(Player playerCible){
 	int diceRes;
 		
-	if(actingPlayer_.nextTo(playerCible){ //close pass
+	if(actingPlayer_.nextTo(playerCible)){ //close pass
 		
 		diceRes = rollPassDices();
 		if(diceRes > playerCible.getAgi()){ //fail
