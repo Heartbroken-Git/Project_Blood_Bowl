@@ -96,19 +96,19 @@ void ActionPass::doAction(Player playerCible){
  * @details la balle appartiendra au joueur qui est censé la reçevoir avant de rebondir vers une case adjacente et devenir indépendant (voir méthode bounce())
  * @details Déclenche un turnover
  */
-void ActionPass::passFail(){
+void ActionPass::passFail(Player player){
 		std::cout<<"Et il a raté le pass! Gah! Ces joueurs ne savent pas jouer ou quoi?!"<<std::endl;
-		game_.getBall.setPlayer(actingPlayer_);
+		game_.getBall.setPlayer(player);
 		game_.getBall.bounce();
-		playerCible.turnover();
+		player.turnover();
 }
 
 /**
  * @brief Méthode qui fait que la passe à... passé
  * @details la balle appartiendra au joueur qui l'a reçue
  */
-void ActionPass::passSuccess(){
-		ball.setPlayer(actingPlayer_);
+void ActionPass::passSuccess(Player player){
+		ball.setPlayer(player);
 		std::cout<<"Oh OH! Aww... Il a reçu la balle... Je voulais le voir rater comme ça on tape plus, mais bon, c'est vraie que Blood Bowl est un jeu de balle."<<std::endl;
 }
 
@@ -135,14 +135,14 @@ void ActionPass::receiveAct(int modif){
 	unsigned int agi = (unsigned int) actingPlayer_.getAgi();
 	diceRes += modif;
 	if(diceRes > agi && !actingPlayer_.catches()){ //fail, no reroll
-		actingPlayer_.passFail();
+		passFail(actingPlayer_);
 	}else if(diceRes > agi && actingPlayer_.catches()){ //fail, reroll
 		std::cout<<"On va relancer ça! \n";
 		diceRes = rollPassDices();
 		if(diceRes > agi){ //fail
-			actingPlayer_.passFail();
+			passFail(actingPlayer_);
 		}else{ //success
-			actingPlayer_.passSuccess();
+			passSuccess(actingPlayer_);
 		}
 	}else{
 		actingPlayer_.passSuccess();
