@@ -117,8 +117,12 @@ int Player::countAdvantage(Player oppoPlayer){
 	return 5;	
 }
 
-int Player::oppoAjac(){
+int Player::oppoAdjac(){
 	return 5;	
+}
+
+bool Player::nextTo(Player oppoPlayer){
+	return true;	
 }
 
 bool Player::block(){
