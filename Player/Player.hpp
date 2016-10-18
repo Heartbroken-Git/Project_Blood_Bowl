@@ -44,6 +44,7 @@ class Player{
 		bool pass();
 		bool catches();
 		bool nextTo(Player oppoPlayer);
+		int tileDist(Player player);
 		
 		
 	private:
