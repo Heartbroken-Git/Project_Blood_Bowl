@@ -121,20 +121,20 @@ int Player::oppoAjac(){
 	return 5;	
 }
 
-void Player::block(){
-	return;	
+bool Player::block(){
+	return true;	
 }
 
-void Player::pass(){
-	return;	
+bool Player::pass(){
+	return true;	
 }
 
-void Player::dodges(){
-	return;	
+bool Player::dodges(){
+	return true;	
 }
 
-void Player::catches(){
-	return;	
+bool Player::catches(){
+	return true;	
 }
 
 
