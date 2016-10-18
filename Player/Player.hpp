@@ -36,10 +36,10 @@ class Player{
 		void pushBack();
 		int oppoAjac();
 		void downed();
-		void block();
-		void dodge();
-		void pass();
-		void catches();
+		bool block();
+		bool dodge();
+		bool pass();
+		bool catches();
 		
 		
 	private:
