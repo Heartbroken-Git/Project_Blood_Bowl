@@ -116,9 +116,9 @@ void ActionPass::passSuccess(){
  * @brief Méthode qui lance un d6 deux fois
  * @return Un entier qui fait la SOMME de ces lancers
  */
-int ActionPass::rollPassDices(){
+unsigned int ActionPass::rollPassDices(){
 	Dice d6(1, 6);
-	int res;
+	unsigned int res;
 	std::cout<<"Dés lancés!..."<<std::endl;
 	res = d6.throwDiceSingle();
 	res += d6.throwDiceSingle();
@@ -131,14 +131,15 @@ int ActionPass::rollPassDices(){
  * @param modif entier qui permet de voir si la récupération est plus ou moins facile
  */
 void ActionPass::receiveAct(int modif){
-	diceRes = rollPassDices();
+	unsigned int diceRes = rollPassDices();
+	unsigned int agi = (unsigned int) actingPlayer_.getAgi();
 	diceRes += modif;
-	if(diceRes > actingPlayer_.getAgi() && !actingPlayer_.catches()){ //fail, no reroll
+	if(diceRes > agi && !actingPlayer_.catches()){ //fail, no reroll
 		actingPlayer_.passFail();
-	}else if(diceRes > actingPlayer_.getAgi() && actingPlayer_.catches()){ //fail, reroll
+	}else if(diceRes > agi && actingPlayer_.catches()){ //fail, reroll
 		std::cout<<"On va relancer ça! \n";
 		diceRes = rollPassDices();
-		if(diceRes > actingPlayer_.getAgi()){ //fail
+		if(diceRes > agi){ //fail
 			actingPlayer_.passFail();
 		}else{ //success
 			actingPlayer_.passSuccess();
