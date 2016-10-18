@@ -29,6 +29,7 @@ class Player{
 		int getArm();
 		int getXpe();
 		int getLvl();
+		string getName();
 	
 		bool outnumbered();
 		void turnover();
