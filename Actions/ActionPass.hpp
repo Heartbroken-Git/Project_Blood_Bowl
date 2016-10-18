@@ -23,7 +23,8 @@ class ActionPass : public virtual Actions{
 	Game getGame();
 	void setActingPlayer(Player actingPlayer);
 	void doAction(Player playerCible);
-	void passFail();
+	void passFail(Player player);
+	void passSuccess(Player player);
 	int rollPassDices();
 	void receiveAct(int modif);
 	
