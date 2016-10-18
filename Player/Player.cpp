@@ -141,6 +141,10 @@ bool Player::catches(){
 	return true;	
 }
 
+int Player::tileDist(Player player){
+	return 5;	
+}
+
 
 	
 
