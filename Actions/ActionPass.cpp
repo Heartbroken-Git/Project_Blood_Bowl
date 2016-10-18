@@ -74,13 +74,13 @@ void ActionPass::doAction(Player playerCible){
 		}else{ //normal
 			receiveAct(0, playerCible);
 		}
-	}else if(actingPlayer_.tileDist() >= 3 && actingPlayer_.tileDist() < 6 ){ //long pass
+	}else if(actingPlayer_.tileDist(playerCible) >= 3 && actingPlayer_.tileDist(playerCible) < 6 ){ //long pass
 		if(actingPlayer_.pass()){ //thrower
 			receiveAct(0, playerCible);
 		}else{ //normal
 			receiveAct(2, playerCible);
 		}
-	}else if (actingPlayer_.tileDist() >= 6 && actingPlayer_.tileDist() < 9 ){ //hail Mary
+	}else if (actingPlayer_.tileDist(playerCible) >= 6 && actingPlayer_.tileDist(playerCible) < 9 ){ //hail Mary
 		if(actingPlayer_.pass()){ //thrower
 			receiveAct(2, playerCible);
 		}else{ //normal
