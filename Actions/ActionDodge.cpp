@@ -31,7 +31,7 @@ ActionDodge::~ActionDodge() {}
  */
 void ActionDodge::doAction() {
 	unsigned int agi= (unsigned int) actingPlayer_.getAgi();
-	unsigned int modifier = 1 + (0 - actingPlayer_.oppoAjac());
+	unsigned int modifier = 1 + (0 - actingPlayer_.oppoAdjac());
 	Dice d6(1, 6);
 	if (!((d6.throwDiceSingle() + modifier) >= 7 - agi)) {
 		actingPlayer_.downed();
