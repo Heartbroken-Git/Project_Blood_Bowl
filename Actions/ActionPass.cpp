@@ -64,25 +64,25 @@ void ActionPass::doAction(Player playerCible){
 		
 		diceRes = rollPassDices();
 		if(diceRes > playerCible.getAgi()){ //fail
-			playerCible.passFail();
+			passFail(actingPlayer_);
 		}else{ //success
-			playerCible.passSuccess();
+			passSuccess(actingPlayer_);
 		}
 	}else if(actingPlayer_.tileDist() >= 1 && actingPlayer_.tileDist() < 3){ //normal pass
 		if(actingPlayer_.pass()){ //thrower
-			playerCible.receiveAct(-2);
+			receiveAct(-2, playerCible);
 		}else{ //normal
-			playerCible.receiveAct(0);
+			receiveAct(0, playerCible);
 		}
 	}else if(actingPlayer_.tileDist() >= 3 && actingPlayer_.tileDist() < 6 ){ //long pass
 		if(actingPlayer_.pass()){ //thrower
-			playerCible.receiveAct(0);
+			receiveAct(0, playerCible);
 		}else{ //normal
-			playerCible.receiveAct(2);
+			receiveAct(2, playerCible);
 		}
 	}else if (actingPlayer_.tileDist() >= 6 && actingPlayer_.tileDist() < 9 ){ //hail Mary
 		if(actingPlayer_.pass()){ //thrower
-			playerCible.receiveAct(2);
+			receiveAct(2, playerCible);
 		}else{ //normal
 			std::cout<<"Trop loin!"<<std::endl;
 			return;
@@ -130,7 +130,7 @@ unsigned int ActionPass::rollPassDices(){
  * @details Un joueur Catcher peut relancer sa première tentative ratée
  * @param modif entier qui permet de voir si la récupération est plus ou moins facile
  */
-void ActionPass::receiveAct(int modif){
+void ActionPass::receiveAct(int modif, Player actingPlayer_){
 	unsigned int diceRes = rollPassDices();
 	unsigned int agi = (unsigned int) actingPlayer_.getAgi();
 	diceRes += modif;
