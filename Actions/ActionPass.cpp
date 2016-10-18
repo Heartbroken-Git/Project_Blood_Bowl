@@ -68,7 +68,7 @@ void ActionPass::doAction(Player playerCible){
 		}else{ //success
 			passSuccess(actingPlayer_);
 		}
-	}else if(actingPlayer_.tileDist() >= 1 && actingPlayer_.tileDist() < 3){ //normal pass
+	}else if(actingPlayer_.tileDist(playerCible) >= 1 && actingPlayer_.tileDist(playerCible) < 3){ //normal pass
 		if(actingPlayer_.pass()){ //thrower
 			receiveAct(-2, playerCible);
 		}else{ //normal
