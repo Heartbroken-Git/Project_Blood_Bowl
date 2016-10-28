@@ -1,4 +1,4 @@
-#ifndefine __TILE_HPP__
+#ifndef __TILE_HPP__
 #define __TILE_HPP__
 
 /**
