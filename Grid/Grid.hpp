@@ -9,9 +9,14 @@
  * @brief Entête du fichier source définissant le plateau en lui même
  */
 
-#include <string>
+#include <iostream>
 #include "Tile.hpp"
+
 using namespace std;
+
+//Documentation Doxygen spécifique aux constantes globales ?
+const int GLOBAL_CONST_GRIDABS = 15;
+const int GLOBAL_CONST_GRIDORD = 28; //c'est pas 30 plutôt que 28 ?
 
 /**
  * @class Grid
@@ -20,14 +25,13 @@ using namespace std;
  */
 class Tile {
 	private:
-		Tile[15][28] plateau_;
+		Tile[GLOBAL_CONST_GRIDABS][GLOBAL_CONST_GRIDORD] plateau_; 
 
 	public:
 		Grid();
 		~Grid();
-		bool addTile(int, int); //Peut être un void à la place si on se fiche de savoir si l'ajout à réussi
-		bool removeTile(int, int); //cf plus haut
-		bool setTile(int, int); //cf plus haut
+		bool removeTile(int, int); //Peut être un void à la place si on se fiche de savoir si l'ajout à réussi
+		bool setTile(Tile, int, int); //cf plus haut
 		Tile getTile(int, int);
 		void displayPlateau();
 }
