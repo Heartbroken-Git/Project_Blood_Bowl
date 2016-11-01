@@ -19,13 +19,13 @@ class Ball{
     Ball();
     ~Ball();
     Player getHolder();
-    Case getLocation();
+    Tile getLocation();
     void setHolder(Player holder);
-    void setLocation(Case location);
+    void setLocation(Tile location);
     
     private:
     Player holder_;
-    Case location_;
+    Tile location_;
 };
 
 #endif
