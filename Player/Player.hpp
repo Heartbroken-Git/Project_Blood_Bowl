@@ -18,12 +18,12 @@ class Player{
 		Player();
 		~Player();
 		enum skill{};
-		void setMvt(int );
-		void setStr(int );
-		void setAgi(int );
-		void setArm(int );
-		void setXpe(int );
-		void setLvl(int );
+		void setMvt(int mouvementAllowance);
+		void setStr(int strength);
+		void setAgi(int agility);
+		void setArm(int armorValue);
+		void setXpe(int experience);
+		void setLvl(int level);
 		void setStatus(int status);
 		int getMvt();
 		int getStr();
@@ -31,6 +31,7 @@ class Player{
 		int getArm();
 		int getXpe();
 		int getLvl();
+		int getStatus()
 		string getName();
 	
 		bool outnumbered();
