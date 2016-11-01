@@ -19,7 +19,7 @@ class ActionStandUp : public virtual Actions{
     public:
 	ActionStandUp(Player actingPlayer);
 	~ActionStandUp();
-	void doAction(Player player);
+	void doAction();
 	Player getActingPlayer();
 	
 	
