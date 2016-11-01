@@ -26,7 +26,7 @@ class ActionPass : public virtual Actions{
 	void doAction(Player playerCible);
 	void passFail(Player player);
 	void passSuccess(Player player);
-	int rollPassDices();
+	unsigned int rollPassDices();
 	void receiveAct(int modif, Player player);
 	
     private:
