@@ -20,6 +20,6 @@
        private:
              Ball ball_; 
  
- }
+ };
 
 #endif
