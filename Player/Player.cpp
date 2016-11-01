@@ -54,6 +54,10 @@ int Player::getLvl(){
 	return lvl_;
 }
 
+int Player::getStatus(){
+	return status_;	
+}
+
 string Player::getName(){
 	return name_;	
 }
