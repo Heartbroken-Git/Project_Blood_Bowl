@@ -98,8 +98,8 @@ void ActionPass::doAction(Player playerCible){
  */
 void ActionPass::passFail(Player player){
 		std::cout<<"Et il a raté le pass! Gah! Ces joueurs ne savent pas jouer ou quoi?!"<<std::endl;
-		game_.getBall.setPlayer(player);
-		game_.getBall.bounce();
+		game_.getBall().setPlayer(player);
+		game_.getBall().bounce();
 		player.turnover();
 }
 
@@ -108,7 +108,7 @@ void ActionPass::passFail(Player player){
  * @details la balle appartiendra au joueur qui l'a reçue
  */
 void ActionPass::passSuccess(Player player){
-		ball.setPlayer(player);
+		game_getBall().setPlayer(player);
 		std::cout<<"Oh OH! Aww... Il a reçu la balle... Je voulais le voir rater comme ça on tape plus, mais bon, c'est vraie que Blood Bowl est un jeu de balle."<<std::endl;
 }
 
