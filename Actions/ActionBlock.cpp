@@ -9,6 +9,7 @@
 #include <vector>
 #include "ActionBlock.hpp"
 #include "../Dice/Dice.hpp"
+#include "../Player/Player.hpp"
 
 class Dice;
 using namespace std;
