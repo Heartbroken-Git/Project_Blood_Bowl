@@ -8,6 +8,7 @@
 
 #include <queue>
 #include <vector>
+#include "../Tile/Tile.hpp"
 
 /**
  * @brief 
@@ -22,6 +23,7 @@ class Ball{
     Tile getLocation();
     void setHolder(Player holder);
     void setLocation(Tile location);
+    void bounce();
     
     private:
     Player holder_;
