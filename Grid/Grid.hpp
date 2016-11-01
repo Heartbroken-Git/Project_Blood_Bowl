@@ -17,6 +17,7 @@ using namespace std;
 //Documentation Doxygen spécifique aux constantes globales ?
 const int GLOBAL_CONST_GRIDABS = 15;
 const int GLOBAL_CONST_GRIDORD = 28; //c'est pas 30 plutôt que 28 ?
+//Les constantes ne marchent peut être pas auquel cas faire un extern ou passage par namespace
 
 /**
  * @class Grid

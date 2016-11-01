@@ -112,9 +112,26 @@ void Tile::setBallOn(bool presence) {
 string Tile::toString() {
 	if (playerOn_ != NULL) {
 		return("La case au coordonnées (" + x_ + ", " + y_ + ") contient le joueur " + playerOn_.toString() + ".");
-	} else if (ballOn_ = true) {
+	} else if (ballOn_ == true) {
 		return("La case au coordonnées (" + x_ + ", " + y_ + ") contient la balle.");
 	} else {
 		return("La case au coordonnées (" + x_ + ", " + y_ + ") est vide.")
+	}
+}
+
+/**
+ * @brief Méthode permettant l'affichage du contenu d'une Tile pour l'affichage final
+ * @display Méthode affichant le contenu de la Tile comme vierge si sans joueur, avec un ballon s'il est présent ou avec l'affichage du joueur éventuellement présent
+ * @sa Fait appel à displayPlayer() du joueur si un est présent
+ */
+void Tile::displayTile() {
+	if (playerOn_ == NULL) {
+		if (ballOn_ == true) {
+			cout << "◦";
+		} else {
+			cout << "█";
+		}
+	} else {
+		playerOn_.displayPlayer();
 	}
 }

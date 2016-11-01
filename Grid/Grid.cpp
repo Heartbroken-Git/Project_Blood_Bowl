@@ -77,14 +77,14 @@ Tile Grid::getTile(int x, int y) {
 
 /**
  * @brief Méthode affichant le contenu du tableau à l'écran
- * @sa Affiche le contenu de toute les Tile du plateau en appelant display() de celles-ci
+ * @sa Affiche le contenu de toute les Tile du plateau en appelant displayTile() de celles-ci
  */
 void Grid::displayPlateau() {
 	cout << " ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁" << endl;
 	for (int i = 0; i < GLOBAL_CONST_GRIDABS; ++i) {
 		cout << "▕";
 		for (int j = 0; j < GLOBAL_CONST_GRIDORD; ++j) {
-			plateau_[i,j].display();
+			plateau_[i,j].displayTile();
 		}
 		cout << "▏" << endl;
 	}

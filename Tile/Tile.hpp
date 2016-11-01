@@ -35,6 +35,7 @@ class Tile {
 		void setPlayerOn(Player);
 		void setBallOn(bool);
 		string toString();
+		void displayTile();
 };
 
 #endif
