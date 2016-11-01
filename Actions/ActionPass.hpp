@@ -11,6 +11,7 @@
 #include <vector>
 #include "Actions.hpp"
 #include "../Player/Player.hpp"
+#include "../Game.hpp"
 
 class Actions;
 class Player;
