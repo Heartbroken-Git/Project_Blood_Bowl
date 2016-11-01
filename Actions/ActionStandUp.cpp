@@ -40,7 +40,7 @@ Player ActionStandUp::getActingPlayer(){
  */
 void ActionStandUp::doAction(){
 	if (actingPlayer_.getStatus() == 2){
-		actingPlayer_.setStatus(1));
+		actingPlayer_.setStatus(1);
 		std::cout<<actingPlayer_.getName()<<" s'est relevé!"<<std::endl;
 	}else{
 		std::cout<<"Ce joueur n'est pas au sol!"<<std::endl;
