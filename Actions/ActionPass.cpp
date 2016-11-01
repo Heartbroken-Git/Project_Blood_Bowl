@@ -108,7 +108,7 @@ void ActionPass::passFail(Player player){
  * @details la balle appartiendra au joueur qui l'a reçue
  */
 void ActionPass::passSuccess(Player player){
-		game_getBall().setPlayer(player);
+		game_.getBall().setPlayer(player);
 		std::cout<<"Oh OH! Aww... Il a reçu la balle... Je voulais le voir rater comme ça on tape plus, mais bon, c'est vraie que Blood Bowl est un jeu de balle."<<std::endl;
 }
 
@@ -122,6 +122,7 @@ unsigned int ActionPass::rollPassDices(){
 	std::cout<<"Dés lancés!..."<<std::endl;
 	res = d6.throwDiceSingle();
 	res += d6.throwDiceSingle();
+	return res;
 }
 
 /**
