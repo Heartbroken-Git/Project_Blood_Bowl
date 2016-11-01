@@ -31,7 +31,7 @@ class Player{
 		int getArm();
 		int getXpe();
 		int getLvl();
-		int getStatus()
+		int getStatus();
 		string getName();
 	
 		bool outnumbered();
