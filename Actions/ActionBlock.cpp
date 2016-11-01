@@ -141,7 +141,7 @@ int ActionBlock::countAdvantage(Player oppoPlayer){
 		}
 	}else if(actingPlayer_.getStr() < oppoPlayer.getStr()){
 		--advantage;
-		if(actingPlayer_.getStr <= oppoPlayer.getStr() * 2 + 1){
+		if(actingPlayer_.getStr() <= oppoPlayer.getStr() * 2 + 1){
 			--advantage;
 		}
 	}
