@@ -9,6 +9,7 @@
  
 #include <iostream>
 #include <vector>
+#include <string>
 
 using namespace std;
 
@@ -51,6 +52,7 @@ class Player{
 		
 	private:
 		int mvt_, str_, agi_, arm_, xpe_, lvl_, status_;
+		string name_;
 
 };
  
