@@ -26,6 +26,7 @@ class Player{
 		void setXpe(int experience);
 		void setLvl(int level);
 		void setStatus(int status);
+		void setName(string name);
 		int getMvt();
 		int getStr();
 		int getAgi();
@@ -39,10 +40,11 @@ class Player{
 		void turnover();
 		int freeSpot();
 		void pushBack();
+		int countAdvantage(Player oppoPlayer);
 		int oppoAdjac();
 		void downed();
 		bool block();
-		bool dodge();
+		bool dodges();
 		bool pass();
 		bool catches();
 		bool nextTo(Player oppoPlayer);
