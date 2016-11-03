@@ -8,7 +8,7 @@
  */
  
  #include <iostream>
- #include "Ball/Ball.hpp"
+ #include "../Ball/Ball.hpp"
  
  using namespace std;
  

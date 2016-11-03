@@ -5,13 +5,13 @@
  * @copyright WTFPL v2
  * @author Elbert NYUNTING
  * @date 08/10/2016
- * @brief Fichier hpp définissant l'action de passer et reçevoir la balle (ainsi que le fait for probable de les rater)
+ * @brief Fichier hpp définissant l'action de passer et reçevoir la balle (ainsi que le fait fort probable de les rater)
 */
 #include <queue>
 #include <vector>
 #include "Actions.hpp"
 #include "../Player/Player.hpp"
-#include "../Game.hpp"
+#include "../Game/Game.hpp"
 
 class Actions;
 class Player;
