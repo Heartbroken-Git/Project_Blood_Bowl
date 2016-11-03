@@ -42,11 +42,11 @@ int Player::getAgi(){
 	return agi_;
 }
 	
-int Player::getArm_(){
+int Player::getArm(){
 	return arm_;
 }
 	
-int Player::getXpe_(){ 
+int Player::getXpe(){ 
 	return xpe_;
 }
 	
