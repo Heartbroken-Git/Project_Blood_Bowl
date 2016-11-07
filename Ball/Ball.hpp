@@ -9,6 +9,7 @@
 #include <queue>
 #include <vector>
 #include "../Tile/Tile.hpp"
+#include "../Player/Player.hpp"
 
 /**
  * @brief 
