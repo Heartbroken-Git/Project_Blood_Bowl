@@ -26,7 +26,7 @@ class Tile {
 		int x_;
 		int y_;
 		Player playerOn_;
-		bool ballOn;
+		bool ballOn_;
 	public:
 		Tile(int, int);
 		Tile(int, int, Player);
