@@ -18,10 +18,7 @@ using namespace std;
  * @param actingPlayer le joueur actif
  * @pre actingPlayer doit être un joueur de l'équipe jouant en jeu
  */
-ActionPass::ActionPass(Player actingPlayer, Game game){
-	actingPlayer_ = actingPlayer;
-	game_ = game;
-}
+ActionPass::ActionPass(){}
 /**
  * @brief Destructeur de ActionPass
  */
