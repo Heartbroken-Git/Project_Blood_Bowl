@@ -15,6 +15,7 @@
  class Game{
        public:
               Game(Ball ball);
+              Game();
               ~Game();
               Ball getBall();
               
