@@ -9,7 +9,7 @@
 */
 #include <queue>
 #include <vector>
-
+#include "../Game/Game.hpp"
 
 class ActionPass : public Actions{
     public:
