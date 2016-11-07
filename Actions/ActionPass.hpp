@@ -12,6 +12,7 @@
 #include "Actions.hpp"
 #include "../Player/Player.hpp"
 #include "../Game/Game.hpp"
+#include "../Ball/Ball.hpp"
 
 class Actions;
 class Player;
