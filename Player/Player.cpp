@@ -149,9 +149,7 @@ int Player::tileDist(Player player){
 	return 5;	
 }
 
-bool Player::passSuccess(){
-	return true;	
-}	
+void Player::passSuccess(){}	
 
 
 
