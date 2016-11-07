@@ -11,6 +11,8 @@ Game::Game(Ball ball){
     ball_ = ball;
 }
 
+Game::Game(){}
+
 Game::~Game(){
     std::cout<<"Game ended."<<std::endl;
 }
