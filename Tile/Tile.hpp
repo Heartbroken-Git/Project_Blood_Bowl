@@ -32,6 +32,7 @@ class Tile {
 		bool ballOn_;
 	public:
 		Tile(int, int);
+		Tile();
 		Tile(int, int, Player);
 		Tile(int, int, bool);
 		int getX();
