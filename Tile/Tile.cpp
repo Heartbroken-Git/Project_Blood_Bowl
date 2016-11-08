@@ -53,6 +53,8 @@ Tile::Tile(int x, int y, bool originalBallTile) {
 	playerOn_ = 0;
 	ballOn_ = originalBallTile;
 }
+
+Tile::Tile(){}
 /**
  * @brief Méthode retournant l'abscisse d'une case
  * @return l'abscisse de la case
