@@ -22,4 +22,4 @@ void Ball::setHolder(Player holder){
 void Ball::setLocation(Tile location){
   location_ = location;
 }
-void bounce(){}
+void Ball::bounce(){}
