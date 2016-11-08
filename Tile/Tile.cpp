@@ -78,7 +78,7 @@ int Tile::getY() {
  * @warning retourne NULL si aucun joueur n'est présent
  */
 Player Tile::getPlayerOn() {
-	return(playerOn_)
+	return(playerOn_);
 }
 
 /**

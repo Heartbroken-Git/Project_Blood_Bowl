@@ -10,21 +10,25 @@
 
 #include <queue>
 #include <vector>
+#include "Actions.hpp"
+#include "../Player/Player.hpp"
 
-
-class ActionBlock : public Actions{
+class Actions;
+class Player;
+class ActionBlock: public virtual Actions {
     public:
 	ActionBlock(Player actingPlayer);
 	~ActionBlock();
 	void doAction(Player oppoPlayer); //check surrounding, then roll dice(s), then apply changes
 	int countAdvantage(Player oppoPlayer);
-	void bothDown(Player oppoPlayer);
+	void bothDown(Player actingPlayer, Player oppoPlayer);
 	void pushed(Player oppoPlayer);
-	void stumble(Player oppoPlayer)
+	void stumble(Player oppoPlayer);
+	Player getActingPlayer();
 	
 	
     private:
-	Player actingPlayer;_
+	Player actingPlayer_;
 };
 
 #endif
