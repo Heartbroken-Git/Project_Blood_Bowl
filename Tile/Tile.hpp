@@ -17,7 +17,6 @@
 using namespace std;
 using std::unique_ptr;
 
-class Player;
 
 /**
  * @class Tile
