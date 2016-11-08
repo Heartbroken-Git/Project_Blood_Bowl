@@ -10,9 +10,12 @@
  */
 
 #include <string>
+#include <memory>
+#include <iostream>
 #include "../Player/Player.hpp"
 
 using namespace std;
+using std::unique_ptr;
 
 class Player;
 
@@ -25,13 +28,12 @@ class Tile {
 	private:
 		int x_;
 		int y_;
-		Player playerOn_;
+		std::unique_ptr<Player> playerOn_;
 		bool ballOn_;
 	public:
 		Tile(int, int);
 		Tile(int, int, Player);
 		Tile(int, int, bool);
-		~Tile();
 		int getX();
 		int getY();
 		Player getPlayerOn();

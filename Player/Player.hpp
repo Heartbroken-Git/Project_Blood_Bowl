@@ -34,7 +34,7 @@ class Player{
 		int getXpe();
 		int getLvl();
 		int getStatus();
-		string getName();
+		std::string getName();
 	
 		bool outnumbered();
 		void turnover();
@@ -50,6 +50,7 @@ class Player{
 		bool nextTo(Player oppoPlayer);
 		int tileDist(Player player);
 		void passSuccess();
+
 		
 		
 	private:
