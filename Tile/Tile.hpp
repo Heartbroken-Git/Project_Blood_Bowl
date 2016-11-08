@@ -27,7 +27,7 @@ class Tile {
 	private:
 		int x_;
 		int y_;
-		std::unique_ptr<Player> playerOn_;
+		std::shared_ptr<Player> playerOn_;
 		bool ballOn_;
 	public:
 		Tile(int, int);
