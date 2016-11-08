@@ -20,6 +20,6 @@ void Ball::setHolder(Player holder){
   holder_ = holder;
 }
 void Ball::setLocation(Tile location){
-  location_=location;
+  location_ = location;
 }
 void bounce(){}
