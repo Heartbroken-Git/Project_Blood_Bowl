@@ -54,7 +54,7 @@ class Dice{
     /*!
      *@brief lance un dé de type typeDice_ une seule fois
     */
-    int throwDiceSingle();
+     unsigned int throwDiceSingle();
    
     
     

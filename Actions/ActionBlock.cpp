@@ -8,7 +8,10 @@
 
 #include <vector>
 #include "ActionBlock.hpp"
+#include "../Dice/Dice.hpp"
+#include "../Player/Player.hpp"
 
+class Dice;
 using namespace std;
 
 /**
@@ -44,14 +47,14 @@ Player ActionBlock::getActingPlayer(){
  */
 void ActionBlock::doAction(Player oppoPlayer){
 	int advantage;
-	int diceRes;
-	int diceChoice;
+	unsigned int diceRes;
+	unsigned int diceChoice;
 	int finalRes;
 	bool inControl = true;
-	vector<int> diceStack;
+	vector<unsigned int> diceStack;
 	Dice d6(1, 6);
 	
-	advantage = actingPlayer_.countAdvantage(Player oppoPlayer);
+	advantage = countAdvantage(oppoPlayer);
 	if (advantage < 0){
 		advantage *= -1;
 		inControl = false;
@@ -65,7 +68,7 @@ void ActionBlock::doAction(Player oppoPlayer){
 	
 	
 	for(int i = 0; i <= advantage; ++i){
-		diceRes = d6.throwDiceSingle()
+		diceRes = d6.throwDiceSingle();
 		diceStack.push_back(diceRes);
 		
 		std::cout<<"Lancée "<<advantage<<"!"<<std::endl;
@@ -92,7 +95,7 @@ void ActionBlock::doAction(Player oppoPlayer){
 			}
 		}else{
 			diceChoice = 6;
-			for(int i = 0; i < diceStack.size(); ++i){
+			for(unsigned int i = 0; i < diceStack.size(); ++i){
 				if(diceChoice > diceStack.at(i)){
 					diceChoice = diceStack.at(i);
 				}
@@ -106,19 +109,19 @@ void ActionBlock::doAction(Player oppoPlayer){
 	
 	if(finalRes == 1){ //failed block, attacker down
 		actingPlayer_.downed();
-		std::cout << "Et voila! Il est à terre pour tenter un blockage! Comme quoi il ne faut pas embaucher des amateurs!" <<std::endl
+		std::cout << "Et voila! Il est à terre pour tenter un blockage! Comme quoi il ne faut pas embaucher des amateurs!" <<std::endl;
 	
 	}else if(finalRes == 2){ 
-		actingPlayer_.bothDown(Player oppoPlayer);		
+		bothDown(actingPlayer_, oppoPlayer);		
 	
 	}else if(finalRes == 3 || finalRes == 4){ //pushed
-		actingPlayer_.pushed(Player oppoPlayer);	
+		pushed(oppoPlayer);	
 		
 	}else if(finalRes == 5){ 
-		actingPlayer_.stumble(Player oppoPlayer);
+		stumble(oppoPlayer);
 		
-	}else(finalRes == 6){ //knocked down, no evading this bad boy
-		oppoPlayer.downed()
+	}else if(finalRes == 6){ //knocked down, no evading this bad boy
+		oppoPlayer.downed();
 		std::cout << "OUCH! Ca doit faire mal, ça!" <<std::endl;
 	}
 	
@@ -134,13 +137,13 @@ int ActionBlock::countAdvantage(Player oppoPlayer){
 	int advantage = 1;
 	if(actingPlayer_.getStr() > oppoPlayer.getStr()){
 		++advantage;
-		if(actingPlayer_.getStr >= oppoPlayer.getStr() * 2 + 1){
-			++advantage
+		if(actingPlayer_.getStr() >= oppoPlayer.getStr() * 2 + 1){
+			++advantage;
 		}
 	}else if(actingPlayer_.getStr() < oppoPlayer.getStr()){
 		--advantage;
-		if(actingPlayer_.getStr <= oppoPlayer.getStr() * 2 + 1){
-			--advantage
+		if(actingPlayer_.getStr() <= oppoPlayer.getStr() * 2 + 1){
+			--advantage;
 		}
 	}
 	 
@@ -165,21 +168,21 @@ int ActionBlock::countAdvantage(Player oppoPlayer){
  * @brief méthode simulant l'effet de deux joueurs se tapant desus
  * @detail le(s) joueur(s) qui a le skill Block ne sera pas à terre
  */
-void ActionBlock::bothDown(Player oppoPlayer){
+void ActionBlock::bothDown(Player actingPlayer, Player oppoPlayer){
 	//both down, unless the guy with Block skill
 	if(actingPlayer_.block() && oppoPlayer.block()){ //none down
 		std::cout << "Les deux joueurs se cognent et rien ne se passe!" <<std::endl;
 	}else if(actingPlayer_.block()){ //opposing player down
 		oppoPlayer.downed();
-		std::cout << "BOOM! Ils se cognent mais un est nettement plus solide que l'autre!" <<std::endl
-	}else if(oppoPlayer_.block()){//acting player down et turnover
+		std::cout << "BOOM! Ils se cognent mais un est nettement plus solide que l'autre!" <<std::endl;
+	}else if(oppoPlayer.block()){//acting player down et turnover
 		actingPlayer_.downed();
-		std::cout << "BOOM! Ils se cognent mais un est nettement plus solide que l'autre!" <<std::endl
+		std::cout << "BOOM! Ils se cognent mais un est nettement plus solide que l'autre!" <<std::endl;
 		actingPlayer_.turnover();
 	}else{ //both down, turnover
 		actingPlayer_.downed();
 		oppoPlayer.downed();
-		std::cout << "HA! Ils se cognent et sont tous les deux à terre!" <<std::endl
+		std::cout << "HA! Ils se cognent et sont tous les deux à terre!" <<std::endl;
 		actingPlayer_.turnover();
 	}
 }
@@ -205,10 +208,10 @@ void ActionBlock::pushed(Player oppoPlayer){
  * @detail si oppoPlayer a le skill Dodge, il ne sera que poussé (avec les effets qui vont avec)
  */
 void ActionBlock::stumble(Player oppoPlayer){
-	if(oppoPlayer.dodge()){
-		actingPlyaer_.pushed(Player oppoPlayer)
+	if(oppoPlayer.dodges()){
+		pushed(oppoPlayer);
 	}else{
-		oppoPlayer.downed()
+		oppoPlayer.downed();
 		std::cout << "OUCH! Ca doit faire mal, ça!" <<std::endl;
 	}
 }

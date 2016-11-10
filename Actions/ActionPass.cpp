@@ -7,6 +7,9 @@
 */
 
 #include "ActionPass.hpp"
+#include "../Dice/Dice.hpp"
+
+class Dice;
 
 using namespace std;
 
@@ -15,10 +18,7 @@ using namespace std;
  * @param actingPlayer le joueur actif
  * @pre actingPlayer doit être un joueur de l'équipe jouant en jeu
  */
-ActionPass::ActionPass(Player actingPlayer, Game game){
-	actingPlayer_ = actingPlayer;
-	game_ = game;
-}
+ActionPass::ActionPass(){}
 /**
  * @brief Destructeur de ActionPass
  */
@@ -57,29 +57,29 @@ void ActionPass::setActingPlayer(Player actingPlayer){
 void ActionPass::doAction(Player playerCible){
 	int diceRes;
 		
-	if(actingPlayer_.nextTo(playerCible){ //close pass
+	if(actingPlayer_.nextTo(playerCible)){ //close pass
 		
 		diceRes = rollPassDices();
 		if(diceRes > playerCible.getAgi()){ //fail
-			playerCible.passFail();
+			passFail(actingPlayer_);
 		}else{ //success
-			playerCible.passSuccess();
+			passSuccess(actingPlayer_);
 		}
-	}else if(actingPlayer_.tileDist() >= 1 && actingPlayer_.tileDist() < 3){ //normal pass
+	}else if(actingPlayer_.tileDist(playerCible) >= 1 && actingPlayer_.tileDist(playerCible) < 3){ //normal pass
 		if(actingPlayer_.pass()){ //thrower
-			playerCible.receiveAct(-2);
+			receiveAct(-2, playerCible);
 		}else{ //normal
-			playerCible.receiveAct(0);
+			receiveAct(0, playerCible);
 		}
-	}else if(actingPlayer_.tileDist() >= 3 && actingPlayer_.tileDist() < 6 ){ //long pass
+	}else if(actingPlayer_.tileDist(playerCible) >= 3 && actingPlayer_.tileDist(playerCible) < 6 ){ //long pass
 		if(actingPlayer_.pass()){ //thrower
-			playerCible.receiveAct(0);
+			receiveAct(0, playerCible);
 		}else{ //normal
-			playerCible.receiveAct(2);
+			receiveAct(2, playerCible);
 		}
-	}else if (actingPlayer_.tileDist() >= 6 && actingPlayer_.tileDist() < 9 ){ //hail Mary
+	}else if (actingPlayer_.tileDist(playerCible) >= 6 && actingPlayer_.tileDist(playerCible) < 9 ){ //hail Mary
 		if(actingPlayer_.pass()){ //thrower
-			playerCible.receiveAct(2);
+			receiveAct(2, playerCible);
 		}else{ //normal
 			std::cout<<"Trop loin!"<<std::endl;
 			return;
@@ -93,19 +93,19 @@ void ActionPass::doAction(Player playerCible){
  * @details la balle appartiendra au joueur qui est censé la reçevoir avant de rebondir vers une case adjacente et devenir indépendant (voir méthode bounce())
  * @details Déclenche un turnover
  */
-void ActionPass::passFail(){
+void ActionPass::passFail(Player player){
 		std::cout<<"Et il a raté le pass! Gah! Ces joueurs ne savent pas jouer ou quoi?!"<<std::endl;
-		game_.getBall.setPlayer(actingPlayer_);
-		game_.getBall.bounce();
-		playerCible.turnover();
+		game_.getBall().setHolder(player);
+		game_.getBall().bounce();
+		player.turnover();
 }
 
 /**
  * @brief Méthode qui fait que la passe à... passé
  * @details la balle appartiendra au joueur qui l'a reçue
  */
-void ActionPass::passSuccess(){
-		ball.setPlayer(actingPlayer_);
+void ActionPass::passSuccess(Player player){
+		game_.getBall().setHolder(player);
 		std::cout<<"Oh OH! Aww... Il a reçu la balle... Je voulais le voir rater comme ça on tape plus, mais bon, c'est vraie que Blood Bowl est un jeu de balle."<<std::endl;
 }
 
@@ -113,12 +113,13 @@ void ActionPass::passSuccess(){
  * @brief Méthode qui lance un d6 deux fois
  * @return Un entier qui fait la SOMME de ces lancers
  */
-int ActionPass::rollPassDices(){
+unsigned int ActionPass::rollPassDices(){
 	Dice d6(1, 6);
-	int res;
+	unsigned int res;
 	std::cout<<"Dés lancés!..."<<std::endl;
 	res = d6.throwDiceSingle();
 	res += d6.throwDiceSingle();
+	return res;
 }
 
 /**
@@ -127,18 +128,19 @@ int ActionPass::rollPassDices(){
  * @details Un joueur Catcher peut relancer sa première tentative ratée
  * @param modif entier qui permet de voir si la récupération est plus ou moins facile
  */
-void ActionPass::receiveAct(int modif){
-	diceRes = rollPassDices();
+void ActionPass::receiveAct(int modif, Player actingPlayer_){
+	unsigned int diceRes = rollPassDices();
+	unsigned int agi = (unsigned int) actingPlayer_.getAgi();
 	diceRes += modif;
-	if(diceRes > actingPlayer_.getAgi() && !actingPlayer_.catch()){ //fail, no reroll
-		actingPlayer_.passFail();
-	}else if(diceRes > actingPlayer_.getAgi() && actingPlayer_.catch()){ //fail, reroll
+	if(diceRes > agi && !actingPlayer_.catches()){ //fail, no reroll
+		passFail(actingPlayer_);
+	}else if(diceRes > agi && actingPlayer_.catches()){ //fail, reroll
 		std::cout<<"On va relancer ça! \n";
 		diceRes = rollPassDices();
-		if(diceRes > actingPlayer_.getAgi()){ //fail
-			actingPlayer_.passFail();
+		if(diceRes > agi){ //fail
+			passFail(actingPlayer_);
 		}else{ //success
-			actingPlayer_.passSuccess();
+			passSuccess(actingPlayer_);
 		}
 	}else{
 		actingPlayer_.passSuccess();
