@@ -23,16 +23,12 @@ class Player{
 		void setStr(int strength);
 		void setAgi(int agility);
 		void setArm(int armorValue);
-		void setXpe(int experience);
-		void setLvl(int level);
 		void setStatus(int status);
 		void setName(string name);
 		int getMvt();
 		int getStr();
 		int getAgi();
 		int getArm();
-		int getXpe();
-		int getLvl();
 		int getStatus();
 		std::string getName();
 	
@@ -54,7 +50,7 @@ class Player{
 		
 		
 	private:
-		int mvt_, str_, agi_, arm_, xpe_, lvl_, status_;
+		int mvt_, str_, agi_, arm_, status_;
 		string name_;
 
 };
