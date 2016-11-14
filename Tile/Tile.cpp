@@ -119,7 +119,22 @@ std::string Tile::toString() {
 	} else {
 		response = "La case au coordonnées (" + std::to_string(x_) + ", " + std::to_string(y_) + ") est vide.";
 	}
-	
 	return response;
 }
 
+/**
+ * @brief Méthode permettant l'affichage du contenu d'une Tile pour l'affichage final
+ * @display Méthode affichant le contenu de la Tile comme vierge si sans joueur, avec un ballon s'il est présent ou avec l'affichage du joueur éventuellement présent
+ * @sa Fait appel à displayPlayer() du joueur si un est présent
+ */
+void Tile::displayTile() {
+	if (playerOn_ == NULL) {
+		if (ballOn_ == true) {
+			cout << "◦";
+		} else {
+			cout << "█";
+		}
+	} else {
+		playerOn_.displayPlayer();
+	}
+}
