@@ -18,8 +18,6 @@ Player::Player(){
 	str_ = 0;
 	agi_ = 0;
 	arm_ = 0;
-	xpe_ = 0;
-	lvl_ = 1;
 	status_ = 0;
 	name_="";
 }
@@ -46,14 +44,6 @@ int Player::getArm(){
 	return arm_;
 }
 	
-int Player::getXpe(){ 
-	return xpe_;
-}
-	
-int Player::getLvl(){
-	return lvl_;
-}
-
 int Player::getStatus(){
 	return status_;	
 }
@@ -79,14 +69,6 @@ void Player::setArm(int armorValue){
 	arm_ = armorValue;
 }
 	
-void Player::setXpe(int experience){
-	xpe_ = experience;
-}
-	
-void Player::setLvl(int level){
-	lvl_ = level;
-}
-
 void Player::setStatus(int status){
 	status_ = status;	
 }
