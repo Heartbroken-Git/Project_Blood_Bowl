@@ -50,7 +50,7 @@ class Player{
 		bool nextTo(Player oppoPlayer);
 		int tileDist(Player player);
 		void passSuccess();
-
+		void displayPlayer();
 		
 		
 	private:

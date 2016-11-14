@@ -151,4 +151,7 @@ int Player::tileDist(Player player){
 
 void Player::passSuccess(){}	
 
-
+//SEMI-PLACEHOLDER
+void Player::displayPlayer() {
+	cout << "?";
+}
