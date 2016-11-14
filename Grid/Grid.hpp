@@ -10,7 +10,7 @@
  */
 
 #include <iostream>
-#include "Tile.hpp"
+#include "../Tile/Tile.hpp"
 
 using namespace std;
 
