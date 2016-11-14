@@ -8,6 +8,9 @@
 
 #include <queue>
 #include <vector>
+#include "../Player/Player.hpp"
+
+class Player;
 
 /**
  * @brief 
@@ -18,6 +21,7 @@ class Actions{
     public:
     Actions();
     ~Actions();
+	virtual void doAction(Player player)=0;
 	virtual void doAction()=0;
 };
 

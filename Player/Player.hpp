@@ -9,27 +9,54 @@
  
 #include <iostream>
 #include <vector>
+#include <string>
+
+using namespace std;
+
 
 class Player{
 	public:
 		Player();
 		~Player();
 		enum skill{};
-		void setMA(int );
-		void setST(int );
-		void setAG(int );
-		void setAV(int );
-		void setXP(int );
-		void setLevel(int );
-		int getMA();
-		int getST();
-		int getAG();
-		int getAV();
-		int getXP();
-		int getLevel();
+		void setMvt(int mouvementAllowance);
+		void setStr(int strength);
+		void setAgi(int agility);
+		void setArm(int armorValue);
+		void setXpe(int experience);
+		void setLvl(int level);
+		void setStatus(int status);
+		void setName(string name);
+		int getMvt();
+		int getStr();
+		int getAgi();
+		int getArm();
+		int getXpe();
+		int getLvl();
+		int getStatus();
+		std::string getName();
+	
+		bool outnumbered();
+		void turnover();
+		int freeSpot();
+		void pushBack();
+		int countAdvantage(Player oppoPlayer);
+		int oppoAdjac();
+		void downed();
+		bool block();
+		bool dodges();
+		bool pass();
+		bool catches();
+		bool nextTo(Player oppoPlayer);
+		int tileDist(Player player);
+		void passSuccess();
+
+		
 		
 	private:
-		int ma, st, ag, av, xp, lvl;
+		int mvt_, str_, agi_, arm_, xpe_, lvl_, status_;
+		string name_;
+
 };
  
  

@@ -65,8 +65,8 @@ using namespace std;
     /*!
      *@brief lance un dé de type typeDice_ une seule fois
     */
-    int Dice::throwDiceSingle(){
-    	int result;
+    unsigned int Dice::throwDiceSingle(){
+    	unsigned int result;
     	std::random_device r;
     	
     	std::default_random_engine e1(r());

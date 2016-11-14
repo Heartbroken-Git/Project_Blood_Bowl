@@ -6,6 +6,9 @@
  * @brief Fichier source définissant les cases du plateau de jeu
 */
 #include "Tile.hpp"
+#include <sstream>
+#include <memory>
+#include <iostream>
 
 /**
  * @brief Constructeur de Tile
@@ -16,7 +19,7 @@
 Tile::Tile(int x, int y) {
 	x_ = x;
 	y_ = y;
-	playerOn_ = NULL;
+	playerOn_ = 0;
 	ballOn_ = false;
 }
 
@@ -32,7 +35,7 @@ Tile::Tile(int x, int y) {
 Tile::Tile(int x, int y, Player player) {
 	x_ = x;
 	y_ = y;
-	playerOn_ = player;
+	playerOn_ = std::shared_ptr<Player> (new Player(player));
 	ballOn_ = false;
 }
 
@@ -47,15 +50,11 @@ Tile::Tile(int x, int y, Player player) {
 Tile::Tile(int x, int y, bool originalBallTile) {
 	x_ = x;
 	y_ = y;
-	playerOn_ = NULL;
+	playerOn_ = 0;
 	ballOn_ = originalBallTile;
 }
 
-/**
- * @brief Destructeur de Tile
- */
-Tile::~Tile() {}
- 
+Tile::Tile(){}
 /**
  * @brief Méthode retournant l'abscisse d'une case
  * @return l'abscisse de la case
@@ -78,7 +77,7 @@ int Tile::getY() {
  * @warning retourne NULL si aucun joueur n'est présent
  */
 Player Tile::getPlayerOn() {
-	return(playerOn_)
+	return *playerOn_.get();
 }
 
 /**
@@ -94,7 +93,7 @@ bool Tile::isBallOn() {
  * @param player le joueur à mettre sur la case
  */
 void Tile::setPlayerOn(Player player) {
-	playerOn_ = player;
+	playerOn_ = std::shared_ptr<Player> (new Player(player));
 }
 
 /**
@@ -109,14 +108,18 @@ void Tile::setBallOn(bool presence) {
  * @brief Méthode permettant d'obtenir le statut d'une case dans un string pour toute utilisation future
  * @return une chaine de caractère indiquant le statut de la case
  */
-string Tile::toString() {
-	if (playerOn_ != NULL) {
-		return("La case au coordonnées (" + x_ + ", " + y_ + ") contient le joueur " + playerOn_.toString() + ".");
+std::string Tile::toString() {
+	std::string response;	
+	Player stockPlayer = *playerOn_.get();
+	
+	if (playerOn_ != 0) {
+		response = "La case au coordonnées (" + std::to_string(x_) + ", " + std::to_string(y_) + ") contient le joueur " + stockPlayer.getName() + '.';
 	} else if (ballOn_ == true) {
-		return("La case au coordonnées (" + x_ + ", " + y_ + ") contient la balle.");
+		response = "La case au coordonnées (" + std::to_string(x_) + ", " + std::to_string(y_) + ") contient la balle.";
 	} else {
-		return("La case au coordonnées (" + x_ + ", " + y_ + ") est vide.")
+		response = "La case au coordonnées (" + std::to_string(x_) + ", " + std::to_string(y_) + ") est vide.";
 	}
+	return response;
 }
 
 /**
