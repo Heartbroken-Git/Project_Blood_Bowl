@@ -24,7 +24,7 @@ const int GLOBAL_CONST_GRIDORD = 28; //c'est pas 30 plutôt que 28 ?
  * @brief Classe définissant le plateau de jeu
  * @details Le plateau de jeu est ici définicomme un tableau de Tile, Tile sur lesquelles peuvent se trouver un joueur, le ballon ou rien du tout. Cette classe servira aussi à l'affichage initial
  */
-class Tile {
+class Grid {
 	private:
 		Tile[GLOBAL_CONST_GRIDABS][GLOBAL_CONST_GRIDORD] plateau_; 
 
