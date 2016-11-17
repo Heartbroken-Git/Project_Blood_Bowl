@@ -29,7 +29,11 @@ Projet libre : BloodBowl}
     Dans le cadre de l'UE X5I0010 "Objet et développement d'applications" nous avons réalisé ce projet. Il comporte comme demandé plusieurs "designs patterns". Ont été utilisé les patterns \pattern{Strategy}, \pattern{State}, \pattern{Command}, \pattern{Abstract Factory}. Ce rapport expliquera leur implémentation, le but et fonctionnement du projet ainsi que les difficultés rencontrées dans la réalisation de celui-ci.
 \end{abstract}
 
+\newpage
+
 \tableofcontents
+
+\newpage
 
 \section{Introduction}
     
@@ -56,7 +60,7 @@ Projet libre : BloodBowl}
 
     \subsection{La licence employée}
     
-    
+    %PAS OBLIGATOIRE
     
     \subsection{Difficultés rencontrées}
     
@@ -64,20 +68,20 @@ Projet libre : BloodBowl}
     
         \subsubsection{La \emph{Pushocalypse}}
         
-        TBD
+        \info{Git} est un système de gestion de version particulièrement efficace et pratique. Nous l'avons utilisé dès la genèse du projet. Cependant tout produit puisant vient avec son lot de pièges et embûches. L'une d'entre elle la capacité de \info{git push -f} d'écraser l'arborescence du répertoire distant et de la remplacer par celle locale. Fonction qui peut être très pratique pour résoudre certains problèmes mais qui causa la suppression des modifications que l'un avait fait alors que l'autre fit un \info{git push -f} par mauvaise habitude alors qu'il n'avait pas récupéré les derniers commits en date avant. Fort heureusement une copie locale pré-\emph{Pushocalypse} put être récupérée et seulement deux petits commits durent être refait.
         
         \subsubsection{\info{Travis CI} ou comment je me suis battu pour mettre en place une belle-mère virtuelle}
         
-        TBD
+        Afin de faciliter le débuggage et les test durant le développement surtout quand nous n'étions pas à travailler côte à côte. Il avait été décidé de mettre en place une integration \info{Travis CI} très tôt dans le répertoire GitHub. Celui permettant alors d'avoir des logs précis, l'exécution de tests à chaque push sur la branche principale et le contrôle continu par \info{valgrind} contre d'éventuelles fuites mémoires.\\
+        Seulement, aucun d'entre nous n'avait usé de \info{Travis} avant, or la réalisation du script \info{.travis.yml} ne fut pas la plus aisée. Elle prit une semaine.
         
         \subsubsection{Débuggage de la classe Action, la belle-mère contre attaque}
         
-        TBD
+        La classe Action et ses sous-classes\dots Un élément primordial et principal de notre programme. %A FINIR !
         
         \subsubsection{\bsc{LAMARTINE} serait fier de nous}
         
-        TBD Temps qui coule tout ça tout ça
-    
+        Ce projet fut aussi l'occasion de nous rappeler combien le poète romantique avait raison. Le temps coule et même si nous cherchons à le remonter c'est impossible. En effet bien que très bien parti initialement nous avons très vite été rattrapé par les autres projets des autres UE et il est vite devenu difficile de gérer son temps. Nous avons donc fini acculé par celui-ci. Bien que nous n'avons pas l'impression d'avoir bâclé la réalisation du programme, il serait présomptueux que de dire que nous n'avons pas passé quelques longues nuits sur le projet afin de finir dans les temps. 
     
     \subsection{Autres}
 
