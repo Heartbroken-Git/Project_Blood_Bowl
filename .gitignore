@@ -1,0 +1,5 @@
+# Gedit's autosave files
+*~
+
+# Dia's autosave files
+*.autosave
