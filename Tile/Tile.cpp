@@ -135,6 +135,6 @@ void Tile::displayTile() {
 			cout << "█";
 		}
 	} else {
-		*playerOn_.displayPlayer();
+		*playerOn_->displayPlayer();
 	}
 }
