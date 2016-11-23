@@ -9,7 +9,7 @@
 */
 
 #include "Playability.hpp"
-
+#include "../../Player/Player.hpp"
 class BlitzMoved : public virtual Playability{
     public:
     BlitzMoved();
@@ -17,7 +17,10 @@ class BlitzMoved : public virtual Playability{
     void GoForIt();
 	void blitzTackle();
 	void donePlaying();
-	
+	Player getPlayer();
+
+	private:
+	Player player_;	
 };
 
 #endif

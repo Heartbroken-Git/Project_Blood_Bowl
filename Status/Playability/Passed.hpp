@@ -9,12 +9,16 @@
 */
 
 #include "Playability.hpp"
-
+#include "../../Player/Player.hpp"
 class Passed : public virtual Playability{
     public:
     Passed();
     ~Passed();
 	void donePlaying();
+	Player getPlayer();
+
+	private:
+	Player player_;
 	
 };
 

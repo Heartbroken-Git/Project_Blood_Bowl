@@ -9,7 +9,7 @@
 */
 
 #include "Playability.hpp"
-
+#include "../../Player/Player.hpp"
 class Fresh : public virtual Playability{
     public:
     Fresh();
@@ -19,7 +19,10 @@ class Fresh : public virtual Playability{
 	void passer();
 	void moving();
 	void tackle();
-	
+	Player getPlayer();
+
+	private:
+	Player player_;	
 };
 
 #endif

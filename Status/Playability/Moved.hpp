@@ -9,7 +9,7 @@
 */
 
 #include "Playability.hpp"
-
+#include "../../Player/Player.hpp"
 class Moved : public virtual Playability{
     public:
     Moved();
@@ -17,7 +17,10 @@ class Moved : public virtual Playability{
 	void passer();
 	void donePlaying();
 	void GoForIt();
-	
+	Player getPlayer();
+
+	private:
+	Player player_;	
 };
 
 #endif

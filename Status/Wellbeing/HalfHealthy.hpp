@@ -9,7 +9,7 @@
 */
 
 #include "Wellbeing.hpp"
-
+#include "../../Player/Player.hpp"
 class HalfHealthy : public virtual Wellbeing{
     public:
     HalfHealthy();
@@ -19,7 +19,10 @@ class HalfHealthy : public virtual Wellbeing{
 	void knockedOut();
 	void getOut();
 	void backToNormal();
-	
+	Player getPlayer();
+
+	private:
+	Player player_;	
 };
 
 #endif

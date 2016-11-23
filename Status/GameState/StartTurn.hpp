@@ -9,13 +9,18 @@
 */
 
 #include "GameState.hpp"
+#include "../../Team/Team.hpp"
 
 class StartTurn : public virtual GameState{
     public:
-    StartTurn();
+    StartTurn(Team equipe);
     ~StartTurn();
 	void endTurnNormal();
 	void turnover();
+	Team getEquipe();
+	
+	private:
+	Team equipe_;
 	
 };
 

@@ -9,13 +9,16 @@
 */
 
 #include "Playability.hpp"
-
+#include "../../Player/Player.hpp"
 class GFI : public virtual Playability{
     public:
     GFI();
     ~GFI();
 	void donePlaying();
-	
+	Player getPlayer();
+
+	private:
+	Player player_;	
 };
 
 #endif

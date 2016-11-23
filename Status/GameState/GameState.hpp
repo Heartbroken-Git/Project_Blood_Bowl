@@ -17,6 +17,7 @@ class GameState{
 	virtual void endTurnNormal()=0;
 	virtual void turnover()=0;
 	
+	
 };
 
 #endif

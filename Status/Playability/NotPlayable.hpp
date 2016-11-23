@@ -9,13 +9,17 @@
 */
 
 #include "Playability.hpp"
-
+#include "../../Player/Player.hpp"
 class NotPlayable : public virtual Playability{
     public:
     NotPlayable();
     ~NotPlayable();
 	void startPlaying();
-	
+	Player getPlayer();
+
+	private:
+	Player player_;
+
 };
 
 #endif

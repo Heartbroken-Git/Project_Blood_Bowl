@@ -9,11 +9,15 @@
 */
 
 #include "Wellbeing.hpp"
-
+#include "../../Player/Player.hpp"
 class Out : public virtual Wellbeing{
     public:
     Out();
     ~Out();
+	Player getPlayer();
+
+	private:
+	Player player_;    
 	
 };
 

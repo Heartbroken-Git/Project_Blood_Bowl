@@ -9,7 +9,7 @@
 */
 
 #include "Wellbeing.hpp"
-
+#include "../../Player/Player.hpp"
 class Prone : public virtual Wellbeing{
     public:
     Prone();
@@ -18,6 +18,10 @@ class Prone : public virtual Wellbeing{
 	void knockedDown()=0;
 	void knockedOut()=0;
 	void getOut()=0;
+	Player getPlayer();
+
+	private:
+	Player player_;	
 	
 };
 
