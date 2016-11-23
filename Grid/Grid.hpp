@@ -26,7 +26,7 @@ const int GLOBAL_CONST_GRIDORD = 28; //c'est pas 30 plutôt que 28 ?
  */
 class Grid {
 	private:
-		Tile[GLOBAL_CONST_GRIDABS][GLOBAL_CONST_GRIDORD] plateau_; 
+		Tile plateau_[GLOBAL_CONST_GRIDABS][GLOBAL_CONST_GRIDORD]; 
 
 	public:
 		Grid();
@@ -35,5 +35,5 @@ class Grid {
 		bool setTile(Tile, int, int); //cf plus haut
 		Tile getTile(int, int);
 		void displayPlateau();
-}
+};
 #endif
