@@ -12,6 +12,8 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include "../Player/Player.hpp"
+#include "../Race/Race.hpp"
 
 /**
  * @class Team

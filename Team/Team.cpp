@@ -1,11 +1,14 @@
-/*!
+/**
  * @file Team.cpp
- * @author Elbert NYUNTING
- * @brief Protoype
+ * @copyright WTFPL v2
+ * @author Corentin CHÉDOTAL
+ * @date 24/11/2016
+ * @brief Fichier source des Team
  */
 
 #include <iostream>
 #include <vector>
+#include <string>
 #include "Team.hpp"
 using namespace std;
 
