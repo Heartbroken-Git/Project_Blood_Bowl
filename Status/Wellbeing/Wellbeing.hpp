@@ -12,13 +12,13 @@ class Wellbeing{
     public:
     Wellbeing();
     ~Wellbeing();
-	virtual void goProne()=0;
-	virtual void getUp()=0;
-	virtual void knockedDown()=0;
-	virtual void knockedOut()=0;
-	virtual void getOut()=0;
-	virtual void returnToGame()=0;
-	virtual void backToNormal()=0;
+	virtual void goProne()=0; //etatProne()
+	virtual void getUp()=0; //etatHalfHealthy()
+	virtual void knockedDown()=0; //etatATerre()
+	virtual void knockedOut()=0; //etatKO()
+	virtual void getOut()=0; //etatOut()
+	virtual void returnToGame()=0; //etatHealthy()
+	virtual void backToNormal()=0; //etatHealthy()
 	
 };
 

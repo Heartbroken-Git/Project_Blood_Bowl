@@ -16,6 +16,13 @@ class Out : public virtual Wellbeing{
     ~Out();
 	Player getPlayer();
 
+	void goProne();
+	void getUp();
+	void knockedDown();
+	void knockedOut();
+	void getOut();
+	void backToNormal();
+	void returnToGame();
 	private:
 	Player player_;    
 	

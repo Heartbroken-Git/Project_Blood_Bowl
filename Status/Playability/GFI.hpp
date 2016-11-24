@@ -12,10 +12,20 @@
 #include "../../Player/Player.hpp"
 class GFI : public virtual Playability{
     public:
-    GFI();
+    GFI(Player player);
     ~GFI();
 	void donePlaying();
 	Player getPlayer();
+
+
+	void blitzMovement();
+	void blitzTackle();
+	void GoForIt();
+	void startPlaying();
+	void tackle();
+	void blitz();
+	void moving();	
+	void passer();
 
 	private:
 	Player player_;	

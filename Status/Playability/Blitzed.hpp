@@ -12,12 +12,20 @@
 #include "../../Player/Player.hpp"
 class Blitzed : public virtual Playability{
     public:
-    Blitzed();
+    Blitzed(Player player);
     ~Blitzed();
-    void blitzMovement();
+    	void blitzMovement();
 	void blitzTackle();
 	void donePlaying();
 	Player getPlayer();
+
+
+	void tackle();
+	void blitz();
+	void moving();	
+	void passer();	
+	void GoForIt();
+	void startPlaying();
 
 	private:
 	Player player_;	

@@ -12,14 +12,19 @@
 #include "../../Player/Player.hpp"
 class Fresh : public virtual Playability{
     public:
-    Fresh();
+    Fresh(Player player);
     ~Fresh();
-	void donePlaying();
-	void blitz();
-	void passer();
-	void moving();
+	void donePlaying(); 
 	void tackle();
+	void blitz();
+	void moving();	
+	void passer();
 	Player getPlayer();
+
+	void blitzMovement();
+	void blitzTackle();
+	void GoForIt();
+	void startPlaying();
 
 	private:
 	Player player_;	

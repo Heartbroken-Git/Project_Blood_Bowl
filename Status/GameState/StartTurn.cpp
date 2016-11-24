@@ -21,7 +21,7 @@ StartTurn::StartTurn(Team equipe){
 /**
  * @brief Destructeur de StartTurn
  */
-StartTurn::StartTurn(){}
+StartTurn::~StartTurn(){}
 
 /**
  * @brief méthode retournant l'équipe actif
@@ -48,4 +48,5 @@ void StartTurn::turnover(){
 	equipe_.etatFinTurnover();
 }
 
+void StartTurn::startTurn(){}
 

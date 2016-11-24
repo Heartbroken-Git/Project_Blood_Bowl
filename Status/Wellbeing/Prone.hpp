@@ -20,6 +20,9 @@ class Prone : public virtual Wellbeing{
 	void getOut()=0;
 	Player getPlayer();
 
+	void backToNormal();
+	void goProne();
+	void returnToGame();
 	private:
 	Player player_;	
 	

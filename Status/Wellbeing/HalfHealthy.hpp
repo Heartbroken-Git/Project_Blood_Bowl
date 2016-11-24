@@ -21,6 +21,9 @@ class HalfHealthy : public virtual Wellbeing{
 	void backToNormal();
 	Player getPlayer();
 
+	void returnToGame();
+	void getUp();
+
 	private:
 	Player player_;	
 };

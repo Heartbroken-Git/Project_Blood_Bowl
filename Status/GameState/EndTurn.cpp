@@ -21,7 +21,7 @@ EndTurn::EndTurn(Team equipe){
 /**
  * @brief Destructeur de EndTurn
  */
-EndTurn::EndTurn(){}
+EndTurn::~EndTurn(){}
 
 /**
  * @brief méthode retournant l'équipe actif
@@ -40,4 +40,6 @@ void EndTurn::startTurn(){
 	equipe_.etatDebTour();
 }
 
+void EndTurn::turnover(){}
+void EndTurn::endTurnNormal(){}
 

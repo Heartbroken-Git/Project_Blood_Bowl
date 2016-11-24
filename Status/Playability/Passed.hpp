@@ -12,10 +12,19 @@
 #include "../../Player/Player.hpp"
 class Passed : public virtual Playability{
     public:
-    Passed();
+    Passed(Player player);
     ~Passed();
 	void donePlaying();
 	Player getPlayer();
+
+	void tackle();
+	void blitz();
+	void moving();	
+	void passer();
+	void blitzMovement();
+	void blitzTackle();
+	void GoForIt();
+	void startPlaying();
 
 	private:
 	Player player_;

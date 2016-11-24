@@ -18,7 +18,8 @@ class StartTurn : public virtual GameState{
 	void endTurnNormal();
 	void turnover();
 	Team getEquipe();
-	
+
+	void startTurn();	
 	private:
 	Team equipe_;
 	

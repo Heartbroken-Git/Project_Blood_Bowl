@@ -13,11 +13,13 @@
 
 class EndTurn : public virtual GameState{
     public:
-    EndTurn();
+    EndTurn(Team equipe);
     ~EndTurn();
 	void startTurn();
 	Team getEquipe();
 	
+	void endTurnNormal();
+	void turnover();
 	private:
 	Team equipe_;
 };

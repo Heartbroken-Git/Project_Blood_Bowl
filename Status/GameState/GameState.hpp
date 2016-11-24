@@ -13,9 +13,9 @@ class GameState{
     public:
     GameState();
     ~GameState();
-	virtual void startTurn()=0;
-	virtual void endTurnNormal()=0;
-	virtual void turnover()=0;
+	virtual void startTurn()=0; //etatFinTour()
+	virtual void endTurnNormal()=0; //etatFinTurnover()
+	virtual void turnover()=0; //etatDebTour()
 	
 	
 };

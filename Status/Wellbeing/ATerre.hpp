@@ -19,6 +19,10 @@ class ATerre : public virtual Wellbeing{
 	void getOut();
 	Player getPlayer();
 
+	void returnToGame();
+	void getUp();
+	void knockedDown();
+	void backToNormal();
 	private:
 	Player player_;	
 };

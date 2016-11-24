@@ -12,11 +12,17 @@
 #include "../../Player/Player.hpp"
 class KO : public virtual Wellbeing{
     public:
-    KO();
-    ~KO();
+    	KO();
+    	~KO();
 	void returnToGame();
 	Player getPlayer();
 
+	void goProne();
+	void getUp();
+	void knockedDown();
+	void knockedOut();
+	void getOut();
+	void backToNormal();
 	private:
 	Player player_;	
 };

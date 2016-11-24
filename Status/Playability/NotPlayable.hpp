@@ -12,10 +12,19 @@
 #include "../../Player/Player.hpp"
 class NotPlayable : public virtual Playability{
     public:
-    NotPlayable();
+    NotPlayable(Player player);
     ~NotPlayable();
 	void startPlaying();
 	Player getPlayer();
+
+	void donePlaying(); 
+	void tackle();
+	void blitz();
+	void moving();	
+	void passer();
+	void blitzMovement();
+	void blitzTackle();
+	void GoForIt();
 
 	private:
 	Player player_;

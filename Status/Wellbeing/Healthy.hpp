@@ -20,6 +20,9 @@ class Healthy : public virtual Wellbeing{
 	void getOut();
 	Player getPlayer();
 
+	void returnToGame();
+	void getUp();
+	void backToNormal();
 	private:
 	Player player_;
 	
