@@ -22,7 +22,7 @@ Passed::Passed(Player player){
 /**
  * @brief Destructeur de Passed
  */
-Passed::~Passed(Player player){}
+Passed::~Passed(){}
 
 Player Passed::getPlayer(){
 	return player_;

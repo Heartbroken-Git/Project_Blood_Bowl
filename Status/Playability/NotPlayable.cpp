@@ -22,7 +22,7 @@ NotPlayable::NotPlayable(Player player){
 /**
  * @brief Destructeur de NotPlayable
  */
-NotPlayable::~NotPlayable(Player player){}
+NotPlayable::~NotPlayable(){}
 
 Player NotPlayable::getPlayer(){
 	return player_;

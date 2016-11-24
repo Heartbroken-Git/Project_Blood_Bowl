@@ -12,7 +12,7 @@
 #include "../../Player/Player.hpp"
 class HalfHealthy : public virtual Wellbeing{
     public:
-    HalfHealthy();
+    HalfHealthy(Player player);
     ~HalfHealthy();
 	void goProne();
 	void knockedDown();

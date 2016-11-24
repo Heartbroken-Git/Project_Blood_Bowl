@@ -22,7 +22,7 @@ BlitzTackled::BlitzTackled(Player player){
 /**
  * @brief Destructeur de BlitzTackled
  */
-BlitzTackled::~BlitzTackled(Player player){}
+BlitzTackled::~BlitzTackled(){}
 
 Player BlitzTackled::getPlayer(){
 	return player_;

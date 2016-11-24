@@ -22,7 +22,7 @@ GFI::GFI(Player player){
 /**
  * @brief Destructeur de GFI
  */
-GFI::~GFI(Player player){}
+GFI::~GFI(){}
 
 Player GFI::getPlayer(){
 	return player_;

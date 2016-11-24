@@ -21,6 +21,8 @@ Playability::Playability(){}
  * @brief Destructeur de Playability
  */
 Playability::~Playability(){}
+
+
 void Playability::donePlaying(){}
 void Playability::GoForIt(){}
 void Playability::passer(){}

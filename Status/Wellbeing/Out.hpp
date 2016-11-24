@@ -12,7 +12,7 @@
 #include "../../Player/Player.hpp"
 class Out : public virtual Wellbeing{
     public:
-    Out();
+    Out(Player player);
     ~Out();
 	Player getPlayer();
 

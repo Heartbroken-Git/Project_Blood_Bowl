@@ -22,7 +22,7 @@ Moved::Moved(Player player){
 /**
  * @brief Destructeur de Moved
  */
-Moved::~Moved(Player player){}
+Moved::~Moved(){}
 
 Player Moved::getPlayer(){
 	return player_;

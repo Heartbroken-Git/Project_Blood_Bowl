@@ -12,7 +12,7 @@
 #include "../../Player/Player.hpp"
 class KO : public virtual Wellbeing{
     public:
-    	KO();
+    	KO(Player player);
     	~KO();
 	void returnToGame();
 	Player getPlayer();

@@ -22,7 +22,7 @@ Tackled::Tackled(Player player){
 /**
  * @brief Destructeur de Tackled
  */
-Tackled::~Tackled(Player player){}
+Tackled::~Tackled(){}
 
 Player Tackled::getPlayer(){
 	return player_;

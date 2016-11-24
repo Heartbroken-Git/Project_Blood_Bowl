@@ -12,7 +12,7 @@
 #include "../../Player/Player.hpp"
 class ATerre : public virtual Wellbeing{
     public:
-    ATerre();
+    ATerre(Player player);
     ~ATerre();
 	void goProne();
 	void knockedOut();

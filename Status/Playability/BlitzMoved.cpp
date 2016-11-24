@@ -22,7 +22,7 @@ BlitzMoved::BlitzMoved(Player player){
 /**
  * @brief Destructeur de BlitzMoved
  */
-BlitzMoved::~BlitzMoved(Player player){}
+BlitzMoved::~BlitzMoved(){}
 
 Player BlitzMoved::getPlayer(){
 	return player_;

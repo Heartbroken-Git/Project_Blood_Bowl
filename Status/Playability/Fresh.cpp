@@ -22,7 +22,7 @@ Fresh::Fresh(Player player){
 /**
  * @brief Destructeur de Fresh
  */
-Fresh::~Fresh(Player player){}
+Fresh::~Fresh(){}
 
 Player Fresh::getPlayer(){
 	return player_;

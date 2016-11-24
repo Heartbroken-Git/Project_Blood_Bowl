@@ -12,12 +12,12 @@
 #include "../../Player/Player.hpp"
 class Prone : public virtual Wellbeing{
     public:
-    Prone();
+    Prone(Player player);
     ~Prone();
-	void getUp()=0;
-	void knockedDown()=0;
-	void knockedOut()=0;
-	void getOut()=0;
+	void getUp();
+	void knockedDown();
+	void knockedOut();
+	void getOut();
 	Player getPlayer();
 
 	void backToNormal();
