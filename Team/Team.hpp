@@ -26,7 +26,7 @@ private:
 	vector<Player> roster_;
 
 public:
-	Team();
+	Team(string);
 	~Team();
 	int getNbScore();
 	int getNom();
