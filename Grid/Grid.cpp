@@ -16,7 +16,7 @@ Grid::Grid() {
 	for (int i = 0; i < GLOBAL_CONST_GRIDABS; ++i) {
 		for (int j = 0; j < GLOBAL_CONST_GRIDORD; ++j) {
 			Tile tmp(i, j);
-			plateau_[i,j] = tmp;
+			plateau_[i][j] = tmp;
 		}
 	}
 }
@@ -35,7 +35,7 @@ Grid::~Grid() {}
  */
 bool Grid::removeTile(int x, int y) {
 	if ((x >= 0) && (x < GLOBAL_CONST_GRIDABS) && (y >= 0) && (y < GLOBAL_CONST_GRIDORD)) {
-		plateau_[x,y] = NULL;
+		plateau_[x][y] = NULL;
 		return(true);
 	} else {
 		return(false);
@@ -53,7 +53,7 @@ bool Grid::removeTile(int x, int y) {
  */
 bool Grid::setTile(Tile add, int x, int y) {
 	if ((x >= 0) && (x < GLOBAL_CONST_GRIDABS) && (y >= 0) && (y < GLOBAL_CONST_GRIDORD) && (add != NULL)) {
-		plateau_[x,y] = add;
+		plateau_[x][y] = add;
 		return(true);
 	} else {
 		return(false);
@@ -69,7 +69,7 @@ bool Grid::setTile(Tile add, int x, int y) {
  */
 Tile Grid::getTile(int x, int y) {
 	if ((x >= 0) && (x < GLOBAL_CONST_GRIDABS) && (y >= 0) && (y < GLOBAL_CONST_GRIDORD)) {
-		return(plateau_[x, y]);
+		return(plateau_[x][y]);
 	} else {
 		return(NULL);
 	}
@@ -84,7 +84,7 @@ void Grid::displayPlateau() {
 	for (int i = 0; i < GLOBAL_CONST_GRIDABS; ++i) {
 		cout << "▕";
 		for (int j = 0; j < GLOBAL_CONST_GRIDORD; ++j) {
-			plateau_[i,j].displayTile();
+			plateau_[i][j].displayTile();
 		}
 		cout << "▏" << endl;
 	}
