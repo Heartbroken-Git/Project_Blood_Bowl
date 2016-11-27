@@ -5,7 +5,7 @@
  */
 
 #include <iostream>
-#include <vector>
+#include <boost/algorithm/string.hpp>
 #include "Catcher.hpp"
 using namespace std;
 
@@ -15,20 +15,23 @@ using namespace std;
 *@pre 1 <= type <= 3
 *@complexite Constante
 */
-Catcher::Catcher(int type){
-		if (type = 1){
+Catcher::Catcher(string name, string race){
+		if (boost::iequals(race,"human") || boost::iequals(race,"homme") || boost::iequals(race,"humain")){
 			ma = 8;
 			st = 2;
 			ag = 3;
 			av = 7;
-			xp = 0;
-			lvl = 1;
-		}else if (type = 2){
+		}else if ((boost::iequals(race,"orc") || boost::iequals(race,"orque") || boost::iequals(race,"ork")){
 			ma = 8;
 			st = 3;
 			ag = 4;
 			av = 7;
-			xp = 0;
-			lvl = 1;
+		}
+		}else if ((boost::iequals(race,"elf") || boost::iequals(race,"elfe") || boost::iequals(race,"eldar")){
+			ma = 8;
+			st = 3;
+			ag = 4;
+			av = 7;
 		}
 }
+

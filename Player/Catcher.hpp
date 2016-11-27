@@ -13,7 +13,8 @@
 
 class Catcher : public Player{
 	public: 
-		Catcher(int);
+		Catcher(string name, string race);
+		~Player();
 };
 
 #endif

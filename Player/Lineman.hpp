@@ -13,7 +13,8 @@
 
 class Lineman : public Player{
 	public: 
-		Lineman(int);
+		Lineman(string name, string race);
+		~Player();
 };
 	
 #endif

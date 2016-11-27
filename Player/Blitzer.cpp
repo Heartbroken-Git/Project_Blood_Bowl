@@ -5,7 +5,7 @@
  */
 
 #include <iostream>
-#include <vector>
+#include <boost/algorithm/string.hpp>
 #include "Blitzer.hpp"
 using namespace std;
 
@@ -15,27 +15,21 @@ using namespace std;
 *@pre 1 <= type <= 3
 *@complexite Constante
 */
-Blitzer::Blitzer(int type){
-		if (type = 1){
+Blitzer::Blitzer(string name, string race){
+		if (boost::iequals(race,"human") || boost::iequals(race,"homme") || boost::iequals(race,"humain")){
 			ma = 7;
 			st = 3;
 			ag = 3;
 			av = 8;
-			xp = 0;
-			lvl = 1;
-		}else if (type = 2){
+		}else if (boost::iequals(race,"orc") || boost::iequals(race,"orque") || boost::iequals(race,"ork")){
 			ma = 7;
 			st = 3;
 			ag = 4;
 			av = 8;
-			xp = 0;
-			lvl = 1;
-		}else if (type = 3){
+		}else if (boost::iequals(race,"elf") || boost::iequals(race,"elfe") || boost::iequals(race,"eldar")){
 			ma = 6;
 			st = 3;
 			ag = 3;
 			av = 9;
-			xp = 0;
-			lvl = 1;
 		}
 }

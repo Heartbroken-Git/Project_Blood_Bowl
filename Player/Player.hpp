@@ -4,12 +4,15 @@
 /*!
  * @file Player.hpp
  * @author Elbert NYUNTING
- * @brief Protoype
+ * @brief Classe mere de joueur, qui composera une équipe
  */
  
 #include <iostream>
 #include <vector>
 #include <string>
+#include "../Status/Playability/Playability.hpp" 
+#include "../Status/Wellbeing/Wellbeing.hpp" 
+#include "../Race/Race.hpp"
 
 using namespace std;
 
@@ -18,22 +21,18 @@ class Player{
 	public:
 		Player();
 		~Player();
-		enum skill{};
 		void setMvt(int mouvementAllowance);
 		void setStr(int strength);
 		void setAgi(int agility);
 		void setArm(int armorValue);
-		void setXpe(int experience);
-		void setLvl(int level);
-		void setStatus(int status);
 		void setName(string name);
 		int getMvt();
 		int getStr();
 		int getAgi();
 		int getArm();
-		int getXpe();
-		int getLvl();
-		int getStatus();
+		Playability getPlayability();
+		Wellbeing getWellbeing();
+		std::string getRace();
 		std::string getName();
 	
 		bool outnumbered();
@@ -52,11 +51,48 @@ class Player{
 		void passSuccess();
 		void displayPlayer();
 		
+		//Playability
+		void etatPassed();
+		void etatMoved();
+		void etatTackle();
+		void etatGFI();
+		void etatBlitz();
+		void etatBlitzMoved();
+		void etatBlitzTackle();
+		void etatDonePlaying();
+		void etatFresh();
+		
+		//Wellbeing
+		void etatProne();
+		void etatHalfHealthy();
+		void etatATerre();
+		void etatKO();
+		void etatOut();
+		void etatHealthy();
 		
 	private:
-		int mvt_, str_, agi_, arm_, xpe_, lvl_, status_;
-		string name_;
-
+		int mvt_, str_, agi_, arm_;
+		string name_, race_;
+		//Playability states
+		Playability playability_;
+		Playability etatFresh_;
+		Playability etatDonePlaying_;
+		Playability etatPassed_;
+		Playability etatMoved_;
+		Playability etatTackle_;
+		Playability etatGFI_;
+		Playability etatBlitz_;
+		Playability etatBlitzMoved_;
+		Playability etatBlitzTackle_;
+		
+		//Wellbeing states
+		Wellbeing etatWellbeing_;
+		Wellbeing etatProne_;
+		Wellbeing etatUp_;
+		Wellbeing etatKnockedDown_;
+		Wellbeing etatKnockedOut_;
+		Wellbeing etatOut_;
+		Wellbeing etatHealthy_;
 };
  
  
