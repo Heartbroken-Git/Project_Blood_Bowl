@@ -73,6 +73,7 @@ class Player{
 	private:
 		int mvt_, str_, agi_, arm_;
 		string name_, race_;
+		Race race_;
 		//Playability states
 		Playability playability_;
 		Playability etatFresh_;
