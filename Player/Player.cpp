@@ -18,9 +18,6 @@ Player::Player(){
 	str_ = 0;
 	agi_ = 0;
 	arm_ = 0;
-	xpe_ = 0;
-	lvl_ = 1;
-	status_ = 0;
 	name_="";
 }
 
