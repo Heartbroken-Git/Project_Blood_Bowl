@@ -89,6 +89,14 @@ bool Tile::isBallOn() {
 }
 
 /**
+ * @brief Méthode retournant la présence ou non d'un joueur la case
+ * @return un booléen indiquant la présence ou non d'un joueur
+ */
+bool Tile::isPlayerOn() {
+	return playerOn_ != 0;
+}
+
+/**
  * @brief Méthode mutatrice permettant d'éditer le joueur présent sur la case
  * @param player le joueur à mettre sur la case
  */
