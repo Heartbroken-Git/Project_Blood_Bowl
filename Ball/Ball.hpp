@@ -21,14 +21,16 @@ class Ball{
     Ball();
     ~Ball();
     Player getHolder();
-    Tile getLocation();
+    int getX();
+    int getY();
     void setHolder(Player holder);
-    void setLocation(Tile location);
     void bounce();
     
     private:
     Player holder_;
-    Tile location_;
+    int x_;
+    int y_;
+    Grid grid_;
 };
 
 #endif
