@@ -30,6 +30,9 @@ class Player{
 		int getStr();
 		int getAgi();
 		int getArm();
+		void setBall(bool test);
+		bool isHoldingBall();
+		
 		Playability getPlayability();
 		Wellbeing getWellbeing();
 		std::string getRace();
@@ -74,6 +77,7 @@ class Player{
 		int mvt_, str_, agi_, arm_;
 		string name_, race_;
 		Race race_;
+		bool hasBall_;
 		//Playability states
 		Playability playability_;
 		Playability etatFresh_;
