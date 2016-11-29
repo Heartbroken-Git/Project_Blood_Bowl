@@ -9,17 +9,32 @@
 #include "../Grid/Grid.hpp"
 using namespace std;
 
-Ball::Ball(){}
+Ball::Ball(int x, int y, Grid grid){
+  grid_ = grid;
+  x_ = x;
+  y_ = y;
+  if(grid_.getTile(x_, y_).isPlayerOn()){
+   diceResult6 = d6.throwDiceSingle();
+   if(diceResult6 + grid_.getTile(x_, y_).getPlayerOn().getAgi() < 7){
+     this.bounce();
+   }else{
+    this.setHolder(grid_.getTile(x_, y_).getPlayerOn());
+    grid_.getTile(x_, y_).getPlayerOn().setBall(true);
+   }
+ }
+ grid_.getTile(x_,y_).setBallOn(true);  
+}
+
 Ball::~Ball(){}
 
 Player Ball::getHolder(){
-  return holder_;
+  return *holder_.get()
 }
 Tile Ball::getLocation(){
   return location_;
 }
 void Ball::setHolder(Player holder){
-  holder_ = holder;
+  holder_ = std::shared_ptr<Player> (new Player(holder));
 }
 int Ball::getX(){
   retun x_;
@@ -29,14 +44,18 @@ int Ball::getY(){
   retun y_;
 }
 
+bool Ball::isHeldByPlayer(){
+  return holder_ != 0; 
+}
+
 void Ball::bounce(){
   grid_.getTile(x_,y_).setBallOn(false);
   Dice d8 = new Dice(1, 8);
   unsigned int diceResult8;
   Dice d6 = new Dice(1, 6);
-  unsigned int diceResult6;
-  
+  unsigned int diceResult6;  
   diceResult8 = d8.throwDiceSingle();
+ 
  if(diceResult8 == 1){
   --x_;
   --y_;
@@ -69,8 +88,9 @@ void Ball::bounce(){
    diceResult6 = d6.throwDiceSingle();
    if(diceResult6 + grid_.getTile(x_, y_).getPlayerOn().getAgi() < 7){
      this.bounce();
+   }else{
+    this.setHolder(grid_.getTile(x_, y_).getPlayerOn());
+    grid_.getTile(x_, y_).getPlayerOn().setBall(true);
    }
-  grid_.getTile(x_, y_).getPlayerOn().setBall(true);
-  grid_.getTile(x_,y_).setBallOn(true);
- }
+   grid_.getTile(x_,y_).setBallOn(true);
 }
