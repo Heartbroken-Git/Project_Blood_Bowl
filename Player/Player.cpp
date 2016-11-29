@@ -42,14 +42,6 @@ int Player::getAgi(){
 int Player::getArm(){
 	return arm_;
 }
-	
-int Player::getXpe(){ 
-	return xpe_;
-}
-	
-int Player::getLvl(){
-	return lvl_;
-}
 
 int Player::getStatus(){
 	return status_;	
@@ -75,19 +67,16 @@ void Player::setAgi(int agility){
 void Player::setArm(int armorValue){
 	arm_ = armorValue;
 }
-	
-void Player::setXpe(int experience){
-	xpe_ = experience;
-}
-	
-void Player::setLvl(int level){
-	lvl_ = level;
-}
 
 void Player::setStatus(int status){
 	status_ = status;	
 }
-
+void Player::setBall(bool test){
+	hasBall_ = test;	
+}
+bool Player::isHoldingBall(){
+	return hasBall_;	
+}
 void Player::setName(string name){
 	name_=name;	
 }
