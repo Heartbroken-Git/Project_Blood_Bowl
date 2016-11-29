@@ -38,6 +38,7 @@ class Tile {
 		int getY();
 		Player getPlayerOn();
 		bool isBallOn();
+		bool isPlayerOn();
 		void setPlayerOn(Player);
 		void setBallOn(bool);
 		string toString();
