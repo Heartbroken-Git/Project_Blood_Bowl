@@ -17,21 +17,39 @@ using namespace std;
 */
 Catcher::Catcher(string name, string race){
 		if (boost::iequals(race,"human") || boost::iequals(race,"homme") || boost::iequals(race,"humain")){
-			ma = 8;
-			st = 2;
-			ag = 3;
-			av = 7;
+			mvt_ = 7;
+			str_ = 3;
+			agi_ = 4;
+			arm_ = 7;
+			catcher_ = true;
+			thrower_ = false;
+			blocker_ = false;
+			dodger_ = true;			
+			name_ = name;
+			race_ = "human";
 		}else if ((boost::iequals(race,"orc") || boost::iequals(race,"orque") || boost::iequals(race,"ork")){
-			ma = 8;
-			st = 3;
-			ag = 4;
-			av = 7;
+			mvt_ = 6;
+			str_ = 4;
+			agi_ = 3;
+			arm_ = 8;*
+			catcher_ = true;
+			thrower_ = false;
+			blocker_ = false;
+			dodger_ = false;
+			name_ = name;
+			race_ = "orc";
 		}
 		}else if ((boost::iequals(race,"elf") || boost::iequals(race,"elfe") || boost::iequals(race,"eldar")){
-			ma = 8;
-			st = 3;
-			ag = 4;
-			av = 7;
+			mvt_ = 8;
+			str_ = 3;
+			agi_ = 5;
+			arm_ = 6;
+			catcher_ = true;
+			thrower_ = false;
+			blocker_ = false;
+			dodger_ = true;
+			name_ = name;
+			race_ = "elf";
 		}
 }
 

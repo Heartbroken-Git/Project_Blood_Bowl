@@ -78,6 +78,7 @@ class Player{
 		string name_, race_;
 		Race race_;
 		bool hasBall_;
+		bool catcher_, thrower_, blocker_, dodger_;
 		//Playability states
 		Playability playability_;
 		Playability etatFresh_;

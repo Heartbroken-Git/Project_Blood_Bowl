@@ -19,6 +19,7 @@ Player::Player(){
 	agi_ = 0;
 	arm_ = 0;
 	name_="";
+	race_="";
 }
 
 Player::~Player(){
@@ -50,6 +51,7 @@ int Player::getStatus(){
 string Player::getName(){
 	return name_;	
 }
+
 	
 //COMMENTER SUR CHAQUE SETTERS
 void Player::setMvt(int mouvementAllowance){
@@ -116,19 +118,19 @@ bool Player::nextTo(Player oppoPlayer){
 }
 
 bool Player::block(){
-	return true;	
+	return blocker_;	
 }
 
 bool Player::pass(){
-	return true;	
+	return thrower_;	
 }
 
 bool Player::dodges(){
-	return true;	
+	return dodger_;	
 }
 
 bool Player::catches(){
-	return true;	
+	return catcher_;	
 }
 
 int Player::tileDist(Player player){
