@@ -105,7 +105,7 @@ void ActionPass::passFail(Player player){
  * @details la balle appartiendra au joueur qui l'a reçue
  */
 void ActionPass::passSuccess(Player player){
-		game_.getBall().setHolder(game_.getPlayer(player));
+		game_.getBall().setHolder(player);
 		std::cout<<"Oh OH! Aww... Il a reçu la balle... Je voulais le voir rater comme ça on tape plus, mais bon, c'est vraie que Blood Bowl est un jeu de balle."<<std::endl;
 }
 
@@ -130,19 +130,19 @@ unsigned int ActionPass::rollPassDices(){
  */
 void ActionPass::receiveAct(int modif, Player catchingPlayer){
 	unsigned int diceRes = rollPassDices();
-	unsigned int agi = (unsigned int) game_.getPlayer(catchingPlayer).getAgi();
+	unsigned int agi = (unsigned int) catchingPlayer.getAgi();
 	diceRes += modif;
-	if(diceRes > agi && !game_.getPlayer(catchingPlayer).catches()){ //fail, no reroll
-		passFail(game_.getPlayer(catchingPlayer));
+	if(diceRes > agi && !catchingPlayer.catches()){ //fail, no reroll
+		passFail(catchingPlayer;
 	}else if(diceRes > agi && game_.getPlayer(catchingPlayer).catches()){ //fail, reroll
 		std::cout<<"On va relancer ça! \n";
 		diceRes = rollPassDices();
 		if(diceRes > agi){ //fail
-			passFail(game_.getPlayer(catchingPlayer));
+			passFail(catchingPlayer);
 		}else{ //success
-			passSuccess(game_.getPlayer(catchingPlayer));
+			passSuccess(catchingPlayer);
 		}
 	}else{
-		passSuccess(game_.getPlayer(catchingPlayer));
+		passSuccess(catchingPlayer);
 	}
 }

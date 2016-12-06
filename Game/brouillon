@@ -1,6 +1,5 @@
 brouiilon Game
 
-getPlayer(Player player); //retourne ce joueur spécifique dans le jeu
 
 tileDist(Player player1, Player player2); //retourne distance en vol d'oiseau entre player1 et player 2 en int
 
