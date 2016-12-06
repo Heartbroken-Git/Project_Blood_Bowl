@@ -26,6 +26,7 @@ class ActionFoul : public virtual Actions{
 	
     private:
 	Player actingPlayer_;
+	Game game_;
 };
 
 #endif

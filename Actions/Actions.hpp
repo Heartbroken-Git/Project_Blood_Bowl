@@ -23,6 +23,9 @@ class Actions{
     ~Actions();
 	virtual void doAction(Player player)=0;
 	virtual void doAction()=0;
+	
+	private:
+	Game game_;
 };
 
 #endif

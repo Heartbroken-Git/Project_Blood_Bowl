@@ -26,32 +26,23 @@ class Player{
 		void setAgi(int agility);
 		void setArm(int armorValue);
 		void setName(string name);
+		void setBall(bool test);
+		void addMovement();
+				
 		int getMvt();
 		int getStr();
 		int getAgi();
 		int getArm();
-		void setBall(bool test);
-		bool isHoldingBall();
-		
-		Playability getPlayability();
-		Wellbeing getWellbeing();
-		std::string getRace();
-		std::string getName();
-	
-		bool outnumbered();
-		void turnover();
-		int freeSpot();
-		void pushBack();
-		int countAdvantage(Player oppoPlayer);
-		int oppoAdjac();
-		void downed();
 		bool block();
 		bool dodges();
 		bool pass();
 		bool catches();
-		bool nextTo(Player oppoPlayer);
-		int tileDist(Player player);
-		void passSuccess();
+		std::string getRace();
+		std::string getName();
+		bool isHoldingBall();		
+		Playability getPlayability();
+		Wellbeing getWellbeing();
+
 		void displayPlayer();
 		
 		//Playability

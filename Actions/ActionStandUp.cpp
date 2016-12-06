@@ -39,8 +39,9 @@ Player ActionStandUp::getActingPlayer(){
  * @details 0 == debout, 1 == debout, -3 mouvement & !tackle, 2 == au sol, 3 == sur le ventre, 4 == KO, 5 == Mort, 6 == en reserve
  */
 void ActionStandUp::doAction(){
-	if (actingPlayer_.getStatus() == 2){
-		actingPlayer_.setStatus(1);
+	if (typeid(actingPlayer_.getWellbeing()) == typeid(Prone) && typeid(actingPlayer_.getPlayability()) == typeid(Fresh)){
+		actingPlayer_.etatHalfHealthy();
+		actingPlayer_.etatDonePlaying();
 		std::cout<<actingPlayer_.getName()<<" s'est relevé!"<<std::endl;
 	}else{
 		std::cout<<"Ce joueur n'est pas au sol!"<<std::endl;
