@@ -5,7 +5,7 @@
  * @file Team.hpp
  * @copyright WTFPL v2
  * @author Corentin CHÉDOTAL
- * @date 24/11/2016
+ * @date 07/12/2016
  * @brief Fichier entête des Team
  */
  
@@ -14,6 +14,8 @@
 #include <string>
 #include "../Player/Player.hpp"
 #include "../Race/Race.hpp"
+
+const int GLOBAL_CONST_TEAMROSTERSIZE = 11;
 
 /**
  * @class Team
@@ -25,21 +27,19 @@ private:
 	int nbScore_;
 	string nom_;
 	Race teamRace_;
-	vector<Player> roster_;
+	Player roster_[GLOBAL_CONST_TEAMROSTERSIZE];
 
 public:
-	Team(string);
+	Team(string, Race);
 	~Team();
 	int getNbScore();
-	int getNom();
+	string getNom();
 	Race getRace();
 	Player getPlayer(int);
 	void setNbScore(int);
 	void setNom(string);
 	void setRace(Race);
 	void setPlayer(int, Player);
-	void addPlayer(Player);
-	void removePlayer(int);
 };
  
  
