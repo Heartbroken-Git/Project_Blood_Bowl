@@ -15,11 +15,14 @@
 #include "../Player/Player.hpp"
 #include "../Race/Race.hpp"
 
+class Player;
+class Race;
+
 const int GLOBAL_CONST_TEAMROSTERSIZE = 11;
 
 /**
  * @class Team
- * @brief Classe abstraite définissant les équipes du jeu
+ * @brief Classe définissant les équipes du jeu
  * @details Les équipes d'un coach contiendront des listes de joueurs inclus dans l'équipe, le nom de l'équipe, ainsi que la Race de l'équipe.
  */
 class Team{
