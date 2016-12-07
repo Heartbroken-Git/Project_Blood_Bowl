@@ -70,6 +70,7 @@ class Player{
 		Race race_;
 		bool hasBall_;
 		bool catcher_, thrower_, blocker_, dodger_;
+		int x_, y_;
 		//Playability states
 		Playability playability_;
 		Playability etatFresh_;
