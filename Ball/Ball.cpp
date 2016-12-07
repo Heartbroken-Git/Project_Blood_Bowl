@@ -94,3 +94,7 @@ void Ball::bounce(){
    }
    grid_.getTile(x_,y_).setBallOn(true);
 }
+
+void Ball::displayBall(){
+	if(this.isHeldByPlayer() == false){cout << "◦";}
+}

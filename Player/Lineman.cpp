@@ -26,7 +26,7 @@ Lineman::Lineman(string name, string race){
 			blocker_ = false;
 			dodger_ = false;			
 			name_ = name;
-			race_ = "human";
+			race_ = new Human();
 		}else if (boost::iequals(race,"orc") || boost::iequals(race,"orque") || boost::iequals(race,"ork")){
 			mvt_ = 5;
 			str_ = 4;
@@ -37,9 +37,9 @@ Lineman::Lineman(string name, string race){
 			blocker_ = true;
 			dodger_ = false;
 			name_ = name;
-			race_ = "orc";
+			race_ = new Orc();
 
-		}else if (boost::iequals(race,"elf") || boost::iequals(race,"elfe") || boost::iequals(race,"eldar")){
+		}else if (boost::iequals(race,"elf") || boost::iequals(race,"elfe") || boost::iequals(race,"best")){
 			mvt_ = 7;
 			str_ = 3;
 			agi_ = 4;
@@ -49,6 +49,11 @@ Lineman::Lineman(string name, string race){
 			blocker_ = false;
 			dodger_ = true;
 			name_ = name;
-			race_ = "elf";
+			race_ = new Elf();
 		}
+}
+
+void Lineman::displayPlayer() {
+	if(hasBall_){cout << "□";}
+	else{cout << "■";}
 }

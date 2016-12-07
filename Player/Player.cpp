@@ -19,7 +19,7 @@ Player::Player(){
 	agi_ = 0;
 	arm_ = 0;
 	name_="";
-	race_="";
+	race_ = new Race();
 	
 	/*
 	* @brief Playability setter
@@ -66,7 +66,7 @@ bool Player::catches(){return catcher_;}
 Playability Player::getPlayability();{return playability_;}
 Playability Player::getWellbeing();{return wellbeing_;}
 string Player::getName(){return name_;}
-string Player::getRace(){return race_;}
+Race getRace(){return race_;}
 bool Player::isHoldingBall(){return hasBall_;}
 	
 //COMMENTER SUR CHAQUE SETTERS

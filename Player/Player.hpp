@@ -37,7 +37,7 @@ class Player{
 		bool dodges();
 		bool pass();
 		bool catches();
-		std::string getRace();
+		Race getRace();
 		std::string getName();
 		bool isHoldingBall();		
 		Playability getPlayability();

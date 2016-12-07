@@ -15,6 +15,7 @@ class Thrower : public Player{
 	public: 
 		Thrower(string name, string race);
 		~Player();
+		void displayPlayer();
 };
 
 #endif

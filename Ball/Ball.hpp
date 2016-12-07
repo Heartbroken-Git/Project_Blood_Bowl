@@ -26,6 +26,7 @@ class Ball{
     void setHolder(Player holder);
     bool isHeldByPlayer();
     void bounce();
+    void displayBall(); 
    
     
     private:

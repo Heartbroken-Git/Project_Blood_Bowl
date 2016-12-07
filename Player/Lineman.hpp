@@ -15,6 +15,7 @@ class Lineman : public Player{
 	public: 
 		Lineman(string name, string race);
 		~Player();
+		void displayPlayer();
 };
 	
 #endif

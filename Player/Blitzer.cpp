@@ -26,7 +26,7 @@ Blitzer::Blitzer(string name, string race){
 			blocker_ = true;
 			dodger_ = false;			
 			name_ = name;
-			race_ = "human";
+			race_ = new Human();
 
 		}else if (boost::iequals(race,"orc") || boost::iequals(race,"orque") || boost::iequals(race,"ork")){
 			mvt_ = 6;
@@ -38,9 +38,9 @@ Blitzer::Blitzer(string name, string race){
 			blocker_ = true;
 			dodger_ = false;
 			name_ = name;
-			race_ = "orc";
+			race_ = new Orc();
 
-		}else if (boost::iequals(race,"elf") || boost::iequals(race,"elfe") || boost::iequals(race,"eldar")){
+		}else if (boost::iequals(race,"elf") || boost::iequals(race,"elfe") || boost::iequals(race,"best")){
 			mvt_ = 7;
 			str_ = 3;
 			agi_ = 4;
@@ -50,6 +50,11 @@ Blitzer::Blitzer(string name, string race){
 			blocker_ = true;
 			dodger_ = true;
 			name_ = name;
-			race_ = "elf";
+			race_ = new Elf();
 		}
+}
+
+void Blitzer::displayPlayer() {
+	if(hasBall_){cout << "△";}
+	else{cout << "▲";}
 }

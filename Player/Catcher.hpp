@@ -15,6 +15,7 @@ class Catcher : public Player{
 	public: 
 		Catcher(string name, string race);
 		~Player();
+		void displayPlayer(); 
 };
 
 #endif
