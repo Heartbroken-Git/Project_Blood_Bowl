@@ -28,6 +28,8 @@ class Player{
 		void setName(string name);
 		void setBall(bool test);
 		void addMovement();
+		void setX(int x);
+		void setY(int y);
 				
 		int getMvt();
 		int getStr();
@@ -42,6 +44,8 @@ class Player{
 		bool isHoldingBall();		
 		Playability getPlayability();
 		Wellbeing getWellbeing();
+		int getX();
+		int getY();
 
 		void displayPlayer();
 		
