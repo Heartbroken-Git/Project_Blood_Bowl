@@ -20,6 +20,8 @@ Player::Player(){
 	arm_ = 0;
 	name_="";
 	race_ = new Race();
+	x_ = 0;
+	y_ = 0;
 	
 	/*
 	* @brief Playability setter
@@ -68,6 +70,8 @@ Playability Player::getWellbeing();{return wellbeing_;}
 string Player::getName(){return name_;}
 Race getRace(){return race_;}
 bool Player::isHoldingBall(){return hasBall_;}
+int Player::getX(){return x_;}
+int Player::getY(){return y_;}
 	
 //COMMENTER SUR CHAQUE SETTERS
 /*
