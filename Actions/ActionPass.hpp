@@ -32,7 +32,7 @@ class ActionPass : public virtual Actions{
 	
     private:
     	Player actingPlayer_;
-	Game game_;
+		Game game_;
 };
 
 #endif

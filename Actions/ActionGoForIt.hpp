@@ -25,6 +25,7 @@ using namespace std;
 class ActionGoForIt : public virtual Actions {
 	private:
 		Player actingPlayer_;
+		Game game_;
 	
 	public:
 		ActionGoForIt(Player);

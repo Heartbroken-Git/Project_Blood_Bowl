@@ -13,7 +13,9 @@
 
 class Blitzer : public Player{
 	public: 
-		Blitzer(int);
+		Blitzer(string name, string race);
+		~Player();
+		void displayPlayer();
 };
 
 #endif

@@ -48,22 +48,23 @@ void ActionFoul::doAction(Player oppoPlayer){
 	Dice d6(1,6);
 	bool reff = false;
 	
-	if (actingPlayer_.nextTo(oppoPlayer)){
+	if (game_.nextToPlayer(actingPlayer_oppoPlayer)){
 		result = d6.throwDiceSingle();
 		stock = d6.throwDiceSingle();
 		if(result == stock){
 			reff = true;
 		}
 		result += stock;
-		stock = oppoPlayer.oppoAdjac();
+		stock = game_.oppoAdjac(oppoPlayer);
 		result += stock;
 		if(result > oppoPlayer.getArm()){
-			oppoPlayer.downed();
+			oppoPlayer.etatATerre();
 			std::cout<<"Aïe!"<<std::endl;
 		}
 		if(reff){
-			actingPlayer_.setStatus(6);
+			actingPlayer_.etatOut();
 			std::cout<<"Et l'arbitre l'a choppé! Fallait faire ça plus discrètement, voyons!"<<std::endl;
+			game_turnover(actingPlayer_);
 		}
 		
 	}else{

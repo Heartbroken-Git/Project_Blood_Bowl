@@ -1,0 +1,16 @@
+brouiilon Game
+
+
+tileDist(Player player1, Player player2); //retourne distance en vol d'oiseau entre player1 et player 2 en int
+
+nextToPlayer(Player player1, Player player2); //retourne un booleen si player1 est à coté de player2, utilise tileDist(player1, player2) == 1;
+
+oppoAdjac(Player player); // retourne le nombre en int de joueurs opposés autour de Player 1
+
+turnover(Player player); fin du tour de l'equipe et si Player a la balle, la balle bounce
+
+outnumbered(Player player); //retourne le nombre de joueur alliés autour de player moins oppoAdjac(player)
+
+freeSpot(Player player); //retourne le nb de cases vide autour de player
+
+game_.pushBack(oppoPlayer); //void qui met le joueur sur une case random adjacente

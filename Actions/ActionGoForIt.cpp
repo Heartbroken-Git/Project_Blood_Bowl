@@ -30,11 +30,17 @@ ActionGoForIt::~ActionGoForIt() {}
  * @details Lance le dé afin de voir si le joueur fait un échec critique, le cas échéant il glisse et met fin au tour
  */
 void ActionGoForIt::doAction() {
-	Dice d6(1, 6);
-	if (d6.throwDiceSingle() == 1) {
+	if(typeid(actingPlayer_.getPlayability()) == typeid(Moved)&&typeid(actingPlayer_.getWellbeing()) == typeid(Fresh)){
+		Dice d6(1, 6);
+		if (d6.throwDiceSingle() == 1) {
 		//Mettre une annonce comme quoi ça a foiré ? Et une si ça passe ou pas ?
-		actingPlayer_.downed();
-		actingPlayer_.turnover();
+			actingPlayer_.etatATerre();
+			game_.turnover(actingPlayer_);
+			std::cout<<"Et il s'est cassé la face ! Ouch, le sol est bien glissant !"<<std::endl;
+		}else{
+			actingPlayer_.addMovement();
+			actingPlayer_.etatGFI();
+		}
 	}
 }
 

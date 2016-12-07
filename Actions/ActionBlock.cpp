@@ -121,7 +121,7 @@ void ActionBlock::doAction(Player oppoPlayer){
 		stumble(oppoPlayer);
 		
 	}else if(finalRes == 6){ //knocked down, no evading this bad boy
-		oppoPlayer.downed();
+		oppoPlayer.etatATerre();
 		std::cout << "OUCH! Ca doit faire mal, ça!" <<std::endl;
 	}
 	
@@ -147,11 +147,11 @@ int ActionBlock::countAdvantage(Player oppoPlayer){
 		}
 	}
 	 
-	if(actingPlayer_.outnumbered()){
+	if(game_.outnumbered(actingPlayer_)){
 		--advantage;
 	}
 	
-	if(oppoPlayer.outnumbered()){
+	if(game_.outnumbered(oppoPlayer)){
 		++advantage;
 	}
 	
@@ -173,17 +173,17 @@ void ActionBlock::bothDown(Player actingPlayer, Player oppoPlayer){
 	if(actingPlayer_.block() && oppoPlayer.block()){ //none down
 		std::cout << "Les deux joueurs se cognent et rien ne se passe!" <<std::endl;
 	}else if(actingPlayer_.block()){ //opposing player down
-		oppoPlayer.downed();
+		oppoPlayer.etatATerre();
 		std::cout << "BOOM! Ils se cognent mais un est nettement plus solide que l'autre!" <<std::endl;
 	}else if(oppoPlayer.block()){//acting player down et turnover
-		actingPlayer_.downed();
+		actingPlayer_.etatATerre();
 		std::cout << "BOOM! Ils se cognent mais un est nettement plus solide que l'autre!" <<std::endl;
-		actingPlayer_.turnover();
+		game_.turnover(actingPlayer_);
 	}else{ //both down, turnover
-		actingPlayer_.downed();
-		oppoPlayer.downed();
+		actingPlayer_.etatATerre();
+		oppoPlayer.etatATerre();
 		std::cout << "HA! Ils se cognent et sont tous les deux à terre!" <<std::endl;
-		actingPlayer_.turnover();
+		game_.turnover(actingPlayer_);
 	}
 }
 
@@ -193,9 +193,9 @@ void ActionBlock::bothDown(Player actingPlayer, Player oppoPlayer){
  * @detail Si pas de case adjacente libre, oppoPlayer sera assomé
  */
 void ActionBlock::pushed(Player oppoPlayer){
-	int spot = oppoPlayer.freeSpot();
+	int spot = game_.freeSpot(oppoPlayer);
 	if(spot>0){		//if there's space, pushed to a random space. Yes, it's not REALLY Blood Bowl, but cmon, man
-		oppoPlayer.pushBack();
+		game_.pushBack(oppoPlayer);
 		std::cout << "Et il s'est fait poussé!" <<std::endl;
 	}else{ //if there's no space, attacking player downed
 		oppoPlayer.downed();

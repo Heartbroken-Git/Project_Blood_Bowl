@@ -25,6 +25,7 @@ using namespace std;
 class ActionDodge : public virtual Actions {
 	private:
 		Player actingPlayer_;
+		Game game_;
 	
 	public:
 		ActionDodge(Player);

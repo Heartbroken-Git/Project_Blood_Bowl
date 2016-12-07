@@ -3,11 +3,11 @@
 /**
  * @file Ball.hpp
  * @author Elbert NYUNTING 
- * @brief Class Ball for Blood Bowl, fickle litthe thing...
+ * @brief Class Ball for Blood Bowl, fickle litle thing...
 **/
 
-#include <queue>
-#include <vector>
+#include <memory>
+#include <iostream>
 #include "../Tile/Tile.hpp"
 #include "../Player/Player.hpp"
 
@@ -18,17 +18,22 @@
 **/
 class Ball{
     public:
-    Ball();
+    Ball(int x, int y, Grid grid);
     ~Ball();
     Player getHolder();
-    Tile getLocation();
+    int getX();
+    int getY();
     void setHolder(Player holder);
-    void setLocation(Tile location);
+    bool isHeldByPlayer();
     void bounce();
+    void displayBall(); 
+   
     
     private:
-    Player holder_;
-    Tile location_;
+    std::shared_ptr<Player> holder_;
+    int x_;
+    int y_;
+    Grid grid_;
 };
 
 #endif

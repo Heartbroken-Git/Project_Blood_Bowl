@@ -31,10 +31,11 @@ ActionDodge::~ActionDodge() {}
  */
 void ActionDodge::doAction() {
 	unsigned int agi= (unsigned int) actingPlayer_.getAgi();
-	unsigned int modifier = 1 + (0 - actingPlayer_.oppoAdjac());
+	unsigned int modifier = 1 + (0 - game_.oppoAdjac(actingPlayer_));
 	Dice d6(1, 6);
 	if (!((d6.throwDiceSingle() + modifier) >= 7 - agi)) {
-		actingPlayer_.downed();
+		actingPlayer_.etatATerre();
+		game_.turnover(actingPlayer_);
 	}
 }
 
