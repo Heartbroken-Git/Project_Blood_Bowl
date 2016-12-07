@@ -82,6 +82,8 @@ void Player::setStr(int strength){str_ = strength;}
 void Player::setAgi(int agility){agi_ = agility;}
 void Player::setArm(int armorValue){arm_ = armorValue;}
 void Player::setName(string name){name_=name;}
+void Player::setX(int x){x_ = x;}
+void Player::setY(int y){y_ = y;}
 
 /*
 * Setters très utiles
