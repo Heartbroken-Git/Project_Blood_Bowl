@@ -12,6 +12,8 @@
 #include <string>
 #include <iostream>
 
+using namespace std;
+
 /**
  * @class Race
  * @brief Classe "abstraite" définissant les Race
