@@ -20,8 +20,7 @@ class Commands{
 		* @brief Méthode qui lit ce qui est écrit sur le String et éxécute les méthodes Funnel correspondant
 		* @warning il faut bien écrire
 		*/
-		void input(String cmd);
-				
+		void input();				
 }
 
 #endif
