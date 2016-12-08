@@ -15,9 +15,7 @@ using namespace std;
 /**
  * @brief Constructeur de Human
  */
-Human::Human() {
-	Race("Human", "\033[0;34m");
-}
+Human::Human() : Race("Human", "\033[0;34m"){}
 
 /**
  * @brief Destructeur vide de Human

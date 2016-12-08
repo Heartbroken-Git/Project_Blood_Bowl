@@ -15,9 +15,7 @@ using namespace std;
 /**
  * @brief Constructeur de Elf
  */
-Elf::Elf() {
-	Race("Elf", "\033[0;33m");
-}
+Elf::Elf() : Race("Elf", "\033[0;33m"){}
 
 /**
  * @brief Destructeur vide de Elf

@@ -15,9 +15,7 @@ using namespace std;
 /**
  * @brief Constructeur de Orc
  */
-Orc::Orc() {
-	Race("Orc", "\033[0;32m");
-}
+Orc::Orc() : Race("Orc", "\033[0;32m") {}
 
 /**
  * @brief Destructeur vide de Orc
