@@ -21,32 +21,7 @@ class Commands{
 		* @warning il faut bien écrire
 		*/
 		void input(String cmd);
-		
-		/*
-		* @brief commencer UNE PARTIE DE BLOOD BOWL
-		*/
-		void startGame();
-
-		void endTurn(Team team);
-
-
-
-		/*
-		* @brief choisir la race de l'équipe
-		*/
-		void chooseElf();
-		void chooseOrc();
-		void chooseHuman();
-
-		/*
-		* @brief choisir le paradigme du team voulu
-		*/
-		void chooseAgressive();
-		void chooseBalanced();
-		void chooseAgile();
-	
-		void teamName(String name);
-
+				
 }
 
 #endif
