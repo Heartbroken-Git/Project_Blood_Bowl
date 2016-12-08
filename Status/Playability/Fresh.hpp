@@ -9,25 +9,22 @@
 */
 
 #include "Playability.hpp"
-#include "../../Player/Player.hpp"
 class Fresh : public virtual Playability{
     public:
-    Fresh(Player player);
+    Fresh();
     ~Fresh();
-	void donePlaying(); 
-	void tackle();
-	void blitz();
-	void moving();	
-	void passer();
-	Player getPlayer();
+	std::shared_ptr<Playability> donePlaying(); 
+	std::shared_ptr<Playability> tackle();
+	std::shared_ptr<Playability> blitz();
+	std::shared_ptr<Playability> moving();	
+	std::shared_ptr<Playability> passer();
 
-	void blitzMovement();
-	void blitzTackle();
-	void GoForIt();
-	void startPlaying();
 
-	private:
-	Player player_;	
+	std::shared_ptr<Playability> blitzMovement();
+	std::shared_ptr<Playability> blitzTackle();
+	std::shared_ptr<Playability> GoForIt();
+	std::shared_ptr<Playability> startPlaying();
+
 };
 
 #endif

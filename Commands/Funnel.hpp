@@ -3,7 +3,7 @@
 /*!
  * @file Funnel.hpp
  * @author Elbert NYUNTING
- * @brief fonction funnel qui prends tous les méthodes de Action, Game, Team et Player et les rendre cohérent
+ * @brief classe funnel qui prends tous les méthodes de Action, Game, Team et Player et les rendre cohérent
  */
  
 
@@ -22,18 +22,21 @@
 using namespace std;
 class Funnel{
 	private:
-		ActionBlock actionBlock_;
+		/*
+		* Pas besoin de les mettre en attribut, ils vont etre crée (par smart pointer, voyons) dans les méthodes.
+		*/	
+		/*ActionBlock actionBlock_;
 		ActionDodge actionDodge_;
 		ActionFoul actionFoul_;
 		ActionGoFotIt actionGoForIt_;
 		ActionPass actionPass_;
-		ActionStandUp actionStandUp_;
+		ActionStandUp actionStandUp_;*/
 		Player player_;
 		Game game_;
 		Team team1_;
 		Team team2_;
 	public:
-		Funnel(ActionBlock actionBlock, ActionDodge actionDodge, ActionFoul actionFoul, ActionGoFotIt actionGoForIt, ActionPass actionPass, ActionStandUp actionStandUp, Player player, Game game, Team team1, Team team2);
+		Funnel(/*ActionBlock actionBlock, ActionDodge actionDodge, ActionFoul actionFoul, ActionGoFotIt actionGoForIt, ActionPass actionPass, ActionStandUp actionStandUp,*/ Player player, Game game, Team team1, Team team2);
 		~Funnel();
 		
 		void move(String direction);
@@ -44,6 +47,7 @@ class Funnel{
 		void foul(Player joueurCible);
 		void goForIt(String direction);
 		void standUp();
+		void donePlaying();
 		
 		void endTurn();
 		void chooseTeam(String teamType);

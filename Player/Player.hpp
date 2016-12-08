@@ -10,6 +10,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <memory>
 #include "../Status/Playability/Playability.hpp" 
 #include "../Status/Wellbeing/Wellbeing.hpp" 
 #include "../Race/Race.hpp"
@@ -42,8 +43,8 @@ class Player{
 		Race getRace();
 		std::string getName();
 		bool isHoldingBall();		
-		Playability getPlayability();
-		Wellbeing getWellbeing();
+		std::shared_ptr<Playability> getPlayability();
+		std::shared_ptr<Wellbeing> getWellbeing();
 		int getX();
 		int getY();
 
@@ -75,26 +76,11 @@ class Player{
 		bool hasBall_;
 		bool catcher_, thrower_, blocker_, dodger_;
 		int x_, y_;
-		//Playability states
-		Playability playability_;
-		Playability etatFresh_;
-		Playability etatDonePlaying_;
-		Playability etatPassed_;
-		Playability etatMoved_;
-		Playability etatTackle_;
-		Playability etatGFI_;
-		Playability etatBlitz_;
-		Playability etatBlitzMoved_;
-		Playability etatBlitzTackle_;
-		
+	
 		//Wellbeing states
-		Wellbeing etatWellbeing_;
-		Wellbeing etatProne_;
-		Wellbeing etatUp_;
-		Wellbeing etatKnockedDown_;
-		Wellbeing etatKnockedOut_;
-		Wellbeing etatOut_;
-		Wellbeing etatHealthy_;
+	protected:
+		std::shared_ptr<Playability> playabilityState_;
+		std::shared_ptr<Wellbeing> wellbeingState_;
 };
  
  

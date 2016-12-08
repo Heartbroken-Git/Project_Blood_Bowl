@@ -109,6 +109,16 @@ void Tile::setPlayerOn(Player player) {
 }
 
 /**
+ * @brief Méthode mutatrice permettant d'enlever le joueur sur la case
+ * @warning les coordonnées de playerOn_ est mis à -1
+ */
+void Tile::unsetPlayerOn(){
+	*playerOn_.get().setX(-1);
+	*playerOn_.get().setY(-1);
+	playerOn_ = 0;
+}
+
+/**
  * @brief Méthode mutatrice permettant d'éditer la présence ou non de la balle sur la case
  * @param presence la presence ou absence de la balle sur la case
  */

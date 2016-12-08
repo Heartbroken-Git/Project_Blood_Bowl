@@ -14,9 +14,7 @@ using namespace std;
  * @brief Constructeur de BlitzMoved
  * @param joueur, le joueur concerné
  */
-BlitzMoved::BlitzMoved(Player player){
-	player_ = player;
-}
+BlitzMoved::BlitzMoved(){}
 
 
 /**
@@ -24,39 +22,34 @@ BlitzMoved::BlitzMoved(Player player){
  */
 BlitzMoved::~BlitzMoved(){}
 
-Player BlitzMoved::getPlayer(){
-	return player_;
-}
-
-
 
 /**
  * @brief méthode qui change l'etat d'un joueur blitzé en mode joueur blitzé ayant bloqué
  * @details BlitzedMoved ---> BlitzTackled
  */
-void BlitzMoved::blitzTackle(){
-	player_.etatBlitzTackle();
+std::shared_ptr<Playability> BlitzMoved::blitzTackle(){
+	return new BlitzTackled;
 }
 
 /**
  * @brief méthode qui change l'etat d'un joueur blitzé en mode joueur non jouable
  * @details BlitzMoved ---> DonePlaying
  */
-void BlitzMoved::donePlaying(){
-	player_.etatDonePlaying();
+std::shared_ptr<Playability> BlitzMoved::donePlaying(){
+	return new NotPlayable;
 }
 
 /**
  * @brief méthode qui change l'etat d'un joueur blitzé ayant bougé au maximum en mode GFI 
  * @details BlitzMoved ---> GFI
  */
-void BlitzMoved::GpForIt(){
-	player_.etatGoForIt();
+std::shared_ptr<Playability> BlitzMoved::GpForIt(){
+	return new GFI;
 }
 
-void BlitzMoved::tackle(){}
-void BlitzMoved::blitz(){}
-void BlitzMoved::moving(){}
-void BlitzMoved::passer(){}
-void BlitzMoved::blitzMovement(){}
-void BlitzMoved::startPlaying(){}
+std::shared_ptr<Playability> BlitzMoved::tackle(){}
+std::shared_ptr<Playability> BlitzMoved::blitz(){}
+std::shared_ptr<Playability> BlitzMoved::moving(){}
+std::shared_ptr<Playability> BlitzMoved::passer(){}
+std::shared_ptr<Playability> BlitzMoved::blitzMovement(){}
+std::shared_ptr<Playability> BlitzMoved::startPlaying(){}

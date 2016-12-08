@@ -9,22 +9,20 @@
 */
 
 #include "Wellbeing.hpp"
-#include "../../Player/Player.hpp"
+
 class ATerre : public virtual Wellbeing{
     public:
-    ATerre(Player player);
+    ATerre();
     ~ATerre();
-	void goProne();
-	void knockedOut();
-	void getOut();
-	Player getPlayer();
+	std::shared_ptr<Wellbeing> goProne();
+	std::shared_ptr<Wellbeing> knockedOut();
+	std::shared_ptr<Wellbeing> getOut();
 
-	void returnToGame();
-	void getUp();
-	void knockedDown();
-	void backToNormal();
-	private:
-	Player player_;	
+	std::shared_ptr<Wellbeing> returnToGame();
+	std::shared_ptr<Wellbeing> getUp();
+	std::shared_ptr<Wellbeing> knockedDown();
+	std::shared_ptr<Wellbeing> backToNormal();
+
 };
 
 #endif

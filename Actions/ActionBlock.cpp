@@ -108,7 +108,7 @@ void ActionBlock::doAction(Player oppoPlayer){
 	finalRes = diceStack.at(diceChoice - 1);
 	
 	if(finalRes == 1){ //failed block, attacker down
-		actingPlayer_.downed();
+		actingPlayer_.etatATerre();
 		std::cout << "Et voila! Il est à terre pour tenter un blockage! Comme quoi il ne faut pas embaucher des amateurs!" <<std::endl;
 	
 	}else if(finalRes == 2){ 
@@ -198,7 +198,7 @@ void ActionBlock::pushed(Player oppoPlayer){
 		game_.pushBack(oppoPlayer);
 		std::cout << "Et il s'est fait poussé!" <<std::endl;
 	}else{ //if there's no space, attacking player downed
-		oppoPlayer.downed();
+		oppoPlayer.etatATerre();
 		std::cout << "Manque de place, il s'est fait terrassé" <<std::endl;
 	}
 }
@@ -211,7 +211,7 @@ void ActionBlock::stumble(Player oppoPlayer){
 	if(oppoPlayer.dodges()){
 		pushed(oppoPlayer);
 	}else{
-		oppoPlayer.downed();
+		oppoPlayer.etatATerre();
 		std::cout << "OUCH! Ca doit faire mal, ça!" <<std::endl;
 	}
 }

@@ -14,9 +14,7 @@ using namespace std;
  * @brief Constructeur de GFI
  * @param joueur, le joueur concerné
  */
-GFI::GFI(Player player){
-	player_ = player;
-}
+GFI::GFI(){}
 
 
 /**
@@ -24,23 +22,19 @@ GFI::GFI(Player player){
  */
 GFI::~GFI(){}
 
-Player GFI::getPlayer(){
-	return player_;
-}
-
 /**
  * @brief méthode qui change l'etat d'un joueur GFIé en mode joueur non jouable
  * @details GoForIt ---> DonePlaying
  */
-void GFI::donePlaying(){
-	player_.etatDonePlaying();
+std::shared_ptr<Playability> GFI::donePlaying(){
+	return new NotPlayable;
 }
 
-void GFI::tackle(){}
-void GFI::blitz(){}
-void GFI::moving(){}
-void GFI::passer(){}
-void GFI::GoForIt(){}
-void GFI::startPlaying(){}
-void GFI::GFIMovement(){}
-void GFI::GFITackle(){}
+std::shared_ptr<Playability> GFI::tackle(){}
+std::shared_ptr<Playability> GFI::blitz(){}
+std::shared_ptr<Playability> GFI::moving(){}
+std::shared_ptr<Playability> GFI::passer(){}
+std::shared_ptr<Playability> GFI::GoForIt(){}
+std::shared_ptr<Playability> GFI::startPlaying(){}
+std::shared_ptr<Playability> GFI::GFIMovement(){}
+std::shared_ptr<Playability> GFI::GFITackle(){}

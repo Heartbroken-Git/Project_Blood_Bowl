@@ -14,9 +14,7 @@ using namespace std;
  * @brief Constructeur de Out
  * @param joueur, le joueur concerné
  */
-Out::Out(Player player){
-	player_ = player;
-}
+Out::Out(){}
 
 
 /**
@@ -24,15 +22,11 @@ Out::Out(Player player){
  */
 Out::~Out(){}
 
-Player Out::getPlayer(){
-	return player_;
-}
-
-void Out::getUp(){}
-void Out::knockedOut(){}
-void Out::knockedDown(){}
-void Out::getOut(){}
-void Out::goProne(){}
-void Out::returnToGame(){}
-void Out::backToNormal(){}
+std::shared_ptr<Wellbeing> Out::getUp(){}
+std::shared_ptr<Wellbeing> Out::knockedOut(){}
+std::shared_ptr<Wellbeing> Out::knockedDown(){}
+std::shared_ptr<Wellbeing> Out::getOut(){}
+std::shared_ptr<Wellbeing> Out::goProne(){}
+std::shared_ptr<Wellbeing> Out::returnToGame(){}
+std::shared_ptr<Wellbeing> Out::backToNormal(){}
 

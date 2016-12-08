@@ -19,34 +19,17 @@ Player::Player(){
 	agi_ = 0;
 	arm_ = 0;
 	name_="";
-	race_ = new Race();
 	x_ = 0;
 	y_ = 0;
 	
 	/*
 	* @brief Playability setter
 	*/
-	etatFresh_ = new Fresh(this);
-	etatDonePlaying_ = new NotPlayable(this);
-	etatPassed_ = new Passed(this); 
-	etatMoved_ = new Moved(this);
-	etatTackle_ = new Tackled(this);
-	etatGFI_ = new GFI(this);
-	etatBlitz_ = new Blitzed(this);
-	etatBlitzMoved_ = new BlitzMoved(this);
-	etatBlitzTackle_ = new BlitzTackled(this);
-	playability_ = etatFresh_;
-	
+	playabilityState_ new Fresh;
 	/*
 	* @brief Wellbeing setter
 	*/
-	etatWellbeing_ = etatHealthy_;
-	etatProne_ = new Prone(this);
-	etatUp_ = new HalfHealthy(this);
-	etatKnockedDown_ = new ATerre(this);
-	etatKnockedOut_ = new KO(this);
-	etatOut_ = new Out(this);
-	etatHealthy_ = new Healthy(this);
+	wellbeingState_ new Healthy;
 	
 	
 }
@@ -56,7 +39,6 @@ Player::~Player(){
 
 }
 
-//COMMENTER SUR CHAQUE GETTERS
 int Player::getMvt(){return mvt_;}
 int Player::getStr(){return str_;}
 int Player::getAgi(){return agi_;}
@@ -65,18 +47,14 @@ bool Player::block(){return blocker_;}
 bool Player::pass(){return thrower_;}
 bool Player::dodges(){return dodger_;}
 bool Player::catches(){return catcher_;}
-Playability Player::getPlayability();{return playability_;}
-Playability Player::getWellbeing();{return wellbeing_;}
+Playability Player::getPlayability();{return *playabilityState_.get();}
+Wellbeing Player::getWellbeing();{rreturn *wellbeingState_.get();}
 string Player::getName(){return name_;}
 Race getRace(){return race_;}
 bool Player::isHoldingBall(){return hasBall_;}
 int Player::getX(){return x_;}
 int Player::getY(){return y_;}
-	
-//COMMENTER SUR CHAQUE SETTERS
-/*
-* Setters inutiles
-*/
+
 void Player::setMvt(int mouvementAllowance){mvt_ = mouvementAllowance;}
 void Player::setStr(int strength){str_ = strength;}
 void Player::setAgi(int agility){agi_ = agility;}
@@ -100,22 +78,112 @@ void Player::displayPlayer() {
 /*
 * State setters
 */
-void Player::etatPassed(){playability_ = etatPassed_;}
-void Player::etatMoved(){playability_ = etatMoved_;}
-void Player::etatTackle(){playability_ = etatTackle_;}
-void Player::etatGFI(){playability_ = etatGFI_;}
-void Player::etatBlitz(){playability_ = etatBlitz_;}
-void Player::etatBlitzMoved(){playability_ = etatBlitzMoved_;}
-void Player::etatBlitzTackle(){playability_ = etatBlitzTackle_;}
-void Player::etatDonePlaying(){playability_ = etatDonePlaying_;}
-void Player::etatFresh(){playability_ = etatFresh_;}
+void Player::etatPassed(){
+	if(playabilityState_){
+		std::shared_ptr<Playability> stockPlayability = playabilityState_ -> passer();
+		delete playabilityState;
+		playabilityState_ = stockPlayability;
+	}
+}
+void Player::etatMoved(){
+	if(playabilityState_){
+		std::shared_ptr<Playability> stockPlayability = playabilityState_ -> moving();
+		delete playabilityState;
+		playabilityState_ = stockPlayability;
+	}		
+}
+void Player::etatTackle(){
+	if(playabilityState_){
+		std::shared_ptr<Playability> stockPlayability = playabilityState_ -> tackle();
+		delete playabilityState;
+		playabilityState_ = stockPlayability;
+	}
+}
+void Player::etatGFI(){
+	if(playabilityState_){
+		std::shared_ptr<Playability> stockPlayability = playabilityState_ -> GoForIt();
+		delete playabilityState;
+		playabilityState_ = stockPlayability;
+	}
+}
+void Player::etatBlitz(){	
+	if(playabilityState_){
+		std::shared_ptr<Playability> stockPlayability = playabilityState_ -> blitz();
+		delete playabilityState;
+		playabilityState_ = stockPlayability;
+	}
+}
+void Player::etatBlitzMoved(){
+	if(playabilityState_){
+		std::shared_ptr<Playability> stockPlayability = playabilityState_ -> blitzMovement();
+		delete playabilityState;
+		playabilityState_ = stockPlayability;
+	}
+}
+void Player::etatBlitzTackle(){
+	if(playabilityState_){
+		std::shared_ptr<Playability> stockPlayability = playabilityState_ -> blitzTackle();
+		delete playabilityState;
+		playabilityState_ = stockPlayability;
+	}
+}
+void Player::etatDonePlaying(){
+	if(playabilityState_){
+		std::shared_ptr<Playability> stockPlayability = playabilityState_ -> donePlaying();
+		delete playabilityState;
+		playabilityState_ = stockPlayability;
+	}
+}
+void Player::etatFresh(){
+	if(playabilityState_){
+		std::shared_ptr<Playability> stockPlayability = playabilityState_ -> startPlaying();
+		delete playabilityState;
+		playabilityState_ = stockPlayability;
+	}
+}
 
-void Player::etatProne(){wellbeing_ = etatProne_;}
-void Player::etatHalfHealthy(){wellbeing_ = etatUp_;}
-void Player::etatATerre(){wellbeing_ = etatKnockedDown_;}
-void Player::etatKO(){wellbeing_ = etatKnockedOut_;}
-void Player::etatOut(){wellbeing_ = etatOut_;}
-void Player::etatHealthy(){wellbeing_ = etatHealthy_;}
+void Player::etatProne(){
+	if(wellbeingState_){
+		std::shared_ptr<Wellbeing> stockWellbeing = wellbeingState_ -> goProne();
+		delete wellbeingState_;
+		wellbeingState_ = stockWellbeing;
+	}
+}
+void Player::etatHalfHealthy(){
+	if(wellbeingState_){
+		std::shared_ptr<Wellbeing> stockWellbeing = wellbeingState_ -> getUp();
+		delete wellbeingState_;
+		wellbeingState_ = stockWellbeing;
+	}
+}
+void Player::etatATerre(){
+	if(wellbeingState_){
+		std::shared_ptr<Wellbeing> stockWellbeing = wellbeingState_ -> knockedDown();
+		delete wellbeingState_;
+		wellbeingState_ = stockWellbeing;
+	}
+}
+void Player::etatKO(){
+	if(wellbeingState_){
+		std::shared_ptr<Wellbeing> stockWellbeing = wellbeingState_ -> knockedOut();
+		delete wellbeingState_;
+		wellbeingState_ = stockWellbeing;
+	}
+}
+void Player::etatOut(){
+	if(wellbeingState_){
+		std::shared_ptr<Wellbeing> stockWellbeing = wellbeingState_ -> getOut();
+		delete wellbeingState_;
+		wellbeingState_ = stockWellbeing;
+	}
+}
+void Player::etatHealthy(){
+	if(wellbeingState_){
+		std::shared_ptr<Wellbeing> stockWellbeing = wellbeingState_ -> backToNormal();
+		delete wellbeingState_;
+		wellbeingState_ = stockWellbeing;
+	}
+}
 
 
 
