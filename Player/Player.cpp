@@ -81,63 +81,63 @@ void Player::displayPlayer() {
 void Player::etatPassed(){
 	if(playabilityState_){
 		std::shared_ptr<Playability> stockPlayability = playabilityState_ -> passer();
-		delete playabilityState;
+		delete playabilityState_;
 		playabilityState_ = stockPlayability;
 	}
 }
 void Player::etatMoved(){
 	if(playabilityState_){
 		std::shared_ptr<Playability> stockPlayability = playabilityState_ -> moving();
-		delete playabilityState;
+		delete playabilityState_;
 		playabilityState_ = stockPlayability;
 	}		
 }
 void Player::etatTackle(){
 	if(playabilityState_){
 		std::shared_ptr<Playability> stockPlayability = playabilityState_ -> tackle();
-		delete playabilityState;
+		delete playabilityState_;
 		playabilityState_ = stockPlayability;
 	}
 }
 void Player::etatGFI(){
 	if(playabilityState_){
 		std::shared_ptr<Playability> stockPlayability = playabilityState_ -> GoForIt();
-		delete playabilityState;
+		delete playabilityState_;
 		playabilityState_ = stockPlayability;
 	}
 }
 void Player::etatBlitz(){	
 	if(playabilityState_){
 		std::shared_ptr<Playability> stockPlayability = playabilityState_ -> blitz();
-		delete playabilityState;
+		delete playabilityState_;
 		playabilityState_ = stockPlayability;
 	}
 }
 void Player::etatBlitzMoved(){
 	if(playabilityState_){
 		std::shared_ptr<Playability> stockPlayability = playabilityState_ -> blitzMovement();
-		delete playabilityState;
+		delete playabilityState_;
 		playabilityState_ = stockPlayability;
 	}
 }
 void Player::etatBlitzTackle(){
 	if(playabilityState_){
 		std::shared_ptr<Playability> stockPlayability = playabilityState_ -> blitzTackle();
-		delete playabilityState;
+		delete playabilityState_;
 		playabilityState_ = stockPlayability;
 	}
 }
 void Player::etatDonePlaying(){
 	if(playabilityState_){
 		std::shared_ptr<Playability> stockPlayability = playabilityState_ -> donePlaying();
-		delete playabilityState;
+		delete playabilityState_;
 		playabilityState_ = stockPlayability;
 	}
 }
 void Player::etatFresh(){
 	if(playabilityState_){
 		std::shared_ptr<Playability> stockPlayability = playabilityState_ -> startPlaying();
-		delete playabilityState;
+		delete playabilityState_;
 		playabilityState_ = stockPlayability;
 	}
 }

@@ -197,7 +197,25 @@ void Funnel::donePlaying(){
 }
 /////////////////////////////////////////////////////Commandes Jeu///////////////////////////////////////////////
 
-
+Player Funnel::findPlayer(std::String name){
+	/*
+	* recherche dans Team1
+	*/	
+	for (int i = 0; i < GLOBAL_CONST_TEAMROSTERSIZE; ++i) {
+		if (game_.getTeam1().getPlayer(i).getName() == name) {
+			return game_.getTeam1().getPlayer(i).;
+		}
+	}
+	
+	/*
+	* recherche dans Team2
+	*/
+	for (int i = 0; i < GLOBAL_CONST_TEAMROSTERSIZE; ++i) {
+		if (game_.getTeam2().getPlayer(i).getName() == name) {
+			return game_.getTeam1().getPlayer(i).;
+		}
+	}
+}
 
 
 

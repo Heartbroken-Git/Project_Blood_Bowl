@@ -54,6 +54,8 @@ class Funnel{
 		void chooseTeam(String teamType);
 		void chooseRace(String raceType);
 		void teamName(String name);
+		
+		Player findPlayer(std::String name);
 }
 
 #endif

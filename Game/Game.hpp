@@ -36,10 +36,16 @@ public:
 	bool nextToPlayer(Player player1, Player player2);
 	int oppoAdjac(Player player);
 	int getPlayerTeam(Player);
-	void turnover(Player player);
 	int outnumbered(Player player);
 	int freeSpot(Player player);
 	void pushBack(Player oppoPlayer);
+	
+	Team getTeam1();
+	Team getTeam2();
+
+	void turnover(Player player);
+	void endTurn();
+	void startTurn();
 
 private:
 	Ball ball_; 
@@ -47,6 +53,10 @@ private:
 	Team team1_;
 	Team team2_;
 	std::vector<Player> players_;
+	
+protected:
+	std::shared_ptr<GameState> gameStateTeam1_;
+	std::shared_ptr<GameState> gameStateTeam2_;
  
 };
 
