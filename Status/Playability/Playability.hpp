@@ -14,8 +14,8 @@
 
 class Playability{
     public:
-    Playability();
-    ~Playability();
+    Playability(){}
+    ~Playability(){}
 	virtual std::shared_ptr<Playability> passer()=0; //etatPassed()
 	virtual std::shared_ptr<Playability> moving()=0; //etatMoved()
 	virtual std::shared_ptr<Playability> tackle()=0; //etatTackle()
