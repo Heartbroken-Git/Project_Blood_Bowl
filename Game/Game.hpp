@@ -25,7 +25,7 @@ using namespace std;
 
 /**
  * @class Game
- * @brief Classe décirvant une partie en cours et gérant le fonctionnement de celle-ci
+ * @brief Classe décrivant une partie en cours et gérant le fonctionnement de celle-ci
  */
 class Game{
 public:
@@ -34,11 +34,12 @@ public:
 	Ball getBall();
 	int tileDist(Player player1, Player player2);
 	bool nextToPlayer(Player player1, Player player2);
-	int oppoAdjac(Player player1, Player player2);
+	int oppoAdjac(Player player);
+	int getPlayerTeam(Player);
 	void turnover(Player player);
 	int outnumbered(Player player);
 	int freeSpot(Player player);
-	pushBack(oppoPlayer);
+	void pushBack(Player oppoPlayer);
               
 private:
 	Ball ball_; 
