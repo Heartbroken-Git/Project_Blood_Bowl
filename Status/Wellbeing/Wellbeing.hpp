@@ -14,8 +14,8 @@
 
 class Wellbeing{
     public:
-    Wellbeing();
-    ~Wellbeing();
+    Wellbeing() {}
+    ~Wellbeing(){}
 	virtual std::shared_ptr<Wellbeing> goProne()=0; //etatProne()
 	virtual std::shared_ptr<Wellbeing> getUp()=0; //etatHalfHealthy()
 	virtual std::shared_ptr<Wellbeing> knockedDown()=0; //etatATerre()
