@@ -71,7 +71,7 @@ class Player{
 		
 	private:
 		int mvt_, str_, agi_, arm_;
-		string name_, race_;
+		string name_;
 		Race race_;
 		bool hasBall_;
 		bool catcher_, thrower_, blocker_, dodger_;
