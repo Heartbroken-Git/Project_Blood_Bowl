@@ -28,7 +28,7 @@ StartTurn::~StartTurn(){}
  */
 
 std::shared_ptr<GameState> StartTurn::endTurnNormal(){
-	return new EndTurn;
+	return std::make_shared<EndTurn>();
 }
 
 /**
@@ -36,7 +36,7 @@ std::shared_ptr<GameState> StartTurn::endTurnNormal(){
  * @details Normal Turn ---> End of Turn (via un turnover)
  */
 std::shared_ptr<GameState> StartTurn::turnover(){
-	return new EndTurn;
+	return std::make_shared<EndTurn>();
 }
 
 std::shared_ptr<GameState> StartTurn::startTurn(){}

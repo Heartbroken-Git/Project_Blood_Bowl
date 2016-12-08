@@ -26,7 +26,7 @@ HalfHealthy::~HalfHealthy(){}
  * @details HalfHealthy est maintenant Prone
  */
 std::shared_ptr<Wellbeing> HalfHealthy::goProne(){
-		return new Prone;
+		return std::make_shared<Prone>();
 }
 
 /**
@@ -34,7 +34,7 @@ std::shared_ptr<Wellbeing> HalfHealthy::goProne(){
  * @details HalfHealthy est maintenant ATerre
  */
 std::shared_ptr<Wellbeing> HalfHealthy::knockedDown(){
-	return new ATerre;
+	return std::make_shared<ATerre>();
 }
  
  /**
@@ -42,7 +42,7 @@ std::shared_ptr<Wellbeing> HalfHealthy::knockedDown(){
  * @details HalfHealthy est maintenant KO
  */
  std::shared_ptr<Wellbeing> HalfHealthy::knockedOut(){
-	 return new KO;
+	 return std::make_shared<KO>();
  }
  
   /**
@@ -50,7 +50,7 @@ std::shared_ptr<Wellbeing> HalfHealthy::knockedDown(){
  * @details HalfHealthy est maintenant hors du jeu
  */
  std::shared_ptr<Wellbeing> HalfHealthy::getOut(){
-	return new Out;
+	return std::make_shared<Out>();
  }
  
    /**
@@ -58,7 +58,7 @@ std::shared_ptr<Wellbeing> HalfHealthy::knockedDown(){
  * @details HalfHealthy est maintenant Healthy
  */
 std::shared_ptr<Wellbeing> HalfHealthy::backToNormal(){
-	return new Healthy;
+	return std::make_shared<Healthy>();
 }
 
 std::shared_ptr<Wellbeing> HalfHealthy::returnToGame(){}

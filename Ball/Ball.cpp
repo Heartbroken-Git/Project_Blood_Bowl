@@ -29,7 +29,7 @@ Ball::Ball(int x, int y, Grid grid){
 Ball::~Ball(){}
 
 Player Ball::getHolder(){
-  return *holder_.get()
+  return *holder_.get();
 }
 Tile Ball::getLocation(){
   return location_;

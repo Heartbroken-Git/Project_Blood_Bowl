@@ -27,7 +27,7 @@ GFI::~GFI(){}
  * @details GoForIt ---> DonePlaying
  */
 std::shared_ptr<Playability> GFI::donePlaying(){
-	return new NotPlayable;
+	return std::make_shared<NotPlayable>();
 }
 
 std::shared_ptr<Playability> GFI::tackle(){}

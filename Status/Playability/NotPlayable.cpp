@@ -27,7 +27,7 @@ NotPlayable::~NotPlayable(){}
  * @details NotPlayable ---> Fresh
  */
 std::shared_ptr<Playability> NotPlayable::startPlaying(){
-	return new Fresh;
+	return std::make_shared<Fresh>();
 }
 
 std::shared_ptr<Playability> NotPlayable::donePlaying(){}

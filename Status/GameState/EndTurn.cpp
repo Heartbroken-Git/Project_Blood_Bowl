@@ -27,7 +27,7 @@ EndTurn::~EndTurn(){}
  */
 
 std::shared_ptr<GameState> EndTurn::startTurn(){
-	return new StartTurn;
+	return std::make_shared<StartTurn>();
 }
 
 std::shared_ptr<GameState> EndTurn::turnover(){}

@@ -28,7 +28,7 @@ Moved::~Moved(){}
  * @details Moved ---> DonePlaying
  */
 std::shared_ptr<Playability> Moved::donePlaying(){
-	return new NotPlayable;
+	return std::make_shared<NotPlayable>();
 }
 
 /**
@@ -36,7 +36,7 @@ std::shared_ptr<Playability> Moved::donePlaying(){
  * @details Moved ---> GFI
  */
 std::shared_ptr<Playability> Moved::GoForIt(){
-	return new GFI;
+	return std::make_shared<GFI>();
 }
 
 /**
@@ -44,7 +44,7 @@ std::shared_ptr<Playability> Moved::GoForIt(){
  * @details Moved ---> Played
  */
 std::shared_ptr<Playability> Moved::passer(){
-	return new Passed;
+	return std::make_shared<Passed>();
 }
 
 

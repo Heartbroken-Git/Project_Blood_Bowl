@@ -28,7 +28,7 @@ ATerre::~ATerre(){}
  * @details ATerre devient maintenant Prone
  */
 std::shared_ptr<Wellbeing> ATerre::goProne(){
-	return new Prone;
+	return std::make_shared<Prone>();
 }
 
 /**
@@ -36,7 +36,7 @@ std::shared_ptr<Wellbeing> ATerre::goProne(){
  * @details ATerre devient maintenant Assomé
  */
 std::shared_ptr<Wellbeing> ATerre::knockedOut(){
-	return new KO;
+	return std::make_shared<KO>();
 }
 
 /**
@@ -44,7 +44,7 @@ std::shared_ptr<Wellbeing> ATerre::knockedOut(){
  * @details Le joueur n'est plus en jeu
  */
 std::shared_ptr<Wellbeing> ATerre::getOut(){
-	return new Out;
+	return std::make_shared<Out>();
 }
 
 std::shared_ptr<Wellbeing> ATerre::returnToGame(){}

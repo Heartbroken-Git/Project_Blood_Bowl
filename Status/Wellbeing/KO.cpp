@@ -27,7 +27,7 @@ KO::~KO(){}
  * @details Ko est maintenant Healthy
  */
 std::shared_ptr<Wellbeing> KO::returnToGame(){
-	return new Healthy;	
+	return std::make_shared<Healthy>();	
 }
 
 std::shared_ptr<Wellbeing> KO::getUp(){}

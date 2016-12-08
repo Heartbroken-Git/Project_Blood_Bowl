@@ -27,7 +27,7 @@ Tackled::~Tackled(){}
  * @details Tackled ---> DonePlaying
  */
 std::shared_ptr<Playability> Tackled::donePlaying(){
-	return new NotPlayable;
+	return std::make_shared<NotPlayable>();
 }
 
 std::shared_ptr<Playability> Tackled::GoForIt(){}

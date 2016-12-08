@@ -26,7 +26,7 @@ Passed::~Passed(){}
  * @details Passed ---> DonePlaying
  */
 std::shared_ptr<Playability> Passed::donePlaying(){
-	return new NotPlayable;
+	return std::make_shared<NotPlayable>();
 }
 
 std::shared_ptr<Playability> Passed::GoForIt(){}

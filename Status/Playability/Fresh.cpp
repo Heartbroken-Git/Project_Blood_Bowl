@@ -27,7 +27,7 @@ Fresh::~Fresh(){}
  * @details Fresh ---> DonePlaying
  */
 std::shared_ptr<Playability> Fresh::donePlaying(){
-	return new NotPlayable;
+	return std::make_shared<NotPlayable>();
 }
 
 /**
@@ -35,7 +35,7 @@ std::shared_ptr<Playability> Fresh::donePlaying(){
  * @details Fresh ---> Tackled
  */
 std::shared_ptr<Playability> Fresh::tackle(){
-	return new Tackled;
+	return std::make_shared<Tackled>();
 }
 
 /**
@@ -43,7 +43,7 @@ std::shared_ptr<Playability> Fresh::tackle(){
  * @details Fresh ---> Blitzed
  */
 std::shared_ptr<Playability> Fresh::blitz(){
-	return new Blitzed;
+	return std::make_shared<Blitzed>();
 }
 
 /**
@@ -51,7 +51,7 @@ std::shared_ptr<Playability> Fresh::blitz(){
  * @details Fresh ---> Moved
  */
 std::shared_ptr<Playability> Fresh::moving(){
-	return new Moved;
+	return std::make_shared<Moved>();
 }
 
 /**
@@ -59,7 +59,7 @@ std::shared_ptr<Playability> Fresh::moving(){
  * @details Fresh ---> Passed
  */
 std::shared_ptr<Playability> Fresh::passer(){
-	return new Passed;
+	return std::make_shared<Passed>();
 }
 
 std::shared_ptr<Playability> Fresh::blitzMovement(){}

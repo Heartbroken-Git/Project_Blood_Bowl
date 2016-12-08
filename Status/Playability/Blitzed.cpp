@@ -27,7 +27,7 @@ Blitzed::~Blitzed(){}
  * @details Blited ---> BlitzMoved
  */
 std::shared_ptr<Playability> Blitzed::blitzMovement(){
-	return new Moved;
+	return std::make_shared<Moved>();
 }
 
 /**
@@ -35,7 +35,7 @@ std::shared_ptr<Playability> Blitzed::blitzMovement(){
  * @details Blited ---> BlitzTackled
  */
 std::shared_ptr<Playability> Blitzed::blitzTackle(){
-	return new Tackled;
+	return std::make_shared<Tackled>();
 }
 
 /**
@@ -43,7 +43,7 @@ std::shared_ptr<Playability> Blitzed::blitzTackle(){
  * @details Blited ---> DonePlaying
  */
 std::shared_ptr<Playability> Blitzed::donePlaying(){
-	return new NotPlayable();
+	return std::make_shared<NotPlayable>();
 }
 
 std::shared_ptr<Playability> Blitzed::tackle(){}

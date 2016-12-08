@@ -27,7 +27,7 @@ Prone::~Prone(){}
  * @details Prone devient maintenant HalfHealthy (-3 mouvement, pas de tackle)
  */
 std::shared_ptr<Wellbeing> Prone::getUp(){
-	return new HalfHealthy;	
+	return std::make_shared<HalfHealthy>();
 }
 
 /**
@@ -35,14 +35,14 @@ std::shared_ptr<Wellbeing> Prone::getUp(){
  * @details Prone devient maintenant Assomé
  */
 std::shared_ptr<Wellbeing> Prone::knockedOut(){
-	return new KO;
+	return std::make_shared<KO>();
 }
 /**
  * @brief méthode qui change l'etat d'un joueur qui est mis sur le ventre... encore
  * @details Prone devient maintenant ATerre
  */
 std::shared_ptr<Wellbeing> Prone::knockedDown(){
-	return new ATerre;	
+	return std::make_shared<ATerre>();	
 }
 
 /**
@@ -50,7 +50,7 @@ std::shared_ptr<Wellbeing> Prone::knockedDown(){
  * @details Le joueur n'est plus en jeu
  */
 std::shared_ptr<Wellbeing> Prone::getOut(){
-	return new Out;
+	return std::make_shared<Out>();
 }
 
 std::shared_ptr<Wellbeing> Prone::goProne(){}
