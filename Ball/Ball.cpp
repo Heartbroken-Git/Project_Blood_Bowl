@@ -13,6 +13,7 @@ Ball::Ball(int x, int y, Grid grid){
   grid_ = grid;
   x_ = x;
   y_ = y;
+  Dice d6 (1, 6);
   if(grid_.getTile(x_, y_).isPlayerOn()){
    diceResult6 = d6.throwDiceSingle();
    if(diceResult6 + grid_.getTile(x_, y_).getPlayerOn().getAgi() < 7){
@@ -50,9 +51,9 @@ bool Ball::isHeldByPlayer(){
 
 void Ball::bounce(){
   grid_.getTile(x_,y_).setBallOn(false);
-  Dice d8 = new Dice(1, 8);
+  Dice d8 (1, 8);
   unsigned int diceResult8;
-  Dice d6 = new Dice(1, 6);
+  Dice d6 (1, 6);
   unsigned int diceResult6;  
   diceResult8 = d8.throwDiceSingle();
  
