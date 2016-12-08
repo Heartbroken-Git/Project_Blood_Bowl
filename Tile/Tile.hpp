@@ -40,6 +40,7 @@ class Tile {
 		bool isBallOn();
 		bool isPlayerOn();
 		void setPlayerOn(Player);
+		void unsetPlayerOn();
 		void setBallOn(bool);
 		string toString();
 		void displayTile();

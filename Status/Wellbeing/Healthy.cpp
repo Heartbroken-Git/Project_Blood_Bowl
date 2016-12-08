@@ -14,9 +14,7 @@ using namespace std;
  * @brief Constructeur de Healthy
  * @param joueur, le joueur concerné
  */
-Healthy::Healthy(Player player){
-	player_ = player;
-}
+Healthy::Healthy(){}
 
 
 /**
@@ -24,43 +22,39 @@ Healthy::Healthy(Player player){
  */
 Healthy::~Healthy(){}
 
-Player Healthy::getPlayer(){
-	return player_;
-}
-
 /**
  * @brief méthode qui change l'etat d'un joueur qui est mis sur son dos
  * @details Healthy est maintenant Prone
  */
-void Healthy::goProne(){
-		player_.etatProne();
+std::shared_ptr<Wellbeing> Healthy::goProne(){
+		return new Prone;
 }
 
 /**
  * @brief méthode qui change l'etat d'un joueur qui est mis sur le ventre
  * @details Healthy est maintenant ATerre
  */
-void Healthy::knockedDown(){
-	player_.etatATerre;
+std::shared_ptr<Wellbeing> Healthy::knockedDown(){
+	return new ATerre;
 }
  
  /**
  * @brief méthode qui change l'etat d'un joueur qui est assomé
  * @details Healthy est maintenant KO
  */
- void Healthy::knockedOut(){
-	 player_.etatKO();
+ std::shared_ptr<Wellbeing> Healthy::knockedOut(){
+	 return new KO;
  }
  
   /**
  * @brief méthode qui change l'etat d'un joueur qui viré du jeu
  * @details Healthy est maintenant hors du jeu
  */
- void Healthy::getOut(){
-	 player_.etatOut();
+ std::shared_ptr<Wellbeing> Healthy::getOut(){
+	 return new Out;
  }
  
-void Healthy::returnToGame(){}
-void Healthy::getUp(){}
-void Healthy::backToNormal(){}
+std::shared_ptr<Wellbeing> Healthy::returnToGame(){}
+std::shared_ptr<Wellbeing> Healthy::getUp(){}
+std::shared_ptr<Wellbeing> Healthy::backToNormal(){}
 

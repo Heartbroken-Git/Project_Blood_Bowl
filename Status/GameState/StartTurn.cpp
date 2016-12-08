@@ -14,39 +14,30 @@ using namespace std;
  * @brief Constructeur de StartTurn
  * @param equipe l'equipe concerné
  */
-StartTurn::StartTurn(Team equipe){
-	equipe_ = equipe;
-}
+StartTurn::StartTurn(){}
 
 /**
  * @brief Destructeur de StartTurn
  */
 StartTurn::~StartTurn(){}
 
-/**
- * @brief méthode retournant l'équipe actif
- * @return l'équipe actif
- */
-Team StartTurn::getEquipe(){
-	return equipe_;
-}
 
 /**
  * @brief méthode qui change l'etat d'une équipe en mode jouable l'équipe actif
  * @details Normal Turn ---> End of Turn
  */
 
-void StartTurn::endTurnNormal(){
-	equipe_.etatFinTour();
+std::shared_ptr<GameState> StartTurn::endTurnNormal(){
+	return new EndTurn;
 }
 
 /**
  * @brief méthode qui change l'etat d'une équipe en mode jouable l'équipe actif
  * @details Normal Turn ---> End of Turn (via un turnover)
  */
-void StartTurn::turnover(){
-	equipe_.etatFinTurnover();
+std::shared_ptr<GameState> StartTurn::turnover(){
+	return new EndTurn;
 }
 
-void StartTurn::startTurn(){}
+std::shared_ptr<GameState> StartTurn::startTurn(){}
 

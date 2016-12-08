@@ -14,9 +14,7 @@ using namespace std;
  * @brief Constructeur de Moved
  * @param joueur, le joueur concerné
  */
-Moved::Moved(Player player){
-	player_ = player;
-}
+Moved::Moved(){}
 
 
 /**
@@ -24,38 +22,35 @@ Moved::Moved(Player player){
  */
 Moved::~Moved(){}
 
-Player Moved::getPlayer(){
-	return player_;
-}
 
 /**
  * @brief méthode qui change l'etat d'un joueur Movedé en mode joueur non jouable
  * @details Moved ---> DonePlaying
  */
-void Moved::donePlaying(){
-	player_.etatDonePlaying();
+std::shared_ptr<Playability> Moved::donePlaying(){
+	return new NotPlayable;
 }
 
 /**
  * @brief méthode qui change l'etat d'un joueur Movedé en mode joueur non jouable
  * @details Moved ---> GFI
  */
-void Moved::GoForIt(){
-	player_.etatGFI();
+std::shared_ptr<Playability> Moved::GoForIt(){
+	return new GFI;
 }
 
 /**
  * @brief méthode qui change l'etat d'un joueur Movedé en mode joueur non jouable
  * @details Moved ---> Played
  */
-void Moved::passer(){
-	player_.etatPassed();
+std::shared_ptr<Playability> Moved::passer(){
+	return new Passed;
 }
 
 
-void Moved::tackle(){}
-void Moved::blitz(){}
-void Moved::moving(){}
-void Moved::startPlaying(){}
-void Moved::MovedMovement(){}
-void Moved::MovedTackle(){}
+std::shared_ptr<Playability> Moved::tackle(){}
+std::shared_ptr<Playability> Moved::blitz(){}
+std::shared_ptr<Playability> Moved::moving(){}
+std::shared_ptr<Playability> Moved::startPlaying(){}
+std::shared_ptr<Playability> Moved::MovedMovement(){}
+std::shared_ptr<Playability> Moved::MovedTackle(){}

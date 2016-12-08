@@ -12,11 +12,8 @@ using namespace std;
 
 /**
  * @brief Constructeur de Passed
- * @param joueur, le joueur concerné
  */
-Passed::Passed(Player player){
-	player_ = player;
-}
+Passed::Passed(){}
 
 
 /**
@@ -24,23 +21,19 @@ Passed::Passed(Player player){
  */
 Passed::~Passed(){}
 
-Player Passed::getPlayer(){
-	return player_;
-}
-
 /**
  * @brief méthode qui change l'etat d'un joueur Passedé en mode joueur non jouable
  * @details Passed ---> DonePlaying
  */
-void Passed::donePlaying(){
-	player_.etatDonePlaying();
+std::shared_ptr<Playability> Passed::donePlaying(){
+	return new NotPlayable;
 }
 
-void Passed::GoForIt(){}
-void Passed::passer(){}
-void Passed::tackle(){}
-void Passed::blitz(){}
-void Passed::moving(){}
-void Passed::startPlaying(){}
-void Passed::PassedMovement(){}
-void Passed::PassedTackle(){}
+std::shared_ptr<Playability> Passed::GoForIt(){}
+std::shared_ptr<Playability> Passed::passer(){}
+std::shared_ptr<Playability> Passed::tackle(){}
+std::shared_ptr<Playability> Passed::blitz(){}
+std::shared_ptr<Playability> Passed::moving(){}
+std::shared_ptr<Playability> Passed::startPlaying(){}
+std::shared_ptr<Playability> Passed::PassedMovement(){}
+std::shared_ptr<Playability> Passed::PassedTackle(){}

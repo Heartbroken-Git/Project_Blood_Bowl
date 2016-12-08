@@ -14,9 +14,7 @@ using namespace std;
  * @brief Constructeur de Fresh
  * @param joueur, le joueur concerné
  */
-Fresh::Fresh(Player player){
-	player_ = player;
-}
+Fresh::Fresh(){}
 
 
 /**
@@ -24,53 +22,49 @@ Fresh::Fresh(Player player){
  */
 Fresh::~Fresh(){}
 
-Player Fresh::getPlayer(){
-	return player_;
-}
-
 /**
  * @brief méthode qui change l'etat d'un joueur fraiche en mode joueur perimé (non jouable)
  * @details Fresh ---> DonePlaying
  */
-void Fresh::donePlaying(){
-	player_.etatDonePlaying();
+std::shared_ptr<Playability> Fresh::donePlaying(){
+	return new NotPlayable;
 }
 
 /**
  * @brief méthode qui change l'etat d'un joueur fraiche en mode joueur qui a bloqué
  * @details Fresh ---> Tackled
  */
-void Fresh::tackle(){
-	player_.etatTackle();
+std::shared_ptr<Playability> Fresh::tackle(){
+	return new Tackled;
 }
 
 /**
  * @brief méthode qui change l'etat d'un joueur fraiche en mode joueur qui est en blitz, prêt pour tout defoncer
  * @details Fresh ---> Blitzed
  */
-void Fresh::blitz(){
-	player_.etatBlitz();
+std::shared_ptr<Playability> Fresh::blitz(){
+	return new Blitzed;
 }
 
 /**
  * @brief méthode qui change l'etat d'un joueur fraiche en mode joueur qui est en mouvement
  * @details Fresh ---> Moved
  */
-void Fresh::moving(){
-	player_.etatMoved();
+std::shared_ptr<Playability> Fresh::moving(){
+	return new Moved;
 }
 
 /**
  * @brief méthode qui change l'etat d'un joueur fraiche en mode joueur qui a passé la balle
  * @details Fresh ---> Passed
  */
-void Fresh::passer(){
-	player_.etatPassed();
+std::shared_ptr<Playability> Fresh::passer(){
+	return new Passed;
 }
 
-void Fresh::blitzMovement(){}
-void Fresh::blitzTackle(){}
-void Fresh::GoForIt(){}
-void Fresh::startPlaying(){}
+std::shared_ptr<Playability> Fresh::blitzMovement(){}
+std::shared_ptr<Playability> Fresh::blitzTackle(){}
+std::shared_ptr<Playability> Fresh::GoForIt(){}
+std::shared_ptr<Playability> Fresh::startPlaying(){}
 
 

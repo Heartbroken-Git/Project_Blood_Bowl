@@ -14,9 +14,7 @@ using namespace std;
  * @brief Constructeur de Prone
  * @param joueur, le joueur concerné
  */
-Prone::Prone(Player player){
-	player_ = player;
-}
+Prone::Prone(){}
 
 
 /**
@@ -24,42 +22,38 @@ Prone::Prone(Player player){
  */
 Prone::~Prone(){}
 
-Player Prone::getPlayer(){
-	return player_;
-}
-
 /**
  * @brief méthode qui change l'etat d'un joueur qui se releve
  * @details Prone devient maintenant HalfHealthy (-3 mouvement, pas de tackle)
  */
-void Prone::getUp(){
-	player_.etatHalfHealthy();	
+std::shared_ptr<Wellbeing> Prone::getUp(){
+	return new HalfHealthy;	
 }
 
 /**
  * @brief méthode qui change l'etat d'un joueur qui est assomé
  * @details Prone devient maintenant Assomé
  */
-void Prone::knockedOut(){
-	player_.etatKO();
+std::shared_ptr<Wellbeing> Prone::knockedOut(){
+	return new KO;
 }
 /**
  * @brief méthode qui change l'etat d'un joueur qui est mis sur le ventre... encore
  * @details Prone devient maintenant ATerre
  */
-void Prone::knockedDown(){
-	player.etatATerre();	
+std::shared_ptr<Wellbeing> Prone::knockedDown(){
+	return new ATerre;	
 }
 
 /**
  * @brief méthode qui change l'etat d'un joueur viré du jeu (mort, blessé grave, prison...)
  * @details Le joueur n'est plus en jeu
  */
-void Prone::getOut(){
-	player_.etatOut();
+std::shared_ptr<Wellbeing> Prone::getOut(){
+	return new Out;
 }
 
-void Prone::goProne(){}
-void Prone::returnToGame(){}
-void Prone::backToNormal(){}
+std::shared_ptr<Wellbeing> Prone::goProne(){}
+std::shared_ptr<Wellbeing> Prone::returnToGame(){}
+std::shared_ptr<Wellbeing> Prone::backToNormal(){}
 

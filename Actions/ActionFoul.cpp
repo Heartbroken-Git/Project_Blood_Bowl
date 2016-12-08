@@ -48,7 +48,7 @@ void ActionFoul::doAction(Player oppoPlayer){
 	Dice d6(1,6);
 	bool reff = false;
 	
-	if (game_.nextToPlayer(actingPlayer_oppoPlayer)){
+	if (game_.nextToPlayer(actingPlayer_,oppoPlayer)){
 		result = d6.throwDiceSingle();
 		stock = d6.throwDiceSingle();
 		if(result == stock){

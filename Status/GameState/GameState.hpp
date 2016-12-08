@@ -8,14 +8,17 @@
  * @brief Fichier hpp définissant l'etat d'un tour de jeu d'une equipe
 */
 
+#include <sstream>
+#include <memory>
+#include <iostream>
 
 class GameState{
     public:
     GameState();
     ~GameState();
-	virtual void startTurn()=0; //etatFinTour()
-	virtual void endTurnNormal()=0; //etatFinTurnover()
-	virtual void turnover()=0; //etatDebTour()
+	virtual std::shared_ptr<GameState> startTurn()=0; //etatFinTour()
+	virtual std::shared_ptr<GameState> endTurnNormal()=0; //etatFinTurnover()
+	virtual std::shared_ptr<GameState> turnover()=0; //etatDebTour()
 	
 	
 };

@@ -14,9 +14,7 @@ using namespace std;
  * @brief Constructeur de KO
  * @param joueur, le joueur concerné
  */
-KO::KO(Player player){
-	player_ = player;
-}
+KO::KO(){}
 
 
 /**
@@ -24,22 +22,18 @@ KO::KO(Player player){
  */
 KO::~KO(){}
 
-Player KO::getPlayer(){
-	return player_;
-}
-
 /**
  * @brief méthode qui change l'etat d'un joueur qui retourne en jeu
  * @details Ko est maintenant Healthy
  */
-void KO::returnToGame(){
-	player_.etatHealthy();	
+std::shared_ptr<Wellbeing> KO::returnToGame(){
+	return new Healthy;	
 }
 
-void KO::getUp(){}
-void KO::knockedOut(){}
-void KO::knockedDown(){}
-void KO::getOut(){}
-void KO::goProne(){}
-void KO::backToNormal(){}
+std::shared_ptr<Wellbeing> KO::getUp(){}
+std::shared_ptr<Wellbeing> KO::knockedOut(){}
+std::shared_ptr<Wellbeing> KO::knockedDown(){}
+std::shared_ptr<Wellbeing> KO::getOut(){}
+std::shared_ptr<Wellbeing> KO::goProne(){}
+std::shared_ptr<Wellbeing> KO::backToNormal(){}
 

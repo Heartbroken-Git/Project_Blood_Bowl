@@ -21,7 +21,7 @@ GameState::GameState(){}
  */
 GameState::~GameState(){}
 
-void GameState::endTurnNormal(){}
-void GameState::turnover(){}
-void GameState::GameState(){}
+std::shared_ptr<GameState> GameState::endTurnNormal(){}
+std::shared_ptr<GameState> GameState::turnover(){}
+std::shared_ptr<GameState> GameState::GameState(){}
 

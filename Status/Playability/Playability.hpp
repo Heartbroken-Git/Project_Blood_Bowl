@@ -8,20 +8,23 @@
  * @brief Fichier hpp définissant l'etat de jouabilité d'un joueur
 */
 
+#include <sstream>
+#include <memory>
+#include <iostream>
 
 class Playability{
     public:
     Playability();
     ~Playability();
-	virtual void passer()=0; //etatPassed()
-	virtual void moving()=0; //etatMoved()
-	virtual void tackle()=0; //etatTackle()
-	virtual void GoForIt()=0; //etatGFI()
-	virtual void blitz()=0; //etatBlitz()
-	virtual void blitzMovement()=0; //etatBlitzMoved()
-	virtual void blitzTackle()=0; //etatBlitzTackle()
-	virtual void donePlaying()=0; //etatDonePlaying()
-	virtual void startPlaying()=0; //etatFresh()
+	virtual std::shared_ptr<Playability> passer()=0; //etatPassed()
+	virtual std::shared_ptr<Playability> moving()=0; //etatMoved()
+	virtual std::shared_ptr<Playability> tackle()=0; //etatTackle()
+	virtual std::shared_ptr<Playability> GoForIt()=0; //etatGFI()
+	virtual std::shared_ptr<Playability> blitz()=0; //etatBlitz()
+	virtual std::shared_ptr<Playability> blitzMovement()=0; //etatBlitzMoved()
+	virtual std::shared_ptr<Playability> blitzTackle()=0; //etatBlitzTackle()
+	virtual std::shared_ptr<Playability> donePlaying()=0; //etatDonePlaying()
+	virtual std::shared_ptr<Playability> startPlaying()=0; //etatFresh()
 };
 
 #endif

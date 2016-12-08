@@ -9,19 +9,16 @@
 */
 
 #include "GameState.hpp"
-#include "../../Team/Team.hpp"
 
 class StartTurn : public virtual GameState{
     public:
-    StartTurn(Team equipe);
+    StartTurn();
     ~StartTurn();
-	void endTurnNormal();
-	void turnover();
-	Team getEquipe();
+	std::shared_ptr<GameState> endTurnNormal();
+	std::shared_ptr<GameState> turnover();
 
-	void startTurn();	
-	private:
-	Team equipe_;
+	std::shared_ptr<GameState> startTurn();	
+
 	
 };
 

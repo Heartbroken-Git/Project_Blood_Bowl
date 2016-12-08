@@ -40,14 +40,13 @@ public:
 	int outnumbered(Player player);
 	int freeSpot(Player player);
 	void pushBack(Player oppoPlayer);
-              
+
 private:
 	Ball ball_; 
 	Grid grid_;
 	Team team1_;
 	Team team2_;
 	std::vector<Player> players_;
-             
  
 };
 

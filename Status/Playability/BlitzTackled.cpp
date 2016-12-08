@@ -12,11 +12,8 @@ using namespace std;
 
 /**
  * @brief Constructeur de BlitzTackled
- * @param joueur, le joueur concerné
  */
-BlitzTackled::BlitzTackled(Player player){
-	player_ = player;
-}
+BlitzTackled::BlitzTackled(){}
 
 
 /**
@@ -24,31 +21,27 @@ BlitzTackled::BlitzTackled(Player player){
  */
 BlitzTackled::~BlitzTackled(){}
 
-Player BlitzTackled::getPlayer(){
-	return player_;
-}
-
 /**
  * @brief méthode qui change l'etat d'un joueur blitzé en mode joueur blitzé ayant bougé
  * @details BlitzTackled ---> BlitzMoved
  */
-void BlitzTackled::blitzMovement(){
-	player_.etatBlitzMoved();
+std::shared_ptr<Playability> BlitzTackled::blitzMovement(){
+	return new BlitzMoved;
 }
 
 /**
  * @brief méthode qui change l'etat d'un joueur blitzé en mode joueur non jouable
  * @details BlitzTackled ---> DonePlaying
  */
-void BlitzTackled::donePlaying(){
-	player_.etatDonePlaying();
+std::shared_ptr<Playability> BlitzTackled::donePlaying(){
+	return new NotPlayable;
 }
 
-void BlitzTackled::tackle(){}
-void BlitzTackled::blitz(){}
-void BlitzTackled::moving(){}
-void BlitzTackled::passer(){}
-void BlitzTackled::blitzTackle(){}
-void BlitzTackled::GoForIt(){}
-void BlitzTackled::startPlaying(){}
+std::shared_ptr<Playability> BlitzTackled::tackle(){}
+std::shared_ptr<Playability> BlitzTackled::blitz(){}
+std::shared_ptr<Playability> BlitzTackled::moving(){}
+std::shared_ptr<Playability> BlitzTackled::passer(){}
+std::shared_ptr<Playability> BlitzTackled::blitzTackle(){}
+std::shared_ptr<Playability> BlitzTackled::GoForIt(){}
+std::shared_ptr<Playability> BlitzTackled::startPlaying(){}
 
