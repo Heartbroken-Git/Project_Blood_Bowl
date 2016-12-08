@@ -12,11 +12,8 @@ using namespace std;
 
 /**
  * @brief Constructeur de NotPlayable
- * @param joueur, le joueur concerné
  */
-NotPlayable::NotPlayable(Player player){
-	player_ = player;
-}
+NotPlayable::NotPlayable(){}
 
 
 /**
@@ -24,23 +21,20 @@ NotPlayable::NotPlayable(Player player){
  */
 NotPlayable::~NotPlayable(){}
 
-Player NotPlayable::getPlayer(){
-	return player_;
-}
 
 /**
  * @brief méthode qui change l'etat d'un joueur passé en mode jouable
  * @details NotPlayable ---> Fresh
  */
-void NotPlayable::startPlaying(){
-	player_.etatFresh();
+std::shared_ptr<Playability> NotPlayable::startPlaying(){
+	return new Fresh;
 }
 
-void NotPlayable::donePlaying(){}
-void NotPlayable::GoForIt(){}
-void NotPlayable::passer(){}
-void NotPlayable::tackle(){}
-void NotPlayable::blitz(){}
-void NotPlayable::moving(){}
-void NotPlayable::NotPlayableMovement(){}
-void NotPlayable::NotPlayableTackle(){}
+std::shared_ptr<Playability> NotPlayable::donePlaying(){}
+std::shared_ptr<Playability> NotPlayable::GoForIt(){}
+std::shared_ptr<Playability> NotPlayable::passer(){}
+std::shared_ptr<Playability> NotPlayable::tackle(){}
+std::shared_ptr<Playability> NotPlayable::blitz(){}
+std::shared_ptr<Playability> NotPlayable::moving(){}
+std::shared_ptr<Playability> NotPlayable::NotPlayableMovement(){}
+std::shared_ptr<Playability> NotPlayable::NotPlayableTackle(){}

@@ -20,11 +20,11 @@ Wellbeing::Wellbeing(){}
  */
 Wellbeing::~Wellbeing(){}
 
-void Wellbeing::getUp(){}
-void Wellbeing::knockedOut(){}
-void Wellbeing::knockedDown(){}
-void Wellbeing::getOut(){}
-void Wellbeing::goProne(){}
-void Wellbeing::returnToGame(){}
-void Wellbeing::backToNormal(){}
+std::shared_ptr<Wellbeing> Wellbeing::getUp(){}
+std::shared_ptr<Wellbeing> Wellbeing::knockedOut(){}
+std::shared_ptr<Wellbeing> Wellbeing::knockedDown(){}
+std::shared_ptr<Wellbeing> Wellbeing::getOut(){}
+std::shared_ptr<Wellbeing> Wellbeing::goProne(){}
+std::shared_ptr<Wellbeing> Wellbeing::returnToGame(){}
+std::shared_ptr<Wellbeing> Wellbeing::backToNormal(){}
 

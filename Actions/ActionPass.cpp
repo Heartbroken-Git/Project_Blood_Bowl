@@ -56,37 +56,37 @@ void ActionPass::setActingPlayer(Player actingPlayer){
  */
 void ActionPass::doAction(Player playerCible){
 	int diceRes;
-	if(typeid(actingPlayer_.getPlayability()) != typeid(Passed) || typeid(actingPlayer_.getPlayability()) != typeid(NotPlayable)){
-		actingPlayer_.etatPassed();
-		if(game_.nextToPlayer(actingPlayer_,playerCible)){ //close pass
-		
-			diceRes = rollPassDices();
-			if(diceRes > playerCible.getAgi()){ //fail
-				passFail(actingPlayer_);
-			}else{ //success
-				passSuccess(actingPlayer_);
-			}
-		}else if(game_.tileDist(actingPlayer_,playerCible)>= 1 && game_.tileDist(actingPlayer_,playerCible)< 3){ //normal pass
-			if(actingPlayer_.pass()){ //thrower
-				receiveAct(-2, playerCible);
-			}else{ //normal
-				receiveAct(0, playerCible);
-			}
-		}else if(game_.tileDist(actingPlayer_,playerCible) >= 3 && game_.tileDist(actingPlayer_,playerCible) < 6 ){ //long pass
-			if(actingPlayer_.pass()){ //thrower
-				receiveAct(0, playerCible);
-			}else{ //normal
-				receiveAct(2, playerCible);
-			}
-		}else if (game_.tileDist(actingPlayer_,playerCible) >= 6 && game_.tileDist(actingPlayer_,playerCible) < 9 ){ //hail Mary
-			if(actingPlayer_.pass()){ //thrower
-				receiveAct(2, playerCible);
-			}else{ //normal
-				std::cout<<"Trop loin!"<<std::endl;
-				return;
-			}
+
+	actingPlayer_.etatPassed();
+	if(game_.nextToPlayer(actingPlayer_,playerCible)){ //close pass
+	
+		diceRes = rollPassDices();
+		if(diceRes > playerCible.getAgi()){ //fail
+			passFail(actingPlayer_);
+		}else{ //success
+			passSuccess(actingPlayer_);
 		}
-	}	
+	}else if(game_.tileDist(actingPlayer_,playerCible)>= 1 && game_.tileDist(actingPlayer_,playerCible)< 3){ //normal pass
+		if(actingPlayer_.pass()){ //thrower
+			receiveAct(-2, playerCible);
+		}else{ //normal
+			receiveAct(0, playerCible);
+		}
+	}else if(game_.tileDist(actingPlayer_,playerCible) >= 3 && game_.tileDist(actingPlayer_,playerCible) < 6 ){ //long pass
+		if(actingPlayer_.pass()){ //thrower
+			receiveAct(0, playerCible);
+		}else{ //normal
+			receiveAct(2, playerCible);
+		}
+	}else if (game_.tileDist(actingPlayer_,playerCible) >= 6 && game_.tileDist(actingPlayer_,playerCible) < 9 ){ //hail Mary
+		if(actingPlayer_.pass()){ //thrower
+			receiveAct(2, playerCible);
+		}else{ //normal
+			std::cout<<"Trop loin!"<<std::endl;
+			return;
+		}
+	}
+	
 }
 /**
  * @brief Méthode qui fait que la passe à échoué
@@ -133,7 +133,7 @@ void ActionPass::receiveAct(int modif, Player catchingPlayer){
 	unsigned int agi = (unsigned int) catchingPlayer.getAgi();
 	diceRes += modif;
 	if(diceRes > agi && !catchingPlayer.catches()){ //fail, no reroll
-		passFail(catchingPlayer;
+		passFail(catchingPlayer);
 	}else if(diceRes > agi && game_.getPlayer(catchingPlayer).catches()){ //fail, reroll
 		std::cout<<"On va relancer ça! \n";
 		diceRes = rollPassDices();

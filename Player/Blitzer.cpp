@@ -26,7 +26,7 @@ Blitzer::Blitzer(string name, string race){
 			blocker_ = true;
 			dodger_ = false;			
 			name_ = name;
-			race_ = new Human();
+			wellbeingState_ new Human;
 
 		}else if (boost::iequals(race,"orc") || boost::iequals(race,"orque") || boost::iequals(race,"ork")){
 			mvt_ = 6;

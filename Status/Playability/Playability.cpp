@@ -12,7 +12,6 @@ using namespace std;
 
 /**
  * @brief Constructeur de Playability
- * @param joueur, le joueur concerné
  */
 Playability::Playability(){}
 
@@ -23,12 +22,12 @@ Playability::Playability(){}
 Playability::~Playability(){}
 
 
-void Playability::donePlaying(){}
-void Playability::GoForIt(){}
-void Playability::passer(){}
-void Playability::tackle(){}
-void Playability::blitz(){}
-void Playability::moving(){}
-void Playability::startPlaying(){}
-void Playability::PlayabilityMovement(){}
-void Playability::PlayabilityTackle(){}
+std::shared_ptr<Playability> Playability::donePlaying(){}
+std::shared_ptr<Playability> Playability::GoForIt(){}
+std::shared_ptr<Playability> Playability::passer(){}
+std::shared_ptr<Playability> Playability::tackle(){}
+std::shared_ptr<Playability> Playability::blitz(){}
+std::shared_ptr<Playability> Playability::moving(){}
+std::shared_ptr<Playability> Playability::startPlaying(){}
+std::shared_ptr<Playability> Playability::PlayabilityMovement(){}
+std::shared_ptr<Playability> Playability::PlayabilityTackle(){}

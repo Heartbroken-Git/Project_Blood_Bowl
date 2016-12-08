@@ -12,11 +12,8 @@ using namespace std;
 
 /**
  * @brief Constructeur de HalfHealthy
- * @param joueur, le joueur concerné
  */
-HalfHealthy::HalfHealthy(Player player){
-	player_ = player;
-}
+HalfHealthy::HalfHealthy(){}
 
 
 /**
@@ -24,51 +21,47 @@ HalfHealthy::HalfHealthy(Player player){
  */
 HalfHealthy::~HalfHealthy(){}
 
-Player HalfHealthy::getPlayer(){
-	return player_;
-}
-
 /**
  * @brief méthode qui change l'etat d'un joueur qui est mis sur son dos
  * @details HalfHealthy est maintenant Prone
  */
-void HalfHealthy::goProne(){
-		player_.etatProne();
+std::shared_ptr<Wellbeing> HalfHealthy::goProne(){
+		return new Prone;
 }
 
 /**
  * @brief méthode qui change l'etat d'un joueur qui est mis sur le ventre
  * @details HalfHealthy est maintenant ATerre
  */
-void HalfHealthy::knockedDown(){
-	player_.etatATerre;
+std::shared_ptr<Wellbeing> HalfHealthy::knockedDown(){
+	return new ATerre;
 }
  
  /**
  * @brief méthode qui change l'etat d'un joueur qui est assomé
  * @details HalfHealthy est maintenant KO
  */
- void HalfHealthy::knockedOut(){
-	 player_.etatKO();
+ std::shared_ptr<Wellbeing> HalfHealthy::knockedOut(){
+	 return new KO;
  }
  
   /**
  * @brief méthode qui change l'etat d'un joueur qui viré du jeu
  * @details HalfHealthy est maintenant hors du jeu
  */
- void HalfHealthy::getOut(){
-	 player_.etatOut();
+ std::shared_ptr<Wellbeing> HalfHealthy::getOut(){
+	return new Out;
  }
  
    /**
  * @brief méthode qui change l'etat d'un joueur qui a regagné son soufle et bien actif
  * @details HalfHealthy est maintenant Healthy
  */
-void HalfHealthy::backToNormal(){
-	player_.etatHealthy();
+std::shared_ptr<Wellbeing> HalfHealthy::backToNormal(){
+	return new Healthy;
 }
 
-void HalfHealthy::returnToGame(){}
-void HalfHealthy::getUp(){}
+std::shared_ptr<Wellbeing> HalfHealthy::returnToGame(){}
+std::shared_ptr<Wellbeing> HalfHealthy::getUp(){}
 
 

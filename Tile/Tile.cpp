@@ -35,6 +35,8 @@ Tile::Tile(int x, int y) {
 Tile::Tile(int x, int y, Player player) {
 	x_ = x;
 	y_ = y;
+	player.setX(x);
+	player.setY(y);
 	playerOn_ = std::shared_ptr<Player> (new Player(player));
 	ballOn_ = false;
 }
@@ -101,7 +103,19 @@ bool Tile::isPlayerOn() {
  * @param player le joueur à mettre sur la case
  */
 void Tile::setPlayerOn(Player player) {
+	player.setX(x);
+	player.setY(y);
 	playerOn_ = std::shared_ptr<Player> (new Player(player));
+}
+
+/**
+ * @brief Méthode mutatrice permettant d'enlever le joueur sur la case
+ * @warning les coordonnées de playerOn_ est mis à -1
+ */
+void Tile::unsetPlayerOn(){
+	*playerOn_.get().setX(-1);
+	*playerOn_.get().setY(-1);
+	playerOn_ = 0;
 }
 
 /**

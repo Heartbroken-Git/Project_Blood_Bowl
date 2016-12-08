@@ -14,9 +14,7 @@ using namespace std;
  * @brief Constructeur de ATerre
  * @param joueur, le joueur concerné
  */
-ATerre::ATerre(Player player){
-	player_ = player;
-}
+ATerre::ATerre(){}
 
 
 /**
@@ -24,36 +22,33 @@ ATerre::ATerre(Player player){
  */
 ATerre::~ATerre(){}
 
-Player ATerre::getPlayer(){
-	return player_;
-}
 
 /**
  * @brief méthode qui change l'etat d'un joueur qui se retourne sur son dos
  * @details ATerre devient maintenant Prone
  */
-void ATerre::goProne(){
-	player_.etatProne();
+std::shared_ptr<Wellbeing> ATerre::goProne(){
+	return new Prone;
 }
 
 /**
  * @brief méthode qui change l'etat d'un joueur qui est assomé
  * @details ATerre devient maintenant Assomé
  */
-void ATerre::knockedOut(){
-	player_.etatKO();
+std::shared_ptr<Wellbeing> ATerre::knockedOut(){
+	return new KO;
 }
 
 /**
  * @brief méthode qui change l'etat d'un joueur viré du jeu (mort, blessé grave, prison...)
  * @details Le joueur n'est plus en jeu
  */
-void ATerre::getOut(){
-	player_.etatOut();
+std::shared_ptr<Wellbeing> ATerre::getOut(){
+	return new Out;
 }
 
-void ATerre::returnToGame(){}
-void ATerre::getUp(){}
-void ATerre::knockedDown(){}
-void ATerre::backToNormal(){}
+std::shared_ptr<Wellbeing> ATerre::returnToGame(){}
+std::shared_ptr<Wellbeing> ATerre::getUp(){}
+std::shared_ptr<Wellbeing> ATerre::knockedDown(){}
+std::shared_ptr<Wellbeing> ATerre::backToNormal(){}
 

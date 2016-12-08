@@ -12,11 +12,8 @@ using namespace std;
 
 /**
  * @brief Constructeur de Tackled
- * @param joueur, le joueur concerné
  */
-Tackled::Tackled(Player player){
-	player_ = player;
-}
+Tackled::Tackled(){}
 
 
 /**
@@ -24,23 +21,20 @@ Tackled::Tackled(Player player){
  */
 Tackled::~Tackled(){}
 
-Player Tackled::getPlayer(){
-	return player_;
-}
 
 /**
  * @brief méthode qui change l'etat d'un joueur Tackledé en mode joueur non jouable
  * @details Tackled ---> DonePlaying
  */
-void Tackled::donePlaying(){
-	player_.etatDonePlaying();
+std::shared_ptr<Playability> Tackled::donePlaying(){
+	return new NotPlayable;
 }
 
-void Tackled::GoForIt(){}
-void Tackled::passer(){}
-void Tackled::tackle(){}
-void Tackled::blitz(){}
-void Tackled::moving(){}
-void Tackled::startPlaying(){}
-void Tackled::TackledMovement(){}
-void Tackled::TackledTackle(){}
+std::shared_ptr<Playability> Tackled::GoForIt(){}
+std::shared_ptr<Playability> Tackled::passer(){}
+std::shared_ptr<Playability> Tackled::tackle(){}
+std::shared_ptr<Playability> Tackled::blitz(){}
+std::shared_ptr<Playability> Tackled::moving(){}
+std::shared_ptr<Playability> Tackled::startPlaying(){}
+std::shared_ptr<Playability> Tackled::TackledMovement(){}
+std::shared_ptr<Playability> Tackled::TackledTackle(){}

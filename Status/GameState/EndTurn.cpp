@@ -14,9 +14,7 @@ using namespace std;
  * @brief Constructeur de EndTurn
  * @param equipe l'equipe concerné
  */
-EndTurn::EndTurn(Team equipe){
-	equipe_ = equipe;
-}
+EndTurn::EndTurn(){}
 
 /**
  * @brief Destructeur de EndTurn
@@ -24,22 +22,14 @@ EndTurn::EndTurn(Team equipe){
 EndTurn::~EndTurn(){}
 
 /**
- * @brief méthode retournant l'équipe actif
- * @return l'équipe actif
- */
-Team EndTurn::getEquipe(){
-	return equipe_;
-}
-
-/**
  * @brief méthode qui change l'etat d'une équipe en mode non jouable l'équipe actif
  * @details End of Turn ---> Normal Turn
  */
 
-void EndTurn::startTurn(){
-	equipe_.etatDebTour();
+std::shared_ptr<GameState> EndTurn::startTurn(){
+	return new StartTurn;
 }
 
-void EndTurn::turnover(){}
-void EndTurn::endTurnNormal(){}
+std::shared_ptr<GameState> EndTurn::turnover(){}
+std::shared_ptr<GameState> EndTurn::endTurnNormal(){}
 

@@ -29,8 +29,8 @@
        private:
              Ball ball_; 
              Grid grid_;
-             std::vector<Team> team1_;
-             std::vector<Team> team2_;
+             Team team1_;
+             Team team2_;
              std::vector<Player> players_;
              
  
