@@ -9,6 +9,7 @@
 
 #include <iostream>
 #include <string>
+#include <memory>
 #include "../Actions/ActionBlock.hpp"
 #include "../Actions/ActionDodge.hpp"
 #include "../Actions/ActionFoul.hpp"
