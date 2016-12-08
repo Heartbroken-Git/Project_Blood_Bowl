@@ -14,8 +14,8 @@
 
 class GameState{
     public:
-    GameState();
-    ~GameState();
+    GameState() {}
+    ~GameState() {}
 	virtual std::shared_ptr<GameState> startTurn()=0; //etatFinTour()
 	virtual std::shared_ptr<GameState> endTurnNormal()=0; //etatFinTurnover()
 	virtual std::shared_ptr<GameState> turnover()=0; //etatDebTour()
