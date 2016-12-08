@@ -112,6 +112,7 @@ void Funnel::tackle(Player joueurCible){
 	if((typeid(actingPlayer_.getPlayability()) == typeid(Fresh) && typeid(actingPlayer_.getWellbeing()) == typeid(Healthy)) && (typeid(joueurCible.getWellbeing()) == typeid(Healthy) || typeid(joueurCible.getWellbeing()) == typeid(Healthy)) ){
 		std::shared_ptr<ActionBlock> block = std::make_shared<ActionBlock>(actingPlayer_);
 		block->doAction(joueurCible);
+		delete block;
 	}else{
 		std::cout<<"L'adversaire ne peut pas être bloqué !"<<endl;
 		game_.turnover(actingPlayer_);
@@ -130,7 +131,8 @@ void Funnel::blitz(){
 void Funnel::pass(Player joueurCible){
 	if(typeid(actingPlayer_.getPlayability()) != typeid(Passed) && actingPlayer_.getPlayability()) != typeid(NotPlayable) && actingPlayer_.getPlayability()) != typeid(Blitzed)){
 		std::shared_ptr<ActionPass> pass = std::make_shared<ActionPass>(actingPlayer_);
-		block->doAction(joueurCible);
+		pass->doAction(joueurCible);
+		delete pass;
 	}else{
 		std::cout<<"Il ne peut pas passer la balle !"<<endl;
 		game_.turnover(actingPlayer_);
@@ -141,6 +143,7 @@ void Funnel::foul(Player joueurCible){
 	if(typeid(actingPlayer_.getPlayability()) == typeid(Fresh) && typeid(actingPlayer_.getWellbeing()) == typeid(Healthy)){
 		std::shared_ptr<ActionFoul> foul = std::make_shared<ActionFoul>(actingPlayer_);	
 		foul->doAction(joueurCible);
+		delete foul;
 	}else{
 		std::cout<<"Il ne peut pas tricher, donc vous ne pouvez pas tricher !"<<endl;
 		game_.turnover(actingPlayer_);
@@ -152,7 +155,7 @@ void Funnel::standUp(){
 	if(typeid(actingPlayer_.getPlayability()) == typeid(Fresh) && typeid(actingPlayer_.getWellbeing()) == typeid(ATerre)){
 		std::shared_ptr<ActionStandUp> up = std::make_shared<ActionStandUp>(actingPlayer_);	
 		up->doAction();
-	
+		delete up;
 	}else{
 		std::cout<<"Il ne peut pas se lever !"<<endl;
 		game_.turnover(actingPlayer_);
@@ -169,13 +172,15 @@ void Funnel::goForIt(String direction){
 			move(String direction);
 			actingPlayer.etatGFI();
 		}
+		delete gfi;
 	}else if(typeid(actingPlayer_.getPlayability()) == typeid(GFI) && typeid(actingPlayer_.getWellbeing()) == typeid(Healthy)){
 		std::shared_ptr<ActionGoForIt> gfi = std::make_shared<ActionGoForIt>(actingPlayer_);	
 		gfi->doAction();
 		if(typeid(actingPlayer_.getWellbeing()) != typeid(ATerre)){
 			move(String direction);
 			actingPlayer.etatDonePlaying();
-		}	
+		}
+		delete gfi;
 	}else{
 		std::cout<<"Il ne peut pas aller plus loin !"<<endl;
 		game_.turnover(actingPlayer_);
