@@ -11,9 +11,7 @@
 #include "Funnel.hpp"
 using namespace std;
 class Commands{
-	private:
-		Funnel funnel_;
-	
+
 	public:
 		Commands();
 		~Commands();
