@@ -118,6 +118,14 @@ int Game::oppoAdjac(Player player) {
 	}
 }
 
+Team Game::getTeam1(){
+	return team1_;
+}
+
+Team Game::getTeam2(){
+	return team2_;
+}
+
 /**
  * @brief Méthode retournant l'équipe dans laquelle se trouve un joueur donné
  * @param player le Player recherché
@@ -135,11 +143,46 @@ int Game::getPlayerTeam(Player player) {
 }
 
 /**
- * @brief Méthode gérant l'arrêt intempestif d'un tour
+ * @brief Méthode gérant l'arrêt intempestif d'un tour, fait appel à endTurn normal avec un cout qui balance le joueur qui a merdé
  * @param player le Player ayant causé l'arrêt du tour
  */ 
-void Game::turnover(Player player) { //TODO
-	//A VOIR AVEC ELBERT SUIVANT SON BOULOT SUR GAMESTATE
+void Game::turnover(Player player) { 
+	this.endTurn();
+	cout<<player<<" à fait une connerie, turnover !"<<endl;
+}
+
+/**
+ * @brief Méthode gérant l'arrêt normal d'un tour
+ */ 
+void Game::endTurn() { 
+	if(typeid(gameStateTeam1_) == typeid(StartTurn)){
+		std::shared_ptr<GameState> stockGameState = gameStateTeam1_ -> endTurnNormal();
+		delete gameStateTeam1_;
+		gameStateTeam1_ = stockGameState;
+	}
+	if(typeid(gameStateTeam2_) == typeid(StartTurn)){
+		std::shared_ptr<GameState> stockGameState = gameStateTeam2_ -> endTurnNormal();
+		delete gameStateTeam2_;
+		gameStateTeam2_ = stockGameState;
+	}
+}
+
+/**
+ * @brief Méthode gérant le début d'un tour
+ */ 
+void Game::startTurn() { 
+
+	
+	if(typeid(gameStateTeam1_) == typeid(EndTurn)){
+		std::shared_ptr<GameState> stockGameState = gameStateTeam1_ -> startTurn();
+		delete gameStateTeam1_;
+		gameStateTeam1_ = stockGameState;
+	}
+	if(typeid(gameStateTeam2_) == typeid(EndTurn)){
+		std::shared_ptr<GameState> stockGameState = gameStateTeam2_ -> startTurn();
+		delete gameStateTeam2_;
+		gameStateTeam2_ = stockGameState;
+	}
 }
 
 /**

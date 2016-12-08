@@ -11,9 +11,11 @@
 #include "Funnel.hpp"
 using namespace std;
 class Commands{
+	private:
+		Game game_;
 
 	public:
-		Commands();
+		Commands(Game game);
 		~Commands();
 		/*
 		* @brief Méthode qui lit ce qui est écrit sur le String et éxécute les méthodes Funnel correspondant
